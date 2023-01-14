@@ -1,16 +1,16 @@
-use crate::node::Node;
-use std::collections::BTreeSet;
+use crate::xml::Node;
+use std::collections::HashSet;
 
 pub struct Feature {
-    pub enums: BTreeSet<String>,
-    pub commands: BTreeSet<String>,
+    pub enums: HashSet<String>,
+    pub commands: HashSet<String>,
 }
 
 impl Feature {
     pub fn new() -> Self {
         Self {
-            enums: BTreeSet::new(),
-            commands: BTreeSet::new(),
+            enums: HashSet::new(),
+            commands: HashSet::new(),
         }
     }
 

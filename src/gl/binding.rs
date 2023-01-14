@@ -1,4 +1,4 @@
-use crate::node::{Node, Token};
+use crate::xml::{Node, Token};
 
 pub struct Binding {
     pub type_: String,
@@ -18,41 +18,8 @@ impl Binding {
             class: None,
         }
     }
-}
 
-pub struct Command {
-    pub proto: Binding,
-    pub param: Vec<Binding>,
-}
-
-impl Command {
-    pub fn new(node: Node) -> Self {
-        let mut me = Self {
-            proto: Binding::new(),
-            param: Vec::new(),
-        };
-
-        for node in node.children.into_iter() {
-            match node.name.as_str() {
-                "proto" => me.set_proto(node),
-                "param" => me.add_param(node),
-                _ => {}
-            }
-        }
-
-        me
-    }
-
-    fn set_proto(&mut self, node: Node) {
-        self.proto = Self::get_binding(node);
-    }
-
-    fn add_param(&mut self, node: Node) {
-        let param = Self::get_binding(node);
-        self.param.push(param)
-    }
-
-    fn get_binding(node: Node) -> Binding {
+    pub fn from_node(node: Node) -> Self {
         let Node {
             children,
             text,
@@ -75,10 +42,7 @@ impl Command {
                             name = s.into();
                             break;
                         } else if tag == "ptype" {
-                            type_ += "_";
                             type_ += s;
-                        } else {
-                            panic!("Wrong tag in binding: {}", tag)
                         }
                     }
                 }
@@ -88,7 +52,7 @@ impl Command {
             }
         }
 
-        Binding {
+        Self {
             type_,
             name,
             group,

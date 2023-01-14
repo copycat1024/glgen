@@ -1,4 +1,7 @@
-use crate::{command::Command, document::Document, enum_::Enum, feature::Feature, node::Node};
+use crate::{
+    gl::{Command, Enum, Feature},
+    xml::{Document, Node},
+};
 
 pub struct Registry {
     enums: Vec<Enum>,

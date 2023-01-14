@@ -1,4 +1,4 @@
-use crate::node::Node;
+use crate::xml::Node;
 
 pub struct Enum {
     pub group: Vec<String>,

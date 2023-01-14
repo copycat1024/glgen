@@ -1,13 +1,9 @@
-mod command;
-mod document;
-mod enum_;
-mod feature;
-mod node;
-mod registry;
+mod gl;
+mod xml;
 
-use crate::{document::Document, registry::Registry};
+use crate::{xml::Document, gl::Registry};
+use ::xml::reader::{EventReader, ParserConfig};
 use std::{fs::File, io::BufReader};
-use xml::reader::{EventReader, ParserConfig};
 
 fn main() {
     use std::io::Write;

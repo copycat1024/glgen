@@ -1,4 +1,4 @@
-use crate::node::Node;
+use crate::xml::Node;
 use xml::reader::{Error, XmlEvent};
 
 pub struct Document {
