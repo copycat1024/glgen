@@ -48,7 +48,7 @@ impl Node {
                     }
                 }
                 Some(Err(error)) => {
-                    println!("{}", error);
+                    println!("{error}");
                     break;
                 }
                 None => {

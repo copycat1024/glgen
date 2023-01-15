@@ -53,7 +53,7 @@ impl Binding {
         }
 
         Self {
-            type_,
+            type_: type_.trim().to_owned(),
             name,
             group,
             len,
