@@ -1150,2826 +1150,2826 @@ impl GlCmd {
 pub fn load<FnLoad>(loader: FnLoad) -> Self
 where FnLoad: Fn(*const c_char) -> *mut c_void {
 Self {
-active_shader_program_p: load(&loader, "glActiveShaderProgram"),
-active_texture_p: load(&loader, "glActiveTexture"),
-alpha_func_p: load(&loader, "glAlphaFunc"),
-alpha_funcx_p: load(&loader, "glAlphaFuncx"),
-attach_shader_p: load(&loader, "glAttachShader"),
-begin_conditional_render_p: load(&loader, "glBeginConditionalRender"),
-begin_query_p: load(&loader, "glBeginQuery"),
-begin_transform_feedback_p: load(&loader, "glBeginTransformFeedback"),
-bind_attrib_location_p: load(&loader, "glBindAttribLocation"),
-bind_buffer_p: load(&loader, "glBindBuffer"),
-bind_buffer_base_p: load(&loader, "glBindBufferBase"),
-bind_buffer_range_p: load(&loader, "glBindBufferRange"),
-bind_frag_data_location_p: load(&loader, "glBindFragDataLocation"),
-bind_frag_data_location_indexed_p: load(&loader, "glBindFragDataLocationIndexed"),
-bind_framebuffer_p: load(&loader, "glBindFramebuffer"),
-bind_image_texture_p: load(&loader, "glBindImageTexture"),
-bind_program_pipeline_p: load(&loader, "glBindProgramPipeline"),
-bind_renderbuffer_p: load(&loader, "glBindRenderbuffer"),
-bind_sampler_p: load(&loader, "glBindSampler"),
-bind_texture_p: load(&loader, "glBindTexture"),
-bind_transform_feedback_p: load(&loader, "glBindTransformFeedback"),
-bind_vertex_array_p: load(&loader, "glBindVertexArray"),
-bind_vertex_buffer_p: load(&loader, "glBindVertexBuffer"),
-blend_barrier_p: load(&loader, "glBlendBarrier"),
-blend_color_p: load(&loader, "glBlendColor"),
-blend_equation_p: load(&loader, "glBlendEquation"),
-blend_equation_separate_p: load(&loader, "glBlendEquationSeparate"),
-blend_equation_separatei_p: load(&loader, "glBlendEquationSeparatei"),
-blend_equationi_p: load(&loader, "glBlendEquationi"),
-blend_func_p: load(&loader, "glBlendFunc"),
-blend_func_separate_p: load(&loader, "glBlendFuncSeparate"),
-blend_func_separatei_p: load(&loader, "glBlendFuncSeparatei"),
-blend_funci_p: load(&loader, "glBlendFunci"),
-blit_framebuffer_p: load(&loader, "glBlitFramebuffer"),
-buffer_data_p: load(&loader, "glBufferData"),
-buffer_sub_data_p: load(&loader, "glBufferSubData"),
-check_framebuffer_status_p: load(&loader, "glCheckFramebufferStatus"),
-clamp_color_p: load(&loader, "glClampColor"),
-clear_p: load(&loader, "glClear"),
-clear_bufferfi_p: load(&loader, "glClearBufferfi"),
-clear_bufferfv_p: load(&loader, "glClearBufferfv"),
-clear_bufferiv_p: load(&loader, "glClearBufferiv"),
-clear_bufferuiv_p: load(&loader, "glClearBufferuiv"),
-clear_color_p: load(&loader, "glClearColor"),
-clear_colorx_p: load(&loader, "glClearColorx"),
-clear_depth_p: load(&loader, "glClearDepth"),
-clear_depthf_p: load(&loader, "glClearDepthf"),
-clear_depthx_p: load(&loader, "glClearDepthx"),
-clear_stencil_p: load(&loader, "glClearStencil"),
-client_active_texture_p: load(&loader, "glClientActiveTexture"),
-client_wait_sync_p: load(&loader, "glClientWaitSync"),
-clip_planef_p: load(&loader, "glClipPlanef"),
-clip_planex_p: load(&loader, "glClipPlanex"),
-color4f_p: load(&loader, "glColor4f"),
-color4ub_p: load(&loader, "glColor4ub"),
-color4x_p: load(&loader, "glColor4x"),
-color_mask_p: load(&loader, "glColorMask"),
-color_maski_p: load(&loader, "glColorMaski"),
-color_p3ui_p: load(&loader, "glColorP3ui"),
-color_p3uiv_p: load(&loader, "glColorP3uiv"),
-color_p4ui_p: load(&loader, "glColorP4ui"),
-color_p4uiv_p: load(&loader, "glColorP4uiv"),
-color_pointer_p: load(&loader, "glColorPointer"),
-compile_shader_p: load(&loader, "glCompileShader"),
-compressed_tex_image1_d_p: load(&loader, "glCompressedTexImage1D"),
-compressed_tex_image2_d_p: load(&loader, "glCompressedTexImage2D"),
-compressed_tex_image3_d_p: load(&loader, "glCompressedTexImage3D"),
-compressed_tex_sub_image1_d_p: load(&loader, "glCompressedTexSubImage1D"),
-compressed_tex_sub_image2_d_p: load(&loader, "glCompressedTexSubImage2D"),
-compressed_tex_sub_image3_d_p: load(&loader, "glCompressedTexSubImage3D"),
-copy_buffer_sub_data_p: load(&loader, "glCopyBufferSubData"),
-copy_image_sub_data_p: load(&loader, "glCopyImageSubData"),
-copy_tex_image1_d_p: load(&loader, "glCopyTexImage1D"),
-copy_tex_image2_d_p: load(&loader, "glCopyTexImage2D"),
-copy_tex_sub_image1_d_p: load(&loader, "glCopyTexSubImage1D"),
-copy_tex_sub_image2_d_p: load(&loader, "glCopyTexSubImage2D"),
-copy_tex_sub_image3_d_p: load(&loader, "glCopyTexSubImage3D"),
-create_program_p: load(&loader, "glCreateProgram"),
-create_shader_p: load(&loader, "glCreateShader"),
-create_shader_programv_p: load(&loader, "glCreateShaderProgramv"),
-cull_face_p: load(&loader, "glCullFace"),
-debug_message_callback_p: load(&loader, "glDebugMessageCallback"),
-debug_message_control_p: load(&loader, "glDebugMessageControl"),
-debug_message_insert_p: load(&loader, "glDebugMessageInsert"),
-delete_buffers_p: load(&loader, "glDeleteBuffers"),
-delete_framebuffers_p: load(&loader, "glDeleteFramebuffers"),
-delete_program_p: load(&loader, "glDeleteProgram"),
-delete_program_pipelines_p: load(&loader, "glDeleteProgramPipelines"),
-delete_queries_p: load(&loader, "glDeleteQueries"),
-delete_renderbuffers_p: load(&loader, "glDeleteRenderbuffers"),
-delete_samplers_p: load(&loader, "glDeleteSamplers"),
-delete_shader_p: load(&loader, "glDeleteShader"),
-delete_sync_p: load(&loader, "glDeleteSync"),
-delete_textures_p: load(&loader, "glDeleteTextures"),
-delete_transform_feedbacks_p: load(&loader, "glDeleteTransformFeedbacks"),
-delete_vertex_arrays_p: load(&loader, "glDeleteVertexArrays"),
-depth_func_p: load(&loader, "glDepthFunc"),
-depth_mask_p: load(&loader, "glDepthMask"),
-depth_range_p: load(&loader, "glDepthRange"),
-depth_rangef_p: load(&loader, "glDepthRangef"),
-depth_rangex_p: load(&loader, "glDepthRangex"),
-detach_shader_p: load(&loader, "glDetachShader"),
-disable_p: load(&loader, "glDisable"),
-disable_client_state_p: load(&loader, "glDisableClientState"),
-disable_vertex_attrib_array_p: load(&loader, "glDisableVertexAttribArray"),
-disablei_p: load(&loader, "glDisablei"),
-dispatch_compute_p: load(&loader, "glDispatchCompute"),
-dispatch_compute_indirect_p: load(&loader, "glDispatchComputeIndirect"),
-draw_arrays_p: load(&loader, "glDrawArrays"),
-draw_arrays_indirect_p: load(&loader, "glDrawArraysIndirect"),
-draw_arrays_instanced_p: load(&loader, "glDrawArraysInstanced"),
-draw_buffer_p: load(&loader, "glDrawBuffer"),
-draw_buffers_p: load(&loader, "glDrawBuffers"),
-draw_elements_p: load(&loader, "glDrawElements"),
-draw_elements_base_vertex_p: load(&loader, "glDrawElementsBaseVertex"),
-draw_elements_indirect_p: load(&loader, "glDrawElementsIndirect"),
-draw_elements_instanced_p: load(&loader, "glDrawElementsInstanced"),
-draw_elements_instanced_base_vertex_p: load(&loader, "glDrawElementsInstancedBaseVertex"),
-draw_range_elements_p: load(&loader, "glDrawRangeElements"),
-draw_range_elements_base_vertex_p: load(&loader, "glDrawRangeElementsBaseVertex"),
-enable_p: load(&loader, "glEnable"),
-enable_client_state_p: load(&loader, "glEnableClientState"),
-enable_vertex_attrib_array_p: load(&loader, "glEnableVertexAttribArray"),
-enablei_p: load(&loader, "glEnablei"),
-end_conditional_render_p: load(&loader, "glEndConditionalRender"),
-end_query_p: load(&loader, "glEndQuery"),
-end_transform_feedback_p: load(&loader, "glEndTransformFeedback"),
-fence_sync_p: load(&loader, "glFenceSync"),
-finish_p: load(&loader, "glFinish"),
-flush_p: load(&loader, "glFlush"),
-flush_mapped_buffer_range_p: load(&loader, "glFlushMappedBufferRange"),
-fogf_p: load(&loader, "glFogf"),
-fogfv_p: load(&loader, "glFogfv"),
-fogx_p: load(&loader, "glFogx"),
-fogxv_p: load(&loader, "glFogxv"),
-framebuffer_parameteri_p: load(&loader, "glFramebufferParameteri"),
-framebuffer_renderbuffer_p: load(&loader, "glFramebufferRenderbuffer"),
-framebuffer_texture_p: load(&loader, "glFramebufferTexture"),
-framebuffer_texture1_d_p: load(&loader, "glFramebufferTexture1D"),
-framebuffer_texture2_d_p: load(&loader, "glFramebufferTexture2D"),
-framebuffer_texture3_d_p: load(&loader, "glFramebufferTexture3D"),
-framebuffer_texture_layer_p: load(&loader, "glFramebufferTextureLayer"),
-front_face_p: load(&loader, "glFrontFace"),
-frustumf_p: load(&loader, "glFrustumf"),
-frustumx_p: load(&loader, "glFrustumx"),
-gen_buffers_p: load(&loader, "glGenBuffers"),
-gen_framebuffers_p: load(&loader, "glGenFramebuffers"),
-gen_program_pipelines_p: load(&loader, "glGenProgramPipelines"),
-gen_queries_p: load(&loader, "glGenQueries"),
-gen_renderbuffers_p: load(&loader, "glGenRenderbuffers"),
-gen_samplers_p: load(&loader, "glGenSamplers"),
-gen_textures_p: load(&loader, "glGenTextures"),
-gen_transform_feedbacks_p: load(&loader, "glGenTransformFeedbacks"),
-gen_vertex_arrays_p: load(&loader, "glGenVertexArrays"),
-generate_mipmap_p: load(&loader, "glGenerateMipmap"),
-get_active_attrib_p: load(&loader, "glGetActiveAttrib"),
-get_active_uniform_p: load(&loader, "glGetActiveUniform"),
-get_active_uniform_block_name_p: load(&loader, "glGetActiveUniformBlockName"),
-get_active_uniform_blockiv_p: load(&loader, "glGetActiveUniformBlockiv"),
-get_active_uniform_name_p: load(&loader, "glGetActiveUniformName"),
-get_active_uniformsiv_p: load(&loader, "glGetActiveUniformsiv"),
-get_attached_shaders_p: load(&loader, "glGetAttachedShaders"),
-get_attrib_location_p: load(&loader, "glGetAttribLocation"),
-get_booleani_v_p: load(&loader, "glGetBooleani_v"),
-get_booleanv_p: load(&loader, "glGetBooleanv"),
-get_buffer_parameteri64v_p: load(&loader, "glGetBufferParameteri64v"),
-get_buffer_parameteriv_p: load(&loader, "glGetBufferParameteriv"),
-get_buffer_pointerv_p: load(&loader, "glGetBufferPointerv"),
-get_buffer_sub_data_p: load(&loader, "glGetBufferSubData"),
-get_clip_planef_p: load(&loader, "glGetClipPlanef"),
-get_clip_planex_p: load(&loader, "glGetClipPlanex"),
-get_compressed_tex_image_p: load(&loader, "glGetCompressedTexImage"),
-get_debug_message_log_p: load(&loader, "glGetDebugMessageLog"),
-get_doublev_p: load(&loader, "glGetDoublev"),
-get_error_p: load(&loader, "glGetError"),
-get_fixedv_p: load(&loader, "glGetFixedv"),
-get_floatv_p: load(&loader, "glGetFloatv"),
-get_frag_data_index_p: load(&loader, "glGetFragDataIndex"),
-get_frag_data_location_p: load(&loader, "glGetFragDataLocation"),
-get_framebuffer_attachment_parameteriv_p: load(&loader, "glGetFramebufferAttachmentParameteriv"),
-get_framebuffer_parameteriv_p: load(&loader, "glGetFramebufferParameteriv"),
-get_graphics_reset_status_p: load(&loader, "glGetGraphicsResetStatus"),
-get_integer64i_v_p: load(&loader, "glGetInteger64i_v"),
-get_integer64v_p: load(&loader, "glGetInteger64v"),
-get_integeri_v_p: load(&loader, "glGetIntegeri_v"),
-get_integerv_p: load(&loader, "glGetIntegerv"),
-get_internalformativ_p: load(&loader, "glGetInternalformativ"),
-get_lightfv_p: load(&loader, "glGetLightfv"),
-get_lightxv_p: load(&loader, "glGetLightxv"),
-get_materialfv_p: load(&loader, "glGetMaterialfv"),
-get_materialxv_p: load(&loader, "glGetMaterialxv"),
-get_multisamplefv_p: load(&loader, "glGetMultisamplefv"),
-get_object_label_p: load(&loader, "glGetObjectLabel"),
-get_object_ptr_label_p: load(&loader, "glGetObjectPtrLabel"),
-get_pointerv_p: load(&loader, "glGetPointerv"),
-get_program_binary_p: load(&loader, "glGetProgramBinary"),
-get_program_info_log_p: load(&loader, "glGetProgramInfoLog"),
-get_program_interfaceiv_p: load(&loader, "glGetProgramInterfaceiv"),
-get_program_pipeline_info_log_p: load(&loader, "glGetProgramPipelineInfoLog"),
-get_program_pipelineiv_p: load(&loader, "glGetProgramPipelineiv"),
-get_program_resource_index_p: load(&loader, "glGetProgramResourceIndex"),
-get_program_resource_location_p: load(&loader, "glGetProgramResourceLocation"),
-get_program_resource_name_p: load(&loader, "glGetProgramResourceName"),
-get_program_resourceiv_p: load(&loader, "glGetProgramResourceiv"),
-get_programiv_p: load(&loader, "glGetProgramiv"),
-get_query_objecti64v_p: load(&loader, "glGetQueryObjecti64v"),
-get_query_objectiv_p: load(&loader, "glGetQueryObjectiv"),
-get_query_objectui64v_p: load(&loader, "glGetQueryObjectui64v"),
-get_query_objectuiv_p: load(&loader, "glGetQueryObjectuiv"),
-get_queryiv_p: load(&loader, "glGetQueryiv"),
-get_renderbuffer_parameteriv_p: load(&loader, "glGetRenderbufferParameteriv"),
-get_sampler_parameter_iiv_p: load(&loader, "glGetSamplerParameterIiv"),
-get_sampler_parameter_iuiv_p: load(&loader, "glGetSamplerParameterIuiv"),
-get_sampler_parameterfv_p: load(&loader, "glGetSamplerParameterfv"),
-get_sampler_parameteriv_p: load(&loader, "glGetSamplerParameteriv"),
-get_shader_info_log_p: load(&loader, "glGetShaderInfoLog"),
-get_shader_precision_format_p: load(&loader, "glGetShaderPrecisionFormat"),
-get_shader_source_p: load(&loader, "glGetShaderSource"),
-get_shaderiv_p: load(&loader, "glGetShaderiv"),
-get_string_p: load(&loader, "glGetString"),
-get_stringi_p: load(&loader, "glGetStringi"),
-get_synciv_p: load(&loader, "glGetSynciv"),
-get_tex_envfv_p: load(&loader, "glGetTexEnvfv"),
-get_tex_enviv_p: load(&loader, "glGetTexEnviv"),
-get_tex_envxv_p: load(&loader, "glGetTexEnvxv"),
-get_tex_image_p: load(&loader, "glGetTexImage"),
-get_tex_level_parameterfv_p: load(&loader, "glGetTexLevelParameterfv"),
-get_tex_level_parameteriv_p: load(&loader, "glGetTexLevelParameteriv"),
-get_tex_parameter_iiv_p: load(&loader, "glGetTexParameterIiv"),
-get_tex_parameter_iuiv_p: load(&loader, "glGetTexParameterIuiv"),
-get_tex_parameterfv_p: load(&loader, "glGetTexParameterfv"),
-get_tex_parameteriv_p: load(&loader, "glGetTexParameteriv"),
-get_tex_parameterxv_p: load(&loader, "glGetTexParameterxv"),
-get_transform_feedback_varying_p: load(&loader, "glGetTransformFeedbackVarying"),
-get_uniform_block_index_p: load(&loader, "glGetUniformBlockIndex"),
-get_uniform_indices_p: load(&loader, "glGetUniformIndices"),
-get_uniform_location_p: load(&loader, "glGetUniformLocation"),
-get_uniformfv_p: load(&loader, "glGetUniformfv"),
-get_uniformiv_p: load(&loader, "glGetUniformiv"),
-get_uniformuiv_p: load(&loader, "glGetUniformuiv"),
-get_vertex_attrib_iiv_p: load(&loader, "glGetVertexAttribIiv"),
-get_vertex_attrib_iuiv_p: load(&loader, "glGetVertexAttribIuiv"),
-get_vertex_attrib_pointerv_p: load(&loader, "glGetVertexAttribPointerv"),
-get_vertex_attribdv_p: load(&loader, "glGetVertexAttribdv"),
-get_vertex_attribfv_p: load(&loader, "glGetVertexAttribfv"),
-get_vertex_attribiv_p: load(&loader, "glGetVertexAttribiv"),
-getn_uniformfv_p: load(&loader, "glGetnUniformfv"),
-getn_uniformiv_p: load(&loader, "glGetnUniformiv"),
-getn_uniformuiv_p: load(&loader, "glGetnUniformuiv"),
-hint_p: load(&loader, "glHint"),
-invalidate_framebuffer_p: load(&loader, "glInvalidateFramebuffer"),
-invalidate_sub_framebuffer_p: load(&loader, "glInvalidateSubFramebuffer"),
-is_buffer_p: load(&loader, "glIsBuffer"),
-is_enabled_p: load(&loader, "glIsEnabled"),
-is_enabledi_p: load(&loader, "glIsEnabledi"),
-is_framebuffer_p: load(&loader, "glIsFramebuffer"),
-is_program_p: load(&loader, "glIsProgram"),
-is_program_pipeline_p: load(&loader, "glIsProgramPipeline"),
-is_query_p: load(&loader, "glIsQuery"),
-is_renderbuffer_p: load(&loader, "glIsRenderbuffer"),
-is_sampler_p: load(&loader, "glIsSampler"),
-is_shader_p: load(&loader, "glIsShader"),
-is_sync_p: load(&loader, "glIsSync"),
-is_texture_p: load(&loader, "glIsTexture"),
-is_transform_feedback_p: load(&loader, "glIsTransformFeedback"),
-is_vertex_array_p: load(&loader, "glIsVertexArray"),
-light_modelf_p: load(&loader, "glLightModelf"),
-light_modelfv_p: load(&loader, "glLightModelfv"),
-light_modelx_p: load(&loader, "glLightModelx"),
-light_modelxv_p: load(&loader, "glLightModelxv"),
-lightf_p: load(&loader, "glLightf"),
-lightfv_p: load(&loader, "glLightfv"),
-lightx_p: load(&loader, "glLightx"),
-lightxv_p: load(&loader, "glLightxv"),
-line_width_p: load(&loader, "glLineWidth"),
-line_widthx_p: load(&loader, "glLineWidthx"),
-link_program_p: load(&loader, "glLinkProgram"),
-load_identity_p: load(&loader, "glLoadIdentity"),
-load_matrixf_p: load(&loader, "glLoadMatrixf"),
-load_matrixx_p: load(&loader, "glLoadMatrixx"),
-logic_op_p: load(&loader, "glLogicOp"),
-map_buffer_p: load(&loader, "glMapBuffer"),
-map_buffer_range_p: load(&loader, "glMapBufferRange"),
-materialf_p: load(&loader, "glMaterialf"),
-materialfv_p: load(&loader, "glMaterialfv"),
-materialx_p: load(&loader, "glMaterialx"),
-materialxv_p: load(&loader, "glMaterialxv"),
-matrix_mode_p: load(&loader, "glMatrixMode"),
-memory_barrier_p: load(&loader, "glMemoryBarrier"),
-memory_barrier_by_region_p: load(&loader, "glMemoryBarrierByRegion"),
-min_sample_shading_p: load(&loader, "glMinSampleShading"),
-mult_matrixf_p: load(&loader, "glMultMatrixf"),
-mult_matrixx_p: load(&loader, "glMultMatrixx"),
-multi_draw_arrays_p: load(&loader, "glMultiDrawArrays"),
-multi_draw_elements_p: load(&loader, "glMultiDrawElements"),
-multi_draw_elements_base_vertex_p: load(&loader, "glMultiDrawElementsBaseVertex"),
-multi_tex_coord4f_p: load(&loader, "glMultiTexCoord4f"),
-multi_tex_coord4x_p: load(&loader, "glMultiTexCoord4x"),
-multi_tex_coord_p1ui_p: load(&loader, "glMultiTexCoordP1ui"),
-multi_tex_coord_p1uiv_p: load(&loader, "glMultiTexCoordP1uiv"),
-multi_tex_coord_p2ui_p: load(&loader, "glMultiTexCoordP2ui"),
-multi_tex_coord_p2uiv_p: load(&loader, "glMultiTexCoordP2uiv"),
-multi_tex_coord_p3ui_p: load(&loader, "glMultiTexCoordP3ui"),
-multi_tex_coord_p3uiv_p: load(&loader, "glMultiTexCoordP3uiv"),
-multi_tex_coord_p4ui_p: load(&loader, "glMultiTexCoordP4ui"),
-multi_tex_coord_p4uiv_p: load(&loader, "glMultiTexCoordP4uiv"),
-normal3f_p: load(&loader, "glNormal3f"),
-normal3x_p: load(&loader, "glNormal3x"),
-normal_p3ui_p: load(&loader, "glNormalP3ui"),
-normal_p3uiv_p: load(&loader, "glNormalP3uiv"),
-normal_pointer_p: load(&loader, "glNormalPointer"),
-object_label_p: load(&loader, "glObjectLabel"),
-object_ptr_label_p: load(&loader, "glObjectPtrLabel"),
-orthof_p: load(&loader, "glOrthof"),
-orthox_p: load(&loader, "glOrthox"),
-patch_parameteri_p: load(&loader, "glPatchParameteri"),
-pause_transform_feedback_p: load(&loader, "glPauseTransformFeedback"),
-pixel_storef_p: load(&loader, "glPixelStoref"),
-pixel_storei_p: load(&loader, "glPixelStorei"),
-point_parameterf_p: load(&loader, "glPointParameterf"),
-point_parameterfv_p: load(&loader, "glPointParameterfv"),
-point_parameteri_p: load(&loader, "glPointParameteri"),
-point_parameteriv_p: load(&loader, "glPointParameteriv"),
-point_parameterx_p: load(&loader, "glPointParameterx"),
-point_parameterxv_p: load(&loader, "glPointParameterxv"),
-point_size_p: load(&loader, "glPointSize"),
-point_sizex_p: load(&loader, "glPointSizex"),
-polygon_mode_p: load(&loader, "glPolygonMode"),
-polygon_offset_p: load(&loader, "glPolygonOffset"),
-polygon_offsetx_p: load(&loader, "glPolygonOffsetx"),
-pop_debug_group_p: load(&loader, "glPopDebugGroup"),
-pop_matrix_p: load(&loader, "glPopMatrix"),
-primitive_bounding_box_p: load(&loader, "glPrimitiveBoundingBox"),
-primitive_restart_index_p: load(&loader, "glPrimitiveRestartIndex"),
-program_binary_p: load(&loader, "glProgramBinary"),
-program_parameteri_p: load(&loader, "glProgramParameteri"),
-program_uniform1f_p: load(&loader, "glProgramUniform1f"),
-program_uniform1fv_p: load(&loader, "glProgramUniform1fv"),
-program_uniform1i_p: load(&loader, "glProgramUniform1i"),
-program_uniform1iv_p: load(&loader, "glProgramUniform1iv"),
-program_uniform1ui_p: load(&loader, "glProgramUniform1ui"),
-program_uniform1uiv_p: load(&loader, "glProgramUniform1uiv"),
-program_uniform2f_p: load(&loader, "glProgramUniform2f"),
-program_uniform2fv_p: load(&loader, "glProgramUniform2fv"),
-program_uniform2i_p: load(&loader, "glProgramUniform2i"),
-program_uniform2iv_p: load(&loader, "glProgramUniform2iv"),
-program_uniform2ui_p: load(&loader, "glProgramUniform2ui"),
-program_uniform2uiv_p: load(&loader, "glProgramUniform2uiv"),
-program_uniform3f_p: load(&loader, "glProgramUniform3f"),
-program_uniform3fv_p: load(&loader, "glProgramUniform3fv"),
-program_uniform3i_p: load(&loader, "glProgramUniform3i"),
-program_uniform3iv_p: load(&loader, "glProgramUniform3iv"),
-program_uniform3ui_p: load(&loader, "glProgramUniform3ui"),
-program_uniform3uiv_p: load(&loader, "glProgramUniform3uiv"),
-program_uniform4f_p: load(&loader, "glProgramUniform4f"),
-program_uniform4fv_p: load(&loader, "glProgramUniform4fv"),
-program_uniform4i_p: load(&loader, "glProgramUniform4i"),
-program_uniform4iv_p: load(&loader, "glProgramUniform4iv"),
-program_uniform4ui_p: load(&loader, "glProgramUniform4ui"),
-program_uniform4uiv_p: load(&loader, "glProgramUniform4uiv"),
-program_uniform_matrix2fv_p: load(&loader, "glProgramUniformMatrix2fv"),
-program_uniform_matrix2x3fv_p: load(&loader, "glProgramUniformMatrix2x3fv"),
-program_uniform_matrix2x4fv_p: load(&loader, "glProgramUniformMatrix2x4fv"),
-program_uniform_matrix3fv_p: load(&loader, "glProgramUniformMatrix3fv"),
-program_uniform_matrix3x2fv_p: load(&loader, "glProgramUniformMatrix3x2fv"),
-program_uniform_matrix3x4fv_p: load(&loader, "glProgramUniformMatrix3x4fv"),
-program_uniform_matrix4fv_p: load(&loader, "glProgramUniformMatrix4fv"),
-program_uniform_matrix4x2fv_p: load(&loader, "glProgramUniformMatrix4x2fv"),
-program_uniform_matrix4x3fv_p: load(&loader, "glProgramUniformMatrix4x3fv"),
-provoking_vertex_p: load(&loader, "glProvokingVertex"),
-push_debug_group_p: load(&loader, "glPushDebugGroup"),
-push_matrix_p: load(&loader, "glPushMatrix"),
-query_counter_p: load(&loader, "glQueryCounter"),
-read_buffer_p: load(&loader, "glReadBuffer"),
-read_pixels_p: load(&loader, "glReadPixels"),
-readn_pixels_p: load(&loader, "glReadnPixels"),
-release_shader_compiler_p: load(&loader, "glReleaseShaderCompiler"),
-renderbuffer_storage_p: load(&loader, "glRenderbufferStorage"),
-renderbuffer_storage_multisample_p: load(&loader, "glRenderbufferStorageMultisample"),
-resume_transform_feedback_p: load(&loader, "glResumeTransformFeedback"),
-rotatef_p: load(&loader, "glRotatef"),
-rotatex_p: load(&loader, "glRotatex"),
-sample_coverage_p: load(&loader, "glSampleCoverage"),
-sample_coveragex_p: load(&loader, "glSampleCoveragex"),
-sample_maski_p: load(&loader, "glSampleMaski"),
-sampler_parameter_iiv_p: load(&loader, "glSamplerParameterIiv"),
-sampler_parameter_iuiv_p: load(&loader, "glSamplerParameterIuiv"),
-sampler_parameterf_p: load(&loader, "glSamplerParameterf"),
-sampler_parameterfv_p: load(&loader, "glSamplerParameterfv"),
-sampler_parameteri_p: load(&loader, "glSamplerParameteri"),
-sampler_parameteriv_p: load(&loader, "glSamplerParameteriv"),
-scalef_p: load(&loader, "glScalef"),
-scalex_p: load(&loader, "glScalex"),
-scissor_p: load(&loader, "glScissor"),
-secondary_color_p3ui_p: load(&loader, "glSecondaryColorP3ui"),
-secondary_color_p3uiv_p: load(&loader, "glSecondaryColorP3uiv"),
-shade_model_p: load(&loader, "glShadeModel"),
-shader_binary_p: load(&loader, "glShaderBinary"),
-shader_source_p: load(&loader, "glShaderSource"),
-stencil_func_p: load(&loader, "glStencilFunc"),
-stencil_func_separate_p: load(&loader, "glStencilFuncSeparate"),
-stencil_mask_p: load(&loader, "glStencilMask"),
-stencil_mask_separate_p: load(&loader, "glStencilMaskSeparate"),
-stencil_op_p: load(&loader, "glStencilOp"),
-stencil_op_separate_p: load(&loader, "glStencilOpSeparate"),
-tex_buffer_p: load(&loader, "glTexBuffer"),
-tex_buffer_range_p: load(&loader, "glTexBufferRange"),
-tex_coord_p1ui_p: load(&loader, "glTexCoordP1ui"),
-tex_coord_p1uiv_p: load(&loader, "glTexCoordP1uiv"),
-tex_coord_p2ui_p: load(&loader, "glTexCoordP2ui"),
-tex_coord_p2uiv_p: load(&loader, "glTexCoordP2uiv"),
-tex_coord_p3ui_p: load(&loader, "glTexCoordP3ui"),
-tex_coord_p3uiv_p: load(&loader, "glTexCoordP3uiv"),
-tex_coord_p4ui_p: load(&loader, "glTexCoordP4ui"),
-tex_coord_p4uiv_p: load(&loader, "glTexCoordP4uiv"),
-tex_coord_pointer_p: load(&loader, "glTexCoordPointer"),
-tex_envf_p: load(&loader, "glTexEnvf"),
-tex_envfv_p: load(&loader, "glTexEnvfv"),
-tex_envi_p: load(&loader, "glTexEnvi"),
-tex_enviv_p: load(&loader, "glTexEnviv"),
-tex_envx_p: load(&loader, "glTexEnvx"),
-tex_envxv_p: load(&loader, "glTexEnvxv"),
-tex_image1_d_p: load(&loader, "glTexImage1D"),
-tex_image2_d_p: load(&loader, "glTexImage2D"),
-tex_image2_d_multisample_p: load(&loader, "glTexImage2DMultisample"),
-tex_image3_d_p: load(&loader, "glTexImage3D"),
-tex_image3_d_multisample_p: load(&loader, "glTexImage3DMultisample"),
-tex_parameter_iiv_p: load(&loader, "glTexParameterIiv"),
-tex_parameter_iuiv_p: load(&loader, "glTexParameterIuiv"),
-tex_parameterf_p: load(&loader, "glTexParameterf"),
-tex_parameterfv_p: load(&loader, "glTexParameterfv"),
-tex_parameteri_p: load(&loader, "glTexParameteri"),
-tex_parameteriv_p: load(&loader, "glTexParameteriv"),
-tex_parameterx_p: load(&loader, "glTexParameterx"),
-tex_parameterxv_p: load(&loader, "glTexParameterxv"),
-tex_storage2_d_p: load(&loader, "glTexStorage2D"),
-tex_storage2_d_multisample_p: load(&loader, "glTexStorage2DMultisample"),
-tex_storage3_d_p: load(&loader, "glTexStorage3D"),
-tex_storage3_d_multisample_p: load(&loader, "glTexStorage3DMultisample"),
-tex_sub_image1_d_p: load(&loader, "glTexSubImage1D"),
-tex_sub_image2_d_p: load(&loader, "glTexSubImage2D"),
-tex_sub_image3_d_p: load(&loader, "glTexSubImage3D"),
-transform_feedback_varyings_p: load(&loader, "glTransformFeedbackVaryings"),
-translatef_p: load(&loader, "glTranslatef"),
-translatex_p: load(&loader, "glTranslatex"),
-uniform1f_p: load(&loader, "glUniform1f"),
-uniform1fv_p: load(&loader, "glUniform1fv"),
-uniform1i_p: load(&loader, "glUniform1i"),
-uniform1iv_p: load(&loader, "glUniform1iv"),
-uniform1ui_p: load(&loader, "glUniform1ui"),
-uniform1uiv_p: load(&loader, "glUniform1uiv"),
-uniform2f_p: load(&loader, "glUniform2f"),
-uniform2fv_p: load(&loader, "glUniform2fv"),
-uniform2i_p: load(&loader, "glUniform2i"),
-uniform2iv_p: load(&loader, "glUniform2iv"),
-uniform2ui_p: load(&loader, "glUniform2ui"),
-uniform2uiv_p: load(&loader, "glUniform2uiv"),
-uniform3f_p: load(&loader, "glUniform3f"),
-uniform3fv_p: load(&loader, "glUniform3fv"),
-uniform3i_p: load(&loader, "glUniform3i"),
-uniform3iv_p: load(&loader, "glUniform3iv"),
-uniform3ui_p: load(&loader, "glUniform3ui"),
-uniform3uiv_p: load(&loader, "glUniform3uiv"),
-uniform4f_p: load(&loader, "glUniform4f"),
-uniform4fv_p: load(&loader, "glUniform4fv"),
-uniform4i_p: load(&loader, "glUniform4i"),
-uniform4iv_p: load(&loader, "glUniform4iv"),
-uniform4ui_p: load(&loader, "glUniform4ui"),
-uniform4uiv_p: load(&loader, "glUniform4uiv"),
-uniform_block_binding_p: load(&loader, "glUniformBlockBinding"),
-uniform_matrix2fv_p: load(&loader, "glUniformMatrix2fv"),
-uniform_matrix2x3fv_p: load(&loader, "glUniformMatrix2x3fv"),
-uniform_matrix2x4fv_p: load(&loader, "glUniformMatrix2x4fv"),
-uniform_matrix3fv_p: load(&loader, "glUniformMatrix3fv"),
-uniform_matrix3x2fv_p: load(&loader, "glUniformMatrix3x2fv"),
-uniform_matrix3x4fv_p: load(&loader, "glUniformMatrix3x4fv"),
-uniform_matrix4fv_p: load(&loader, "glUniformMatrix4fv"),
-uniform_matrix4x2fv_p: load(&loader, "glUniformMatrix4x2fv"),
-uniform_matrix4x3fv_p: load(&loader, "glUniformMatrix4x3fv"),
-unmap_buffer_p: load(&loader, "glUnmapBuffer"),
-use_program_p: load(&loader, "glUseProgram"),
-use_program_stages_p: load(&loader, "glUseProgramStages"),
-validate_program_p: load(&loader, "glValidateProgram"),
-validate_program_pipeline_p: load(&loader, "glValidateProgramPipeline"),
-vertex_attrib1d_p: load(&loader, "glVertexAttrib1d"),
-vertex_attrib1dv_p: load(&loader, "glVertexAttrib1dv"),
-vertex_attrib1f_p: load(&loader, "glVertexAttrib1f"),
-vertex_attrib1fv_p: load(&loader, "glVertexAttrib1fv"),
-vertex_attrib1s_p: load(&loader, "glVertexAttrib1s"),
-vertex_attrib1sv_p: load(&loader, "glVertexAttrib1sv"),
-vertex_attrib2d_p: load(&loader, "glVertexAttrib2d"),
-vertex_attrib2dv_p: load(&loader, "glVertexAttrib2dv"),
-vertex_attrib2f_p: load(&loader, "glVertexAttrib2f"),
-vertex_attrib2fv_p: load(&loader, "glVertexAttrib2fv"),
-vertex_attrib2s_p: load(&loader, "glVertexAttrib2s"),
-vertex_attrib2sv_p: load(&loader, "glVertexAttrib2sv"),
-vertex_attrib3d_p: load(&loader, "glVertexAttrib3d"),
-vertex_attrib3dv_p: load(&loader, "glVertexAttrib3dv"),
-vertex_attrib3f_p: load(&loader, "glVertexAttrib3f"),
-vertex_attrib3fv_p: load(&loader, "glVertexAttrib3fv"),
-vertex_attrib3s_p: load(&loader, "glVertexAttrib3s"),
-vertex_attrib3sv_p: load(&loader, "glVertexAttrib3sv"),
-vertex_attrib4_nbv_p: load(&loader, "glVertexAttrib4Nbv"),
-vertex_attrib4_niv_p: load(&loader, "glVertexAttrib4Niv"),
-vertex_attrib4_nsv_p: load(&loader, "glVertexAttrib4Nsv"),
-vertex_attrib4_nub_p: load(&loader, "glVertexAttrib4Nub"),
-vertex_attrib4_nubv_p: load(&loader, "glVertexAttrib4Nubv"),
-vertex_attrib4_nuiv_p: load(&loader, "glVertexAttrib4Nuiv"),
-vertex_attrib4_nusv_p: load(&loader, "glVertexAttrib4Nusv"),
-vertex_attrib4bv_p: load(&loader, "glVertexAttrib4bv"),
-vertex_attrib4d_p: load(&loader, "glVertexAttrib4d"),
-vertex_attrib4dv_p: load(&loader, "glVertexAttrib4dv"),
-vertex_attrib4f_p: load(&loader, "glVertexAttrib4f"),
-vertex_attrib4fv_p: load(&loader, "glVertexAttrib4fv"),
-vertex_attrib4iv_p: load(&loader, "glVertexAttrib4iv"),
-vertex_attrib4s_p: load(&loader, "glVertexAttrib4s"),
-vertex_attrib4sv_p: load(&loader, "glVertexAttrib4sv"),
-vertex_attrib4ubv_p: load(&loader, "glVertexAttrib4ubv"),
-vertex_attrib4uiv_p: load(&loader, "glVertexAttrib4uiv"),
-vertex_attrib4usv_p: load(&loader, "glVertexAttrib4usv"),
-vertex_attrib_binding_p: load(&loader, "glVertexAttribBinding"),
-vertex_attrib_divisor_p: load(&loader, "glVertexAttribDivisor"),
-vertex_attrib_format_p: load(&loader, "glVertexAttribFormat"),
-vertex_attrib_i1i_p: load(&loader, "glVertexAttribI1i"),
-vertex_attrib_i1iv_p: load(&loader, "glVertexAttribI1iv"),
-vertex_attrib_i1ui_p: load(&loader, "glVertexAttribI1ui"),
-vertex_attrib_i1uiv_p: load(&loader, "glVertexAttribI1uiv"),
-vertex_attrib_i2i_p: load(&loader, "glVertexAttribI2i"),
-vertex_attrib_i2iv_p: load(&loader, "glVertexAttribI2iv"),
-vertex_attrib_i2ui_p: load(&loader, "glVertexAttribI2ui"),
-vertex_attrib_i2uiv_p: load(&loader, "glVertexAttribI2uiv"),
-vertex_attrib_i3i_p: load(&loader, "glVertexAttribI3i"),
-vertex_attrib_i3iv_p: load(&loader, "glVertexAttribI3iv"),
-vertex_attrib_i3ui_p: load(&loader, "glVertexAttribI3ui"),
-vertex_attrib_i3uiv_p: load(&loader, "glVertexAttribI3uiv"),
-vertex_attrib_i4bv_p: load(&loader, "glVertexAttribI4bv"),
-vertex_attrib_i4i_p: load(&loader, "glVertexAttribI4i"),
-vertex_attrib_i4iv_p: load(&loader, "glVertexAttribI4iv"),
-vertex_attrib_i4sv_p: load(&loader, "glVertexAttribI4sv"),
-vertex_attrib_i4ubv_p: load(&loader, "glVertexAttribI4ubv"),
-vertex_attrib_i4ui_p: load(&loader, "glVertexAttribI4ui"),
-vertex_attrib_i4uiv_p: load(&loader, "glVertexAttribI4uiv"),
-vertex_attrib_i4usv_p: load(&loader, "glVertexAttribI4usv"),
-vertex_attrib_i_format_p: load(&loader, "glVertexAttribIFormat"),
-vertex_attrib_i_pointer_p: load(&loader, "glVertexAttribIPointer"),
-vertex_attrib_p1ui_p: load(&loader, "glVertexAttribP1ui"),
-vertex_attrib_p1uiv_p: load(&loader, "glVertexAttribP1uiv"),
-vertex_attrib_p2ui_p: load(&loader, "glVertexAttribP2ui"),
-vertex_attrib_p2uiv_p: load(&loader, "glVertexAttribP2uiv"),
-vertex_attrib_p3ui_p: load(&loader, "glVertexAttribP3ui"),
-vertex_attrib_p3uiv_p: load(&loader, "glVertexAttribP3uiv"),
-vertex_attrib_p4ui_p: load(&loader, "glVertexAttribP4ui"),
-vertex_attrib_p4uiv_p: load(&loader, "glVertexAttribP4uiv"),
-vertex_attrib_pointer_p: load(&loader, "glVertexAttribPointer"),
-vertex_binding_divisor_p: load(&loader, "glVertexBindingDivisor"),
-vertex_p2ui_p: load(&loader, "glVertexP2ui"),
-vertex_p2uiv_p: load(&loader, "glVertexP2uiv"),
-vertex_p3ui_p: load(&loader, "glVertexP3ui"),
-vertex_p3uiv_p: load(&loader, "glVertexP3uiv"),
-vertex_p4ui_p: load(&loader, "glVertexP4ui"),
-vertex_p4uiv_p: load(&loader, "glVertexP4uiv"),
-vertex_pointer_p: load(&loader, "glVertexPointer"),
-viewport_p: load(&loader, "glViewport"),
-wait_sync_p: load(&loader, "glWaitSync"),
+active_shader_program_p: load(&loader, "gl_active_shader_program"),
+active_texture_p: load(&loader, "gl_active_texture"),
+alpha_func_p: load(&loader, "gl_alpha_func"),
+alpha_funcx_p: load(&loader, "gl_alpha_funcx"),
+attach_shader_p: load(&loader, "gl_attach_shader"),
+begin_conditional_render_p: load(&loader, "gl_begin_conditional_render"),
+begin_query_p: load(&loader, "gl_begin_query"),
+begin_transform_feedback_p: load(&loader, "gl_begin_transform_feedback"),
+bind_attrib_location_p: load(&loader, "gl_bind_attrib_location"),
+bind_buffer_p: load(&loader, "gl_bind_buffer"),
+bind_buffer_base_p: load(&loader, "gl_bind_buffer_base"),
+bind_buffer_range_p: load(&loader, "gl_bind_buffer_range"),
+bind_frag_data_location_p: load(&loader, "gl_bind_frag_data_location"),
+bind_frag_data_location_indexed_p: load(&loader, "gl_bind_frag_data_location_indexed"),
+bind_framebuffer_p: load(&loader, "gl_bind_framebuffer"),
+bind_image_texture_p: load(&loader, "gl_bind_image_texture"),
+bind_program_pipeline_p: load(&loader, "gl_bind_program_pipeline"),
+bind_renderbuffer_p: load(&loader, "gl_bind_renderbuffer"),
+bind_sampler_p: load(&loader, "gl_bind_sampler"),
+bind_texture_p: load(&loader, "gl_bind_texture"),
+bind_transform_feedback_p: load(&loader, "gl_bind_transform_feedback"),
+bind_vertex_array_p: load(&loader, "gl_bind_vertex_array"),
+bind_vertex_buffer_p: load(&loader, "gl_bind_vertex_buffer"),
+blend_barrier_p: load(&loader, "gl_blend_barrier"),
+blend_color_p: load(&loader, "gl_blend_color"),
+blend_equation_p: load(&loader, "gl_blend_equation"),
+blend_equation_separate_p: load(&loader, "gl_blend_equation_separate"),
+blend_equation_separatei_p: load(&loader, "gl_blend_equation_separatei"),
+blend_equationi_p: load(&loader, "gl_blend_equationi"),
+blend_func_p: load(&loader, "gl_blend_func"),
+blend_func_separate_p: load(&loader, "gl_blend_func_separate"),
+blend_func_separatei_p: load(&loader, "gl_blend_func_separatei"),
+blend_funci_p: load(&loader, "gl_blend_funci"),
+blit_framebuffer_p: load(&loader, "gl_blit_framebuffer"),
+buffer_data_p: load(&loader, "gl_buffer_data"),
+buffer_sub_data_p: load(&loader, "gl_buffer_sub_data"),
+check_framebuffer_status_p: load(&loader, "gl_check_framebuffer_status"),
+clamp_color_p: load(&loader, "gl_clamp_color"),
+clear_p: load(&loader, "gl_clear"),
+clear_bufferfi_p: load(&loader, "gl_clear_bufferfi"),
+clear_bufferfv_p: load(&loader, "gl_clear_bufferfv"),
+clear_bufferiv_p: load(&loader, "gl_clear_bufferiv"),
+clear_bufferuiv_p: load(&loader, "gl_clear_bufferuiv"),
+clear_color_p: load(&loader, "gl_clear_color"),
+clear_colorx_p: load(&loader, "gl_clear_colorx"),
+clear_depth_p: load(&loader, "gl_clear_depth"),
+clear_depthf_p: load(&loader, "gl_clear_depthf"),
+clear_depthx_p: load(&loader, "gl_clear_depthx"),
+clear_stencil_p: load(&loader, "gl_clear_stencil"),
+client_active_texture_p: load(&loader, "gl_client_active_texture"),
+client_wait_sync_p: load(&loader, "gl_client_wait_sync"),
+clip_planef_p: load(&loader, "gl_clip_planef"),
+clip_planex_p: load(&loader, "gl_clip_planex"),
+color4f_p: load(&loader, "gl_color4f"),
+color4ub_p: load(&loader, "gl_color4ub"),
+color4x_p: load(&loader, "gl_color4x"),
+color_mask_p: load(&loader, "gl_color_mask"),
+color_maski_p: load(&loader, "gl_color_maski"),
+color_p3ui_p: load(&loader, "gl_color_p3ui"),
+color_p3uiv_p: load(&loader, "gl_color_p3uiv"),
+color_p4ui_p: load(&loader, "gl_color_p4ui"),
+color_p4uiv_p: load(&loader, "gl_color_p4uiv"),
+color_pointer_p: load(&loader, "gl_color_pointer"),
+compile_shader_p: load(&loader, "gl_compile_shader"),
+compressed_tex_image1_d_p: load(&loader, "gl_compressed_tex_image1_d"),
+compressed_tex_image2_d_p: load(&loader, "gl_compressed_tex_image2_d"),
+compressed_tex_image3_d_p: load(&loader, "gl_compressed_tex_image3_d"),
+compressed_tex_sub_image1_d_p: load(&loader, "gl_compressed_tex_sub_image1_d"),
+compressed_tex_sub_image2_d_p: load(&loader, "gl_compressed_tex_sub_image2_d"),
+compressed_tex_sub_image3_d_p: load(&loader, "gl_compressed_tex_sub_image3_d"),
+copy_buffer_sub_data_p: load(&loader, "gl_copy_buffer_sub_data"),
+copy_image_sub_data_p: load(&loader, "gl_copy_image_sub_data"),
+copy_tex_image1_d_p: load(&loader, "gl_copy_tex_image1_d"),
+copy_tex_image2_d_p: load(&loader, "gl_copy_tex_image2_d"),
+copy_tex_sub_image1_d_p: load(&loader, "gl_copy_tex_sub_image1_d"),
+copy_tex_sub_image2_d_p: load(&loader, "gl_copy_tex_sub_image2_d"),
+copy_tex_sub_image3_d_p: load(&loader, "gl_copy_tex_sub_image3_d"),
+create_program_p: load(&loader, "gl_create_program"),
+create_shader_p: load(&loader, "gl_create_shader"),
+create_shader_programv_p: load(&loader, "gl_create_shader_programv"),
+cull_face_p: load(&loader, "gl_cull_face"),
+debug_message_callback_p: load(&loader, "gl_debug_message_callback"),
+debug_message_control_p: load(&loader, "gl_debug_message_control"),
+debug_message_insert_p: load(&loader, "gl_debug_message_insert"),
+delete_buffers_p: load(&loader, "gl_delete_buffers"),
+delete_framebuffers_p: load(&loader, "gl_delete_framebuffers"),
+delete_program_p: load(&loader, "gl_delete_program"),
+delete_program_pipelines_p: load(&loader, "gl_delete_program_pipelines"),
+delete_queries_p: load(&loader, "gl_delete_queries"),
+delete_renderbuffers_p: load(&loader, "gl_delete_renderbuffers"),
+delete_samplers_p: load(&loader, "gl_delete_samplers"),
+delete_shader_p: load(&loader, "gl_delete_shader"),
+delete_sync_p: load(&loader, "gl_delete_sync"),
+delete_textures_p: load(&loader, "gl_delete_textures"),
+delete_transform_feedbacks_p: load(&loader, "gl_delete_transform_feedbacks"),
+delete_vertex_arrays_p: load(&loader, "gl_delete_vertex_arrays"),
+depth_func_p: load(&loader, "gl_depth_func"),
+depth_mask_p: load(&loader, "gl_depth_mask"),
+depth_range_p: load(&loader, "gl_depth_range"),
+depth_rangef_p: load(&loader, "gl_depth_rangef"),
+depth_rangex_p: load(&loader, "gl_depth_rangex"),
+detach_shader_p: load(&loader, "gl_detach_shader"),
+disable_p: load(&loader, "gl_disable"),
+disable_client_state_p: load(&loader, "gl_disable_client_state"),
+disable_vertex_attrib_array_p: load(&loader, "gl_disable_vertex_attrib_array"),
+disablei_p: load(&loader, "gl_disablei"),
+dispatch_compute_p: load(&loader, "gl_dispatch_compute"),
+dispatch_compute_indirect_p: load(&loader, "gl_dispatch_compute_indirect"),
+draw_arrays_p: load(&loader, "gl_draw_arrays"),
+draw_arrays_indirect_p: load(&loader, "gl_draw_arrays_indirect"),
+draw_arrays_instanced_p: load(&loader, "gl_draw_arrays_instanced"),
+draw_buffer_p: load(&loader, "gl_draw_buffer"),
+draw_buffers_p: load(&loader, "gl_draw_buffers"),
+draw_elements_p: load(&loader, "gl_draw_elements"),
+draw_elements_base_vertex_p: load(&loader, "gl_draw_elements_base_vertex"),
+draw_elements_indirect_p: load(&loader, "gl_draw_elements_indirect"),
+draw_elements_instanced_p: load(&loader, "gl_draw_elements_instanced"),
+draw_elements_instanced_base_vertex_p: load(&loader, "gl_draw_elements_instanced_base_vertex"),
+draw_range_elements_p: load(&loader, "gl_draw_range_elements"),
+draw_range_elements_base_vertex_p: load(&loader, "gl_draw_range_elements_base_vertex"),
+enable_p: load(&loader, "gl_enable"),
+enable_client_state_p: load(&loader, "gl_enable_client_state"),
+enable_vertex_attrib_array_p: load(&loader, "gl_enable_vertex_attrib_array"),
+enablei_p: load(&loader, "gl_enablei"),
+end_conditional_render_p: load(&loader, "gl_end_conditional_render"),
+end_query_p: load(&loader, "gl_end_query"),
+end_transform_feedback_p: load(&loader, "gl_end_transform_feedback"),
+fence_sync_p: load(&loader, "gl_fence_sync"),
+finish_p: load(&loader, "gl_finish"),
+flush_p: load(&loader, "gl_flush"),
+flush_mapped_buffer_range_p: load(&loader, "gl_flush_mapped_buffer_range"),
+fogf_p: load(&loader, "gl_fogf"),
+fogfv_p: load(&loader, "gl_fogfv"),
+fogx_p: load(&loader, "gl_fogx"),
+fogxv_p: load(&loader, "gl_fogxv"),
+framebuffer_parameteri_p: load(&loader, "gl_framebuffer_parameteri"),
+framebuffer_renderbuffer_p: load(&loader, "gl_framebuffer_renderbuffer"),
+framebuffer_texture_p: load(&loader, "gl_framebuffer_texture"),
+framebuffer_texture1_d_p: load(&loader, "gl_framebuffer_texture1_d"),
+framebuffer_texture2_d_p: load(&loader, "gl_framebuffer_texture2_d"),
+framebuffer_texture3_d_p: load(&loader, "gl_framebuffer_texture3_d"),
+framebuffer_texture_layer_p: load(&loader, "gl_framebuffer_texture_layer"),
+front_face_p: load(&loader, "gl_front_face"),
+frustumf_p: load(&loader, "gl_frustumf"),
+frustumx_p: load(&loader, "gl_frustumx"),
+gen_buffers_p: load(&loader, "gl_gen_buffers"),
+gen_framebuffers_p: load(&loader, "gl_gen_framebuffers"),
+gen_program_pipelines_p: load(&loader, "gl_gen_program_pipelines"),
+gen_queries_p: load(&loader, "gl_gen_queries"),
+gen_renderbuffers_p: load(&loader, "gl_gen_renderbuffers"),
+gen_samplers_p: load(&loader, "gl_gen_samplers"),
+gen_textures_p: load(&loader, "gl_gen_textures"),
+gen_transform_feedbacks_p: load(&loader, "gl_gen_transform_feedbacks"),
+gen_vertex_arrays_p: load(&loader, "gl_gen_vertex_arrays"),
+generate_mipmap_p: load(&loader, "gl_generate_mipmap"),
+get_active_attrib_p: load(&loader, "gl_get_active_attrib"),
+get_active_uniform_p: load(&loader, "gl_get_active_uniform"),
+get_active_uniform_block_name_p: load(&loader, "gl_get_active_uniform_block_name"),
+get_active_uniform_blockiv_p: load(&loader, "gl_get_active_uniform_blockiv"),
+get_active_uniform_name_p: load(&loader, "gl_get_active_uniform_name"),
+get_active_uniformsiv_p: load(&loader, "gl_get_active_uniformsiv"),
+get_attached_shaders_p: load(&loader, "gl_get_attached_shaders"),
+get_attrib_location_p: load(&loader, "gl_get_attrib_location"),
+get_booleani_v_p: load(&loader, "gl_get_booleani_v"),
+get_booleanv_p: load(&loader, "gl_get_booleanv"),
+get_buffer_parameteri64v_p: load(&loader, "gl_get_buffer_parameteri64v"),
+get_buffer_parameteriv_p: load(&loader, "gl_get_buffer_parameteriv"),
+get_buffer_pointerv_p: load(&loader, "gl_get_buffer_pointerv"),
+get_buffer_sub_data_p: load(&loader, "gl_get_buffer_sub_data"),
+get_clip_planef_p: load(&loader, "gl_get_clip_planef"),
+get_clip_planex_p: load(&loader, "gl_get_clip_planex"),
+get_compressed_tex_image_p: load(&loader, "gl_get_compressed_tex_image"),
+get_debug_message_log_p: load(&loader, "gl_get_debug_message_log"),
+get_doublev_p: load(&loader, "gl_get_doublev"),
+get_error_p: load(&loader, "gl_get_error"),
+get_fixedv_p: load(&loader, "gl_get_fixedv"),
+get_floatv_p: load(&loader, "gl_get_floatv"),
+get_frag_data_index_p: load(&loader, "gl_get_frag_data_index"),
+get_frag_data_location_p: load(&loader, "gl_get_frag_data_location"),
+get_framebuffer_attachment_parameteriv_p: load(&loader, "gl_get_framebuffer_attachment_parameteriv"),
+get_framebuffer_parameteriv_p: load(&loader, "gl_get_framebuffer_parameteriv"),
+get_graphics_reset_status_p: load(&loader, "gl_get_graphics_reset_status"),
+get_integer64i_v_p: load(&loader, "gl_get_integer64i_v"),
+get_integer64v_p: load(&loader, "gl_get_integer64v"),
+get_integeri_v_p: load(&loader, "gl_get_integeri_v"),
+get_integerv_p: load(&loader, "gl_get_integerv"),
+get_internalformativ_p: load(&loader, "gl_get_internalformativ"),
+get_lightfv_p: load(&loader, "gl_get_lightfv"),
+get_lightxv_p: load(&loader, "gl_get_lightxv"),
+get_materialfv_p: load(&loader, "gl_get_materialfv"),
+get_materialxv_p: load(&loader, "gl_get_materialxv"),
+get_multisamplefv_p: load(&loader, "gl_get_multisamplefv"),
+get_object_label_p: load(&loader, "gl_get_object_label"),
+get_object_ptr_label_p: load(&loader, "gl_get_object_ptr_label"),
+get_pointerv_p: load(&loader, "gl_get_pointerv"),
+get_program_binary_p: load(&loader, "gl_get_program_binary"),
+get_program_info_log_p: load(&loader, "gl_get_program_info_log"),
+get_program_interfaceiv_p: load(&loader, "gl_get_program_interfaceiv"),
+get_program_pipeline_info_log_p: load(&loader, "gl_get_program_pipeline_info_log"),
+get_program_pipelineiv_p: load(&loader, "gl_get_program_pipelineiv"),
+get_program_resource_index_p: load(&loader, "gl_get_program_resource_index"),
+get_program_resource_location_p: load(&loader, "gl_get_program_resource_location"),
+get_program_resource_name_p: load(&loader, "gl_get_program_resource_name"),
+get_program_resourceiv_p: load(&loader, "gl_get_program_resourceiv"),
+get_programiv_p: load(&loader, "gl_get_programiv"),
+get_query_objecti64v_p: load(&loader, "gl_get_query_objecti64v"),
+get_query_objectiv_p: load(&loader, "gl_get_query_objectiv"),
+get_query_objectui64v_p: load(&loader, "gl_get_query_objectui64v"),
+get_query_objectuiv_p: load(&loader, "gl_get_query_objectuiv"),
+get_queryiv_p: load(&loader, "gl_get_queryiv"),
+get_renderbuffer_parameteriv_p: load(&loader, "gl_get_renderbuffer_parameteriv"),
+get_sampler_parameter_iiv_p: load(&loader, "gl_get_sampler_parameter_iiv"),
+get_sampler_parameter_iuiv_p: load(&loader, "gl_get_sampler_parameter_iuiv"),
+get_sampler_parameterfv_p: load(&loader, "gl_get_sampler_parameterfv"),
+get_sampler_parameteriv_p: load(&loader, "gl_get_sampler_parameteriv"),
+get_shader_info_log_p: load(&loader, "gl_get_shader_info_log"),
+get_shader_precision_format_p: load(&loader, "gl_get_shader_precision_format"),
+get_shader_source_p: load(&loader, "gl_get_shader_source"),
+get_shaderiv_p: load(&loader, "gl_get_shaderiv"),
+get_string_p: load(&loader, "gl_get_string"),
+get_stringi_p: load(&loader, "gl_get_stringi"),
+get_synciv_p: load(&loader, "gl_get_synciv"),
+get_tex_envfv_p: load(&loader, "gl_get_tex_envfv"),
+get_tex_enviv_p: load(&loader, "gl_get_tex_enviv"),
+get_tex_envxv_p: load(&loader, "gl_get_tex_envxv"),
+get_tex_image_p: load(&loader, "gl_get_tex_image"),
+get_tex_level_parameterfv_p: load(&loader, "gl_get_tex_level_parameterfv"),
+get_tex_level_parameteriv_p: load(&loader, "gl_get_tex_level_parameteriv"),
+get_tex_parameter_iiv_p: load(&loader, "gl_get_tex_parameter_iiv"),
+get_tex_parameter_iuiv_p: load(&loader, "gl_get_tex_parameter_iuiv"),
+get_tex_parameterfv_p: load(&loader, "gl_get_tex_parameterfv"),
+get_tex_parameteriv_p: load(&loader, "gl_get_tex_parameteriv"),
+get_tex_parameterxv_p: load(&loader, "gl_get_tex_parameterxv"),
+get_transform_feedback_varying_p: load(&loader, "gl_get_transform_feedback_varying"),
+get_uniform_block_index_p: load(&loader, "gl_get_uniform_block_index"),
+get_uniform_indices_p: load(&loader, "gl_get_uniform_indices"),
+get_uniform_location_p: load(&loader, "gl_get_uniform_location"),
+get_uniformfv_p: load(&loader, "gl_get_uniformfv"),
+get_uniformiv_p: load(&loader, "gl_get_uniformiv"),
+get_uniformuiv_p: load(&loader, "gl_get_uniformuiv"),
+get_vertex_attrib_iiv_p: load(&loader, "gl_get_vertex_attrib_iiv"),
+get_vertex_attrib_iuiv_p: load(&loader, "gl_get_vertex_attrib_iuiv"),
+get_vertex_attrib_pointerv_p: load(&loader, "gl_get_vertex_attrib_pointerv"),
+get_vertex_attribdv_p: load(&loader, "gl_get_vertex_attribdv"),
+get_vertex_attribfv_p: load(&loader, "gl_get_vertex_attribfv"),
+get_vertex_attribiv_p: load(&loader, "gl_get_vertex_attribiv"),
+getn_uniformfv_p: load(&loader, "gl_getn_uniformfv"),
+getn_uniformiv_p: load(&loader, "gl_getn_uniformiv"),
+getn_uniformuiv_p: load(&loader, "gl_getn_uniformuiv"),
+hint_p: load(&loader, "gl_hint"),
+invalidate_framebuffer_p: load(&loader, "gl_invalidate_framebuffer"),
+invalidate_sub_framebuffer_p: load(&loader, "gl_invalidate_sub_framebuffer"),
+is_buffer_p: load(&loader, "gl_is_buffer"),
+is_enabled_p: load(&loader, "gl_is_enabled"),
+is_enabledi_p: load(&loader, "gl_is_enabledi"),
+is_framebuffer_p: load(&loader, "gl_is_framebuffer"),
+is_program_p: load(&loader, "gl_is_program"),
+is_program_pipeline_p: load(&loader, "gl_is_program_pipeline"),
+is_query_p: load(&loader, "gl_is_query"),
+is_renderbuffer_p: load(&loader, "gl_is_renderbuffer"),
+is_sampler_p: load(&loader, "gl_is_sampler"),
+is_shader_p: load(&loader, "gl_is_shader"),
+is_sync_p: load(&loader, "gl_is_sync"),
+is_texture_p: load(&loader, "gl_is_texture"),
+is_transform_feedback_p: load(&loader, "gl_is_transform_feedback"),
+is_vertex_array_p: load(&loader, "gl_is_vertex_array"),
+light_modelf_p: load(&loader, "gl_light_modelf"),
+light_modelfv_p: load(&loader, "gl_light_modelfv"),
+light_modelx_p: load(&loader, "gl_light_modelx"),
+light_modelxv_p: load(&loader, "gl_light_modelxv"),
+lightf_p: load(&loader, "gl_lightf"),
+lightfv_p: load(&loader, "gl_lightfv"),
+lightx_p: load(&loader, "gl_lightx"),
+lightxv_p: load(&loader, "gl_lightxv"),
+line_width_p: load(&loader, "gl_line_width"),
+line_widthx_p: load(&loader, "gl_line_widthx"),
+link_program_p: load(&loader, "gl_link_program"),
+load_identity_p: load(&loader, "gl_load_identity"),
+load_matrixf_p: load(&loader, "gl_load_matrixf"),
+load_matrixx_p: load(&loader, "gl_load_matrixx"),
+logic_op_p: load(&loader, "gl_logic_op"),
+map_buffer_p: load(&loader, "gl_map_buffer"),
+map_buffer_range_p: load(&loader, "gl_map_buffer_range"),
+materialf_p: load(&loader, "gl_materialf"),
+materialfv_p: load(&loader, "gl_materialfv"),
+materialx_p: load(&loader, "gl_materialx"),
+materialxv_p: load(&loader, "gl_materialxv"),
+matrix_mode_p: load(&loader, "gl_matrix_mode"),
+memory_barrier_p: load(&loader, "gl_memory_barrier"),
+memory_barrier_by_region_p: load(&loader, "gl_memory_barrier_by_region"),
+min_sample_shading_p: load(&loader, "gl_min_sample_shading"),
+mult_matrixf_p: load(&loader, "gl_mult_matrixf"),
+mult_matrixx_p: load(&loader, "gl_mult_matrixx"),
+multi_draw_arrays_p: load(&loader, "gl_multi_draw_arrays"),
+multi_draw_elements_p: load(&loader, "gl_multi_draw_elements"),
+multi_draw_elements_base_vertex_p: load(&loader, "gl_multi_draw_elements_base_vertex"),
+multi_tex_coord4f_p: load(&loader, "gl_multi_tex_coord4f"),
+multi_tex_coord4x_p: load(&loader, "gl_multi_tex_coord4x"),
+multi_tex_coord_p1ui_p: load(&loader, "gl_multi_tex_coord_p1ui"),
+multi_tex_coord_p1uiv_p: load(&loader, "gl_multi_tex_coord_p1uiv"),
+multi_tex_coord_p2ui_p: load(&loader, "gl_multi_tex_coord_p2ui"),
+multi_tex_coord_p2uiv_p: load(&loader, "gl_multi_tex_coord_p2uiv"),
+multi_tex_coord_p3ui_p: load(&loader, "gl_multi_tex_coord_p3ui"),
+multi_tex_coord_p3uiv_p: load(&loader, "gl_multi_tex_coord_p3uiv"),
+multi_tex_coord_p4ui_p: load(&loader, "gl_multi_tex_coord_p4ui"),
+multi_tex_coord_p4uiv_p: load(&loader, "gl_multi_tex_coord_p4uiv"),
+normal3f_p: load(&loader, "gl_normal3f"),
+normal3x_p: load(&loader, "gl_normal3x"),
+normal_p3ui_p: load(&loader, "gl_normal_p3ui"),
+normal_p3uiv_p: load(&loader, "gl_normal_p3uiv"),
+normal_pointer_p: load(&loader, "gl_normal_pointer"),
+object_label_p: load(&loader, "gl_object_label"),
+object_ptr_label_p: load(&loader, "gl_object_ptr_label"),
+orthof_p: load(&loader, "gl_orthof"),
+orthox_p: load(&loader, "gl_orthox"),
+patch_parameteri_p: load(&loader, "gl_patch_parameteri"),
+pause_transform_feedback_p: load(&loader, "gl_pause_transform_feedback"),
+pixel_storef_p: load(&loader, "gl_pixel_storef"),
+pixel_storei_p: load(&loader, "gl_pixel_storei"),
+point_parameterf_p: load(&loader, "gl_point_parameterf"),
+point_parameterfv_p: load(&loader, "gl_point_parameterfv"),
+point_parameteri_p: load(&loader, "gl_point_parameteri"),
+point_parameteriv_p: load(&loader, "gl_point_parameteriv"),
+point_parameterx_p: load(&loader, "gl_point_parameterx"),
+point_parameterxv_p: load(&loader, "gl_point_parameterxv"),
+point_size_p: load(&loader, "gl_point_size"),
+point_sizex_p: load(&loader, "gl_point_sizex"),
+polygon_mode_p: load(&loader, "gl_polygon_mode"),
+polygon_offset_p: load(&loader, "gl_polygon_offset"),
+polygon_offsetx_p: load(&loader, "gl_polygon_offsetx"),
+pop_debug_group_p: load(&loader, "gl_pop_debug_group"),
+pop_matrix_p: load(&loader, "gl_pop_matrix"),
+primitive_bounding_box_p: load(&loader, "gl_primitive_bounding_box"),
+primitive_restart_index_p: load(&loader, "gl_primitive_restart_index"),
+program_binary_p: load(&loader, "gl_program_binary"),
+program_parameteri_p: load(&loader, "gl_program_parameteri"),
+program_uniform1f_p: load(&loader, "gl_program_uniform1f"),
+program_uniform1fv_p: load(&loader, "gl_program_uniform1fv"),
+program_uniform1i_p: load(&loader, "gl_program_uniform1i"),
+program_uniform1iv_p: load(&loader, "gl_program_uniform1iv"),
+program_uniform1ui_p: load(&loader, "gl_program_uniform1ui"),
+program_uniform1uiv_p: load(&loader, "gl_program_uniform1uiv"),
+program_uniform2f_p: load(&loader, "gl_program_uniform2f"),
+program_uniform2fv_p: load(&loader, "gl_program_uniform2fv"),
+program_uniform2i_p: load(&loader, "gl_program_uniform2i"),
+program_uniform2iv_p: load(&loader, "gl_program_uniform2iv"),
+program_uniform2ui_p: load(&loader, "gl_program_uniform2ui"),
+program_uniform2uiv_p: load(&loader, "gl_program_uniform2uiv"),
+program_uniform3f_p: load(&loader, "gl_program_uniform3f"),
+program_uniform3fv_p: load(&loader, "gl_program_uniform3fv"),
+program_uniform3i_p: load(&loader, "gl_program_uniform3i"),
+program_uniform3iv_p: load(&loader, "gl_program_uniform3iv"),
+program_uniform3ui_p: load(&loader, "gl_program_uniform3ui"),
+program_uniform3uiv_p: load(&loader, "gl_program_uniform3uiv"),
+program_uniform4f_p: load(&loader, "gl_program_uniform4f"),
+program_uniform4fv_p: load(&loader, "gl_program_uniform4fv"),
+program_uniform4i_p: load(&loader, "gl_program_uniform4i"),
+program_uniform4iv_p: load(&loader, "gl_program_uniform4iv"),
+program_uniform4ui_p: load(&loader, "gl_program_uniform4ui"),
+program_uniform4uiv_p: load(&loader, "gl_program_uniform4uiv"),
+program_uniform_matrix2fv_p: load(&loader, "gl_program_uniform_matrix2fv"),
+program_uniform_matrix2x3fv_p: load(&loader, "gl_program_uniform_matrix2x3fv"),
+program_uniform_matrix2x4fv_p: load(&loader, "gl_program_uniform_matrix2x4fv"),
+program_uniform_matrix3fv_p: load(&loader, "gl_program_uniform_matrix3fv"),
+program_uniform_matrix3x2fv_p: load(&loader, "gl_program_uniform_matrix3x2fv"),
+program_uniform_matrix3x4fv_p: load(&loader, "gl_program_uniform_matrix3x4fv"),
+program_uniform_matrix4fv_p: load(&loader, "gl_program_uniform_matrix4fv"),
+program_uniform_matrix4x2fv_p: load(&loader, "gl_program_uniform_matrix4x2fv"),
+program_uniform_matrix4x3fv_p: load(&loader, "gl_program_uniform_matrix4x3fv"),
+provoking_vertex_p: load(&loader, "gl_provoking_vertex"),
+push_debug_group_p: load(&loader, "gl_push_debug_group"),
+push_matrix_p: load(&loader, "gl_push_matrix"),
+query_counter_p: load(&loader, "gl_query_counter"),
+read_buffer_p: load(&loader, "gl_read_buffer"),
+read_pixels_p: load(&loader, "gl_read_pixels"),
+readn_pixels_p: load(&loader, "gl_readn_pixels"),
+release_shader_compiler_p: load(&loader, "gl_release_shader_compiler"),
+renderbuffer_storage_p: load(&loader, "gl_renderbuffer_storage"),
+renderbuffer_storage_multisample_p: load(&loader, "gl_renderbuffer_storage_multisample"),
+resume_transform_feedback_p: load(&loader, "gl_resume_transform_feedback"),
+rotatef_p: load(&loader, "gl_rotatef"),
+rotatex_p: load(&loader, "gl_rotatex"),
+sample_coverage_p: load(&loader, "gl_sample_coverage"),
+sample_coveragex_p: load(&loader, "gl_sample_coveragex"),
+sample_maski_p: load(&loader, "gl_sample_maski"),
+sampler_parameter_iiv_p: load(&loader, "gl_sampler_parameter_iiv"),
+sampler_parameter_iuiv_p: load(&loader, "gl_sampler_parameter_iuiv"),
+sampler_parameterf_p: load(&loader, "gl_sampler_parameterf"),
+sampler_parameterfv_p: load(&loader, "gl_sampler_parameterfv"),
+sampler_parameteri_p: load(&loader, "gl_sampler_parameteri"),
+sampler_parameteriv_p: load(&loader, "gl_sampler_parameteriv"),
+scalef_p: load(&loader, "gl_scalef"),
+scalex_p: load(&loader, "gl_scalex"),
+scissor_p: load(&loader, "gl_scissor"),
+secondary_color_p3ui_p: load(&loader, "gl_secondary_color_p3ui"),
+secondary_color_p3uiv_p: load(&loader, "gl_secondary_color_p3uiv"),
+shade_model_p: load(&loader, "gl_shade_model"),
+shader_binary_p: load(&loader, "gl_shader_binary"),
+shader_source_p: load(&loader, "gl_shader_source"),
+stencil_func_p: load(&loader, "gl_stencil_func"),
+stencil_func_separate_p: load(&loader, "gl_stencil_func_separate"),
+stencil_mask_p: load(&loader, "gl_stencil_mask"),
+stencil_mask_separate_p: load(&loader, "gl_stencil_mask_separate"),
+stencil_op_p: load(&loader, "gl_stencil_op"),
+stencil_op_separate_p: load(&loader, "gl_stencil_op_separate"),
+tex_buffer_p: load(&loader, "gl_tex_buffer"),
+tex_buffer_range_p: load(&loader, "gl_tex_buffer_range"),
+tex_coord_p1ui_p: load(&loader, "gl_tex_coord_p1ui"),
+tex_coord_p1uiv_p: load(&loader, "gl_tex_coord_p1uiv"),
+tex_coord_p2ui_p: load(&loader, "gl_tex_coord_p2ui"),
+tex_coord_p2uiv_p: load(&loader, "gl_tex_coord_p2uiv"),
+tex_coord_p3ui_p: load(&loader, "gl_tex_coord_p3ui"),
+tex_coord_p3uiv_p: load(&loader, "gl_tex_coord_p3uiv"),
+tex_coord_p4ui_p: load(&loader, "gl_tex_coord_p4ui"),
+tex_coord_p4uiv_p: load(&loader, "gl_tex_coord_p4uiv"),
+tex_coord_pointer_p: load(&loader, "gl_tex_coord_pointer"),
+tex_envf_p: load(&loader, "gl_tex_envf"),
+tex_envfv_p: load(&loader, "gl_tex_envfv"),
+tex_envi_p: load(&loader, "gl_tex_envi"),
+tex_enviv_p: load(&loader, "gl_tex_enviv"),
+tex_envx_p: load(&loader, "gl_tex_envx"),
+tex_envxv_p: load(&loader, "gl_tex_envxv"),
+tex_image1_d_p: load(&loader, "gl_tex_image1_d"),
+tex_image2_d_p: load(&loader, "gl_tex_image2_d"),
+tex_image2_d_multisample_p: load(&loader, "gl_tex_image2_d_multisample"),
+tex_image3_d_p: load(&loader, "gl_tex_image3_d"),
+tex_image3_d_multisample_p: load(&loader, "gl_tex_image3_d_multisample"),
+tex_parameter_iiv_p: load(&loader, "gl_tex_parameter_iiv"),
+tex_parameter_iuiv_p: load(&loader, "gl_tex_parameter_iuiv"),
+tex_parameterf_p: load(&loader, "gl_tex_parameterf"),
+tex_parameterfv_p: load(&loader, "gl_tex_parameterfv"),
+tex_parameteri_p: load(&loader, "gl_tex_parameteri"),
+tex_parameteriv_p: load(&loader, "gl_tex_parameteriv"),
+tex_parameterx_p: load(&loader, "gl_tex_parameterx"),
+tex_parameterxv_p: load(&loader, "gl_tex_parameterxv"),
+tex_storage2_d_p: load(&loader, "gl_tex_storage2_d"),
+tex_storage2_d_multisample_p: load(&loader, "gl_tex_storage2_d_multisample"),
+tex_storage3_d_p: load(&loader, "gl_tex_storage3_d"),
+tex_storage3_d_multisample_p: load(&loader, "gl_tex_storage3_d_multisample"),
+tex_sub_image1_d_p: load(&loader, "gl_tex_sub_image1_d"),
+tex_sub_image2_d_p: load(&loader, "gl_tex_sub_image2_d"),
+tex_sub_image3_d_p: load(&loader, "gl_tex_sub_image3_d"),
+transform_feedback_varyings_p: load(&loader, "gl_transform_feedback_varyings"),
+translatef_p: load(&loader, "gl_translatef"),
+translatex_p: load(&loader, "gl_translatex"),
+uniform1f_p: load(&loader, "gl_uniform1f"),
+uniform1fv_p: load(&loader, "gl_uniform1fv"),
+uniform1i_p: load(&loader, "gl_uniform1i"),
+uniform1iv_p: load(&loader, "gl_uniform1iv"),
+uniform1ui_p: load(&loader, "gl_uniform1ui"),
+uniform1uiv_p: load(&loader, "gl_uniform1uiv"),
+uniform2f_p: load(&loader, "gl_uniform2f"),
+uniform2fv_p: load(&loader, "gl_uniform2fv"),
+uniform2i_p: load(&loader, "gl_uniform2i"),
+uniform2iv_p: load(&loader, "gl_uniform2iv"),
+uniform2ui_p: load(&loader, "gl_uniform2ui"),
+uniform2uiv_p: load(&loader, "gl_uniform2uiv"),
+uniform3f_p: load(&loader, "gl_uniform3f"),
+uniform3fv_p: load(&loader, "gl_uniform3fv"),
+uniform3i_p: load(&loader, "gl_uniform3i"),
+uniform3iv_p: load(&loader, "gl_uniform3iv"),
+uniform3ui_p: load(&loader, "gl_uniform3ui"),
+uniform3uiv_p: load(&loader, "gl_uniform3uiv"),
+uniform4f_p: load(&loader, "gl_uniform4f"),
+uniform4fv_p: load(&loader, "gl_uniform4fv"),
+uniform4i_p: load(&loader, "gl_uniform4i"),
+uniform4iv_p: load(&loader, "gl_uniform4iv"),
+uniform4ui_p: load(&loader, "gl_uniform4ui"),
+uniform4uiv_p: load(&loader, "gl_uniform4uiv"),
+uniform_block_binding_p: load(&loader, "gl_uniform_block_binding"),
+uniform_matrix2fv_p: load(&loader, "gl_uniform_matrix2fv"),
+uniform_matrix2x3fv_p: load(&loader, "gl_uniform_matrix2x3fv"),
+uniform_matrix2x4fv_p: load(&loader, "gl_uniform_matrix2x4fv"),
+uniform_matrix3fv_p: load(&loader, "gl_uniform_matrix3fv"),
+uniform_matrix3x2fv_p: load(&loader, "gl_uniform_matrix3x2fv"),
+uniform_matrix3x4fv_p: load(&loader, "gl_uniform_matrix3x4fv"),
+uniform_matrix4fv_p: load(&loader, "gl_uniform_matrix4fv"),
+uniform_matrix4x2fv_p: load(&loader, "gl_uniform_matrix4x2fv"),
+uniform_matrix4x3fv_p: load(&loader, "gl_uniform_matrix4x3fv"),
+unmap_buffer_p: load(&loader, "gl_unmap_buffer"),
+use_program_p: load(&loader, "gl_use_program"),
+use_program_stages_p: load(&loader, "gl_use_program_stages"),
+validate_program_p: load(&loader, "gl_validate_program"),
+validate_program_pipeline_p: load(&loader, "gl_validate_program_pipeline"),
+vertex_attrib1d_p: load(&loader, "gl_vertex_attrib1d"),
+vertex_attrib1dv_p: load(&loader, "gl_vertex_attrib1dv"),
+vertex_attrib1f_p: load(&loader, "gl_vertex_attrib1f"),
+vertex_attrib1fv_p: load(&loader, "gl_vertex_attrib1fv"),
+vertex_attrib1s_p: load(&loader, "gl_vertex_attrib1s"),
+vertex_attrib1sv_p: load(&loader, "gl_vertex_attrib1sv"),
+vertex_attrib2d_p: load(&loader, "gl_vertex_attrib2d"),
+vertex_attrib2dv_p: load(&loader, "gl_vertex_attrib2dv"),
+vertex_attrib2f_p: load(&loader, "gl_vertex_attrib2f"),
+vertex_attrib2fv_p: load(&loader, "gl_vertex_attrib2fv"),
+vertex_attrib2s_p: load(&loader, "gl_vertex_attrib2s"),
+vertex_attrib2sv_p: load(&loader, "gl_vertex_attrib2sv"),
+vertex_attrib3d_p: load(&loader, "gl_vertex_attrib3d"),
+vertex_attrib3dv_p: load(&loader, "gl_vertex_attrib3dv"),
+vertex_attrib3f_p: load(&loader, "gl_vertex_attrib3f"),
+vertex_attrib3fv_p: load(&loader, "gl_vertex_attrib3fv"),
+vertex_attrib3s_p: load(&loader, "gl_vertex_attrib3s"),
+vertex_attrib3sv_p: load(&loader, "gl_vertex_attrib3sv"),
+vertex_attrib4_nbv_p: load(&loader, "gl_vertex_attrib4_nbv"),
+vertex_attrib4_niv_p: load(&loader, "gl_vertex_attrib4_niv"),
+vertex_attrib4_nsv_p: load(&loader, "gl_vertex_attrib4_nsv"),
+vertex_attrib4_nub_p: load(&loader, "gl_vertex_attrib4_nub"),
+vertex_attrib4_nubv_p: load(&loader, "gl_vertex_attrib4_nubv"),
+vertex_attrib4_nuiv_p: load(&loader, "gl_vertex_attrib4_nuiv"),
+vertex_attrib4_nusv_p: load(&loader, "gl_vertex_attrib4_nusv"),
+vertex_attrib4bv_p: load(&loader, "gl_vertex_attrib4bv"),
+vertex_attrib4d_p: load(&loader, "gl_vertex_attrib4d"),
+vertex_attrib4dv_p: load(&loader, "gl_vertex_attrib4dv"),
+vertex_attrib4f_p: load(&loader, "gl_vertex_attrib4f"),
+vertex_attrib4fv_p: load(&loader, "gl_vertex_attrib4fv"),
+vertex_attrib4iv_p: load(&loader, "gl_vertex_attrib4iv"),
+vertex_attrib4s_p: load(&loader, "gl_vertex_attrib4s"),
+vertex_attrib4sv_p: load(&loader, "gl_vertex_attrib4sv"),
+vertex_attrib4ubv_p: load(&loader, "gl_vertex_attrib4ubv"),
+vertex_attrib4uiv_p: load(&loader, "gl_vertex_attrib4uiv"),
+vertex_attrib4usv_p: load(&loader, "gl_vertex_attrib4usv"),
+vertex_attrib_binding_p: load(&loader, "gl_vertex_attrib_binding"),
+vertex_attrib_divisor_p: load(&loader, "gl_vertex_attrib_divisor"),
+vertex_attrib_format_p: load(&loader, "gl_vertex_attrib_format"),
+vertex_attrib_i1i_p: load(&loader, "gl_vertex_attrib_i1i"),
+vertex_attrib_i1iv_p: load(&loader, "gl_vertex_attrib_i1iv"),
+vertex_attrib_i1ui_p: load(&loader, "gl_vertex_attrib_i1ui"),
+vertex_attrib_i1uiv_p: load(&loader, "gl_vertex_attrib_i1uiv"),
+vertex_attrib_i2i_p: load(&loader, "gl_vertex_attrib_i2i"),
+vertex_attrib_i2iv_p: load(&loader, "gl_vertex_attrib_i2iv"),
+vertex_attrib_i2ui_p: load(&loader, "gl_vertex_attrib_i2ui"),
+vertex_attrib_i2uiv_p: load(&loader, "gl_vertex_attrib_i2uiv"),
+vertex_attrib_i3i_p: load(&loader, "gl_vertex_attrib_i3i"),
+vertex_attrib_i3iv_p: load(&loader, "gl_vertex_attrib_i3iv"),
+vertex_attrib_i3ui_p: load(&loader, "gl_vertex_attrib_i3ui"),
+vertex_attrib_i3uiv_p: load(&loader, "gl_vertex_attrib_i3uiv"),
+vertex_attrib_i4bv_p: load(&loader, "gl_vertex_attrib_i4bv"),
+vertex_attrib_i4i_p: load(&loader, "gl_vertex_attrib_i4i"),
+vertex_attrib_i4iv_p: load(&loader, "gl_vertex_attrib_i4iv"),
+vertex_attrib_i4sv_p: load(&loader, "gl_vertex_attrib_i4sv"),
+vertex_attrib_i4ubv_p: load(&loader, "gl_vertex_attrib_i4ubv"),
+vertex_attrib_i4ui_p: load(&loader, "gl_vertex_attrib_i4ui"),
+vertex_attrib_i4uiv_p: load(&loader, "gl_vertex_attrib_i4uiv"),
+vertex_attrib_i4usv_p: load(&loader, "gl_vertex_attrib_i4usv"),
+vertex_attrib_i_format_p: load(&loader, "gl_vertex_attrib_i_format"),
+vertex_attrib_i_pointer_p: load(&loader, "gl_vertex_attrib_i_pointer"),
+vertex_attrib_p1ui_p: load(&loader, "gl_vertex_attrib_p1ui"),
+vertex_attrib_p1uiv_p: load(&loader, "gl_vertex_attrib_p1uiv"),
+vertex_attrib_p2ui_p: load(&loader, "gl_vertex_attrib_p2ui"),
+vertex_attrib_p2uiv_p: load(&loader, "gl_vertex_attrib_p2uiv"),
+vertex_attrib_p3ui_p: load(&loader, "gl_vertex_attrib_p3ui"),
+vertex_attrib_p3uiv_p: load(&loader, "gl_vertex_attrib_p3uiv"),
+vertex_attrib_p4ui_p: load(&loader, "gl_vertex_attrib_p4ui"),
+vertex_attrib_p4uiv_p: load(&loader, "gl_vertex_attrib_p4uiv"),
+vertex_attrib_pointer_p: load(&loader, "gl_vertex_attrib_pointer"),
+vertex_binding_divisor_p: load(&loader, "gl_vertex_binding_divisor"),
+vertex_p2ui_p: load(&loader, "gl_vertex_p2ui"),
+vertex_p2uiv_p: load(&loader, "gl_vertex_p2uiv"),
+vertex_p3ui_p: load(&loader, "gl_vertex_p3ui"),
+vertex_p3uiv_p: load(&loader, "gl_vertex_p3uiv"),
+vertex_p4ui_p: load(&loader, "gl_vertex_p4ui"),
+vertex_p4uiv_p: load(&loader, "gl_vertex_p4uiv"),
+vertex_pointer_p: load(&loader, "gl_vertex_pointer"),
+viewport_p: load(&loader, "gl_viewport"),
+wait_sync_p: load(&loader, "gl_wait_sync"),
 }
 }
 pub fn active_shader_program(&self, pipeline: u32, program: u32) {
-(self.active_shader_program_p)(pipeline, program)
+(self.active_shader_program_p_p)(pipeline, program)
 }
 
 pub fn active_texture(&self, texture: u32) {
-(self.active_texture_p)(texture)
+(self.active_texture_p_p)(texture)
 }
 
 pub fn alpha_func(&self, func: u32, ref_: f32) {
-(self.alpha_func_p)(func, ref_)
+(self.alpha_func_p_p)(func, ref_)
 }
 
 pub fn alpha_funcx(&self, func: u32, ref_: i32) {
-(self.alpha_funcx_p)(func, ref_)
+(self.alpha_funcx_p_p)(func, ref_)
 }
 
 pub fn attach_shader(&self, program: u32, shader: u32) {
-(self.attach_shader_p)(program, shader)
+(self.attach_shader_p_p)(program, shader)
 }
 
 pub fn begin_conditional_render(&self, id: u32, mode: u32) {
-(self.begin_conditional_render_p)(id, mode)
+(self.begin_conditional_render_p_p)(id, mode)
 }
 
 pub fn begin_query(&self, target: u32, id: u32) {
-(self.begin_query_p)(target, id)
+(self.begin_query_p_p)(target, id)
 }
 
 pub fn begin_transform_feedback(&self, primitive_mode: u32) {
-(self.begin_transform_feedback_p)(primitive_mode)
+(self.begin_transform_feedback_p_p)(primitive_mode)
 }
 
 pub fn bind_attrib_location(&self, program: u32, index: u32, name: *const i8) {
-(self.bind_attrib_location_p)(program, index, name)
+(self.bind_attrib_location_p_p)(program, index, name)
 }
 
 pub fn bind_buffer(&self, target: u32, buffer: u32) {
-(self.bind_buffer_p)(target, buffer)
+(self.bind_buffer_p_p)(target, buffer)
 }
 
 pub fn bind_buffer_base(&self, target: u32, index: u32, buffer: u32) {
-(self.bind_buffer_base_p)(target, index, buffer)
+(self.bind_buffer_base_p_p)(target, index, buffer)
 }
 
 pub fn bind_buffer_range(&self, target: u32, index: u32, buffer: u32, offset: isize, size: isize) {
-(self.bind_buffer_range_p)(target, index, buffer, offset, size)
+(self.bind_buffer_range_p_p)(target, index, buffer, offset, size)
 }
 
 pub fn bind_frag_data_location(&self, program: u32, color: u32, name: *const i8) {
-(self.bind_frag_data_location_p)(program, color, name)
+(self.bind_frag_data_location_p_p)(program, color, name)
 }
 
 pub fn bind_frag_data_location_indexed(&self, program: u32, color_number: u32, index: u32, name: *const i8) {
-(self.bind_frag_data_location_indexed_p)(program, color_number, index, name)
+(self.bind_frag_data_location_indexed_p_p)(program, color_number, index, name)
 }
 
 pub fn bind_framebuffer(&self, target: u32, framebuffer: u32) {
-(self.bind_framebuffer_p)(target, framebuffer)
+(self.bind_framebuffer_p_p)(target, framebuffer)
 }
 
 pub fn bind_image_texture(&self, unit: u32, texture: u32, level: i32, layered: u8, layer: i32, access: u32, format: u32) {
-(self.bind_image_texture_p)(unit, texture, level, layered, layer, access, format)
+(self.bind_image_texture_p_p)(unit, texture, level, layered, layer, access, format)
 }
 
 pub fn bind_program_pipeline(&self, pipeline: u32) {
-(self.bind_program_pipeline_p)(pipeline)
+(self.bind_program_pipeline_p_p)(pipeline)
 }
 
 pub fn bind_renderbuffer(&self, target: u32, renderbuffer: u32) {
-(self.bind_renderbuffer_p)(target, renderbuffer)
+(self.bind_renderbuffer_p_p)(target, renderbuffer)
 }
 
 pub fn bind_sampler(&self, unit: u32, sampler: u32) {
-(self.bind_sampler_p)(unit, sampler)
+(self.bind_sampler_p_p)(unit, sampler)
 }
 
 pub fn bind_texture(&self, target: u32, texture: u32) {
-(self.bind_texture_p)(target, texture)
+(self.bind_texture_p_p)(target, texture)
 }
 
 pub fn bind_transform_feedback(&self, target: u32, id: u32) {
-(self.bind_transform_feedback_p)(target, id)
+(self.bind_transform_feedback_p_p)(target, id)
 }
 
 pub fn bind_vertex_array(&self, array: u32) {
-(self.bind_vertex_array_p)(array)
+(self.bind_vertex_array_p_p)(array)
 }
 
 pub fn bind_vertex_buffer(&self, bindingindex: u32, buffer: u32, offset: isize, stride: i32) {
-(self.bind_vertex_buffer_p)(bindingindex, buffer, offset, stride)
+(self.bind_vertex_buffer_p_p)(bindingindex, buffer, offset, stride)
 }
 
 pub fn blend_barrier(&self, ) {
-(self.blend_barrier_p)()
+(self.blend_barrier_p_p)()
 }
 
 pub fn blend_color(&self, red: f32, green: f32, blue: f32, alpha: f32) {
-(self.blend_color_p)(red, green, blue, alpha)
+(self.blend_color_p_p)(red, green, blue, alpha)
 }
 
 pub fn blend_equation(&self, mode: u32) {
-(self.blend_equation_p)(mode)
+(self.blend_equation_p_p)(mode)
 }
 
 pub fn blend_equation_separate(&self, mode_r_g_b: u32, mode_alpha: u32) {
-(self.blend_equation_separate_p)(mode_r_g_b, mode_alpha)
+(self.blend_equation_separate_p_p)(mode_r_g_b, mode_alpha)
 }
 
 pub fn blend_equation_separatei(&self, buf: u32, mode_r_g_b: u32, mode_alpha: u32) {
-(self.blend_equation_separatei_p)(buf, mode_r_g_b, mode_alpha)
+(self.blend_equation_separatei_p_p)(buf, mode_r_g_b, mode_alpha)
 }
 
 pub fn blend_equationi(&self, buf: u32, mode: u32) {
-(self.blend_equationi_p)(buf, mode)
+(self.blend_equationi_p_p)(buf, mode)
 }
 
 pub fn blend_func(&self, sfactor: u32, dfactor: u32) {
-(self.blend_func_p)(sfactor, dfactor)
+(self.blend_func_p_p)(sfactor, dfactor)
 }
 
 pub fn blend_func_separate(&self, sfactor_r_g_b: u32, dfactor_r_g_b: u32, sfactor_alpha: u32, dfactor_alpha: u32) {
-(self.blend_func_separate_p)(sfactor_r_g_b, dfactor_r_g_b, sfactor_alpha, dfactor_alpha)
+(self.blend_func_separate_p_p)(sfactor_r_g_b, dfactor_r_g_b, sfactor_alpha, dfactor_alpha)
 }
 
 pub fn blend_func_separatei(&self, buf: u32, src_r_g_b: u32, dst_r_g_b: u32, src_alpha: u32, dst_alpha: u32) {
-(self.blend_func_separatei_p)(buf, src_r_g_b, dst_r_g_b, src_alpha, dst_alpha)
+(self.blend_func_separatei_p_p)(buf, src_r_g_b, dst_r_g_b, src_alpha, dst_alpha)
 }
 
 pub fn blend_funci(&self, buf: u32, src: u32, dst: u32) {
-(self.blend_funci_p)(buf, src, dst)
+(self.blend_funci_p_p)(buf, src, dst)
 }
 
 pub fn blit_framebuffer(&self, src_x0: i32, src_y0: i32, src_x1: i32, src_y1: i32, dst_x0: i32, dst_y0: i32, dst_x1: i32, dst_y1: i32, mask: u32, filter: u32) {
-(self.blit_framebuffer_p)(src_x0, src_y0, src_x1, src_y1, dst_x0, dst_y0, dst_x1, dst_y1, mask, filter)
+(self.blit_framebuffer_p_p)(src_x0, src_y0, src_x1, src_y1, dst_x0, dst_y0, dst_x1, dst_y1, mask, filter)
 }
 
 pub fn buffer_data(&self, target: u32, size: isize, data: *const c_void, usage: u32) {
-(self.buffer_data_p)(target, size, data, usage)
+(self.buffer_data_p_p)(target, size, data, usage)
 }
 
 pub fn buffer_sub_data(&self, target: u32, offset: isize, size: isize, data: *const c_void) {
-(self.buffer_sub_data_p)(target, offset, size, data)
+(self.buffer_sub_data_p_p)(target, offset, size, data)
 }
 
-pub fn check_framebuffer_status(&self, target: u32) -> c_uint {
-(self.check_framebuffer_status_p)(target)
+pub fn check_framebuffer_status(&self, target: u32) -> u32 {
+(self.check_framebuffer_status_p_p)(target)
 }
 
 pub fn clamp_color(&self, target: u32, clamp: u32) {
-(self.clamp_color_p)(target, clamp)
+(self.clamp_color_p_p)(target, clamp)
 }
 
 pub fn clear(&self, mask: u32) {
-(self.clear_p)(mask)
+(self.clear_p_p)(mask)
 }
 
 pub fn clear_bufferfi(&self, buffer: u32, drawbuffer: i32, depth: f32, stencil: i32) {
-(self.clear_bufferfi_p)(buffer, drawbuffer, depth, stencil)
+(self.clear_bufferfi_p_p)(buffer, drawbuffer, depth, stencil)
 }
 
 pub fn clear_bufferfv(&self, buffer: u32, drawbuffer: i32, value: *const f32) {
-(self.clear_bufferfv_p)(buffer, drawbuffer, value)
+(self.clear_bufferfv_p_p)(buffer, drawbuffer, value)
 }
 
 pub fn clear_bufferiv(&self, buffer: u32, drawbuffer: i32, value: *const i32) {
-(self.clear_bufferiv_p)(buffer, drawbuffer, value)
+(self.clear_bufferiv_p_p)(buffer, drawbuffer, value)
 }
 
 pub fn clear_bufferuiv(&self, buffer: u32, drawbuffer: i32, value: *const u32) {
-(self.clear_bufferuiv_p)(buffer, drawbuffer, value)
+(self.clear_bufferuiv_p_p)(buffer, drawbuffer, value)
 }
 
 pub fn clear_color(&self, red: f32, green: f32, blue: f32, alpha: f32) {
-(self.clear_color_p)(red, green, blue, alpha)
+(self.clear_color_p_p)(red, green, blue, alpha)
 }
 
 pub fn clear_colorx(&self, red: i32, green: i32, blue: i32, alpha: i32) {
-(self.clear_colorx_p)(red, green, blue, alpha)
+(self.clear_colorx_p_p)(red, green, blue, alpha)
 }
 
 pub fn clear_depth(&self, depth: f64) {
-(self.clear_depth_p)(depth)
+(self.clear_depth_p_p)(depth)
 }
 
 pub fn clear_depthf(&self, d: f32) {
-(self.clear_depthf_p)(d)
+(self.clear_depthf_p_p)(d)
 }
 
 pub fn clear_depthx(&self, depth: i32) {
-(self.clear_depthx_p)(depth)
+(self.clear_depthx_p_p)(depth)
 }
 
 pub fn clear_stencil(&self, s: i32) {
-(self.clear_stencil_p)(s)
+(self.clear_stencil_p_p)(s)
 }
 
 pub fn client_active_texture(&self, texture: u32) {
-(self.client_active_texture_p)(texture)
+(self.client_active_texture_p_p)(texture)
 }
 
-pub fn client_wait_sync(&self, sync: *mut c_void, flags: u32, timeout: u64) -> c_uint {
-(self.client_wait_sync_p)(sync, flags, timeout)
+pub fn client_wait_sync(&self, sync: *mut c_void, flags: u32, timeout: u64) -> u32 {
+(self.client_wait_sync_p_p)(sync, flags, timeout)
 }
 
 pub fn clip_planef(&self, p: u32, eqn: *const f32) {
-(self.clip_planef_p)(p, eqn)
+(self.clip_planef_p_p)(p, eqn)
 }
 
 pub fn clip_planex(&self, plane: u32, equation: *const i32) {
-(self.clip_planex_p)(plane, equation)
+(self.clip_planex_p_p)(plane, equation)
 }
 
 pub fn color4f(&self, red: f32, green: f32, blue: f32, alpha: f32) {
-(self.color4f_p)(red, green, blue, alpha)
+(self.color4f_p_p)(red, green, blue, alpha)
 }
 
 pub fn color4ub(&self, red: u8, green: u8, blue: u8, alpha: u8) {
-(self.color4ub_p)(red, green, blue, alpha)
+(self.color4ub_p_p)(red, green, blue, alpha)
 }
 
 pub fn color4x(&self, red: i32, green: i32, blue: i32, alpha: i32) {
-(self.color4x_p)(red, green, blue, alpha)
+(self.color4x_p_p)(red, green, blue, alpha)
 }
 
 pub fn color_mask(&self, red: u8, green: u8, blue: u8, alpha: u8) {
-(self.color_mask_p)(red, green, blue, alpha)
+(self.color_mask_p_p)(red, green, blue, alpha)
 }
 
 pub fn color_maski(&self, index: u32, r: u8, g: u8, b: u8, a: u8) {
-(self.color_maski_p)(index, r, g, b, a)
+(self.color_maski_p_p)(index, r, g, b, a)
 }
 
 pub fn color_p3ui(&self, type_: u32, color: u32) {
-(self.color_p3ui_p)(type_, color)
+(self.color_p3ui_p_p)(type_, color)
 }
 
 pub fn color_p3uiv(&self, type_: u32, color: *const u32) {
-(self.color_p3uiv_p)(type_, color)
+(self.color_p3uiv_p_p)(type_, color)
 }
 
 pub fn color_p4ui(&self, type_: u32, color: u32) {
-(self.color_p4ui_p)(type_, color)
+(self.color_p4ui_p_p)(type_, color)
 }
 
 pub fn color_p4uiv(&self, type_: u32, color: *const u32) {
-(self.color_p4uiv_p)(type_, color)
+(self.color_p4uiv_p_p)(type_, color)
 }
 
 pub fn color_pointer(&self, size: i32, type_: u32, stride: i32, pointer: *const c_void) {
-(self.color_pointer_p)(size, type_, stride, pointer)
+(self.color_pointer_p_p)(size, type_, stride, pointer)
 }
 
 pub fn compile_shader(&self, shader: u32) {
-(self.compile_shader_p)(shader)
+(self.compile_shader_p_p)(shader)
 }
 
 pub fn compressed_tex_image1_d(&self, target: u32, level: i32, internalformat: u32, width: i32, border: i32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_image1_d_p)(target, level, internalformat, width, border, image_size, data)
+(self.compressed_tex_image1_d_p_p)(target, level, internalformat, width, border, image_size, data)
 }
 
 pub fn compressed_tex_image2_d(&self, target: u32, level: i32, internalformat: u32, width: i32, height: i32, border: i32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_image2_d_p)(target, level, internalformat, width, height, border, image_size, data)
+(self.compressed_tex_image2_d_p_p)(target, level, internalformat, width, height, border, image_size, data)
 }
 
 pub fn compressed_tex_image3_d(&self, target: u32, level: i32, internalformat: u32, width: i32, height: i32, depth: i32, border: i32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_image3_d_p)(target, level, internalformat, width, height, depth, border, image_size, data)
+(self.compressed_tex_image3_d_p_p)(target, level, internalformat, width, height, depth, border, image_size, data)
 }
 
 pub fn compressed_tex_sub_image1_d(&self, target: u32, level: i32, xoffset: i32, width: i32, format: u32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_sub_image1_d_p)(target, level, xoffset, width, format, image_size, data)
+(self.compressed_tex_sub_image1_d_p_p)(target, level, xoffset, width, format, image_size, data)
 }
 
 pub fn compressed_tex_sub_image2_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, width: i32, height: i32, format: u32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_sub_image2_d_p)(target, level, xoffset, yoffset, width, height, format, image_size, data)
+(self.compressed_tex_sub_image2_d_p_p)(target, level, xoffset, yoffset, width, height, format, image_size, data)
 }
 
 pub fn compressed_tex_sub_image3_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, zoffset: i32, width: i32, height: i32, depth: i32, format: u32, image_size: i32, data: *const c_void) {
-(self.compressed_tex_sub_image3_d_p)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, image_size, data)
+(self.compressed_tex_sub_image3_d_p_p)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, image_size, data)
 }
 
 pub fn copy_buffer_sub_data(&self, read_target: u32, write_target: u32, read_offset: isize, write_offset: isize, size: isize) {
-(self.copy_buffer_sub_data_p)(read_target, write_target, read_offset, write_offset, size)
+(self.copy_buffer_sub_data_p_p)(read_target, write_target, read_offset, write_offset, size)
 }
 
 pub fn copy_image_sub_data(&self, src_name: u32, src_target: u32, src_level: i32, src_x: i32, src_y: i32, src_z: i32, dst_name: u32, dst_target: u32, dst_level: i32, dst_x: i32, dst_y: i32, dst_z: i32, src_width: i32, src_height: i32, src_depth: i32) {
-(self.copy_image_sub_data_p)(src_name, src_target, src_level, src_x, src_y, src_z, dst_name, dst_target, dst_level, dst_x, dst_y, dst_z, src_width, src_height, src_depth)
+(self.copy_image_sub_data_p_p)(src_name, src_target, src_level, src_x, src_y, src_z, dst_name, dst_target, dst_level, dst_x, dst_y, dst_z, src_width, src_height, src_depth)
 }
 
 pub fn copy_tex_image1_d(&self, target: u32, level: i32, internalformat: u32, x: i32, y: i32, width: i32, border: i32) {
-(self.copy_tex_image1_d_p)(target, level, internalformat, x, y, width, border)
+(self.copy_tex_image1_d_p_p)(target, level, internalformat, x, y, width, border)
 }
 
 pub fn copy_tex_image2_d(&self, target: u32, level: i32, internalformat: u32, x: i32, y: i32, width: i32, height: i32, border: i32) {
-(self.copy_tex_image2_d_p)(target, level, internalformat, x, y, width, height, border)
+(self.copy_tex_image2_d_p_p)(target, level, internalformat, x, y, width, height, border)
 }
 
 pub fn copy_tex_sub_image1_d(&self, target: u32, level: i32, xoffset: i32, x: i32, y: i32, width: i32) {
-(self.copy_tex_sub_image1_d_p)(target, level, xoffset, x, y, width)
+(self.copy_tex_sub_image1_d_p_p)(target, level, xoffset, x, y, width)
 }
 
 pub fn copy_tex_sub_image2_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, x: i32, y: i32, width: i32, height: i32) {
-(self.copy_tex_sub_image2_d_p)(target, level, xoffset, yoffset, x, y, width, height)
+(self.copy_tex_sub_image2_d_p_p)(target, level, xoffset, yoffset, x, y, width, height)
 }
 
 pub fn copy_tex_sub_image3_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, zoffset: i32, x: i32, y: i32, width: i32, height: i32) {
-(self.copy_tex_sub_image3_d_p)(target, level, xoffset, yoffset, zoffset, x, y, width, height)
+(self.copy_tex_sub_image3_d_p_p)(target, level, xoffset, yoffset, zoffset, x, y, width, height)
 }
 
-pub fn create_program(&self, ) -> c_uint {
-(self.create_program_p)()
+pub fn create_program(&self, ) -> u32 {
+(self.create_program_p_p)()
 }
 
-pub fn create_shader(&self, type_: u32) -> c_uint {
-(self.create_shader_p)(type_)
+pub fn create_shader(&self, type_: u32) -> u32 {
+(self.create_shader_p_p)(type_)
 }
 
-pub fn create_shader_programv(&self, type_: u32, count: i32, strings: *const *const i8) -> c_uint {
-(self.create_shader_programv_p)(type_, count, strings)
+pub fn create_shader_programv(&self, type_: u32, count: i32, strings: *const *const i8) -> u32 {
+(self.create_shader_programv_p_p)(type_, count, strings)
 }
 
 pub fn cull_face(&self, mode: u32) {
-(self.cull_face_p)(mode)
+(self.cull_face_p_p)(mode)
 }
 
 pub fn debug_message_callback(&self, callback: DebugProc, user_param: *const c_void) {
-(self.debug_message_callback_p)(callback, user_param)
+(self.debug_message_callback_p_p)(callback, user_param)
 }
 
 pub fn debug_message_control(&self, source: u32, type_: u32, severity: u32, count: i32, ids: *const u32, enabled: u8) {
-(self.debug_message_control_p)(source, type_, severity, count, ids, enabled)
+(self.debug_message_control_p_p)(source, type_, severity, count, ids, enabled)
 }
 
 pub fn debug_message_insert(&self, source: u32, type_: u32, id: u32, severity: u32, length: i32, buf: *const i8) {
-(self.debug_message_insert_p)(source, type_, id, severity, length, buf)
+(self.debug_message_insert_p_p)(source, type_, id, severity, length, buf)
 }
 
 pub fn delete_buffers(&self, n: i32, buffers: *const u32) {
-(self.delete_buffers_p)(n, buffers)
+(self.delete_buffers_p_p)(n, buffers)
 }
 
 pub fn delete_framebuffers(&self, n: i32, framebuffers: *const u32) {
-(self.delete_framebuffers_p)(n, framebuffers)
+(self.delete_framebuffers_p_p)(n, framebuffers)
 }
 
 pub fn delete_program(&self, program: u32) {
-(self.delete_program_p)(program)
+(self.delete_program_p_p)(program)
 }
 
 pub fn delete_program_pipelines(&self, n: i32, pipelines: *const u32) {
-(self.delete_program_pipelines_p)(n, pipelines)
+(self.delete_program_pipelines_p_p)(n, pipelines)
 }
 
 pub fn delete_queries(&self, n: i32, ids: *const u32) {
-(self.delete_queries_p)(n, ids)
+(self.delete_queries_p_p)(n, ids)
 }
 
 pub fn delete_renderbuffers(&self, n: i32, renderbuffers: *const u32) {
-(self.delete_renderbuffers_p)(n, renderbuffers)
+(self.delete_renderbuffers_p_p)(n, renderbuffers)
 }
 
 pub fn delete_samplers(&self, count: i32, samplers: *const u32) {
-(self.delete_samplers_p)(count, samplers)
+(self.delete_samplers_p_p)(count, samplers)
 }
 
 pub fn delete_shader(&self, shader: u32) {
-(self.delete_shader_p)(shader)
+(self.delete_shader_p_p)(shader)
 }
 
 pub fn delete_sync(&self, sync: *mut c_void) {
-(self.delete_sync_p)(sync)
+(self.delete_sync_p_p)(sync)
 }
 
 pub fn delete_textures(&self, n: i32, textures: *const u32) {
-(self.delete_textures_p)(n, textures)
+(self.delete_textures_p_p)(n, textures)
 }
 
 pub fn delete_transform_feedbacks(&self, n: i32, ids: *const u32) {
-(self.delete_transform_feedbacks_p)(n, ids)
+(self.delete_transform_feedbacks_p_p)(n, ids)
 }
 
 pub fn delete_vertex_arrays(&self, n: i32, arrays: *const u32) {
-(self.delete_vertex_arrays_p)(n, arrays)
+(self.delete_vertex_arrays_p_p)(n, arrays)
 }
 
 pub fn depth_func(&self, func: u32) {
-(self.depth_func_p)(func)
+(self.depth_func_p_p)(func)
 }
 
 pub fn depth_mask(&self, flag: u8) {
-(self.depth_mask_p)(flag)
+(self.depth_mask_p_p)(flag)
 }
 
 pub fn depth_range(&self, n: f64, f: f64) {
-(self.depth_range_p)(n, f)
+(self.depth_range_p_p)(n, f)
 }
 
 pub fn depth_rangef(&self, n: f32, f: f32) {
-(self.depth_rangef_p)(n, f)
+(self.depth_rangef_p_p)(n, f)
 }
 
 pub fn depth_rangex(&self, n: i32, f: i32) {
-(self.depth_rangex_p)(n, f)
+(self.depth_rangex_p_p)(n, f)
 }
 
 pub fn detach_shader(&self, program: u32, shader: u32) {
-(self.detach_shader_p)(program, shader)
+(self.detach_shader_p_p)(program, shader)
 }
 
 pub fn disable(&self, cap: u32) {
-(self.disable_p)(cap)
+(self.disable_p_p)(cap)
 }
 
 pub fn disable_client_state(&self, array: u32) {
-(self.disable_client_state_p)(array)
+(self.disable_client_state_p_p)(array)
 }
 
 pub fn disable_vertex_attrib_array(&self, index: u32) {
-(self.disable_vertex_attrib_array_p)(index)
+(self.disable_vertex_attrib_array_p_p)(index)
 }
 
 pub fn disablei(&self, target: u32, index: u32) {
-(self.disablei_p)(target, index)
+(self.disablei_p_p)(target, index)
 }
 
 pub fn dispatch_compute(&self, num_groups_x: u32, num_groups_y: u32, num_groups_z: u32) {
-(self.dispatch_compute_p)(num_groups_x, num_groups_y, num_groups_z)
+(self.dispatch_compute_p_p)(num_groups_x, num_groups_y, num_groups_z)
 }
 
 pub fn dispatch_compute_indirect(&self, indirect: isize) {
-(self.dispatch_compute_indirect_p)(indirect)
+(self.dispatch_compute_indirect_p_p)(indirect)
 }
 
 pub fn draw_arrays(&self, mode: u32, first: i32, count: i32) {
-(self.draw_arrays_p)(mode, first, count)
+(self.draw_arrays_p_p)(mode, first, count)
 }
 
 pub fn draw_arrays_indirect(&self, mode: u32, indirect: *const c_void) {
-(self.draw_arrays_indirect_p)(mode, indirect)
+(self.draw_arrays_indirect_p_p)(mode, indirect)
 }
 
 pub fn draw_arrays_instanced(&self, mode: u32, first: i32, count: i32, instancecount: i32) {
-(self.draw_arrays_instanced_p)(mode, first, count, instancecount)
+(self.draw_arrays_instanced_p_p)(mode, first, count, instancecount)
 }
 
 pub fn draw_buffer(&self, buf: u32) {
-(self.draw_buffer_p)(buf)
+(self.draw_buffer_p_p)(buf)
 }
 
 pub fn draw_buffers(&self, n: i32, bufs: *const u32) {
-(self.draw_buffers_p)(n, bufs)
+(self.draw_buffers_p_p)(n, bufs)
 }
 
 pub fn draw_elements(&self, mode: u32, count: i32, type_: u32, indices: *const c_void) {
-(self.draw_elements_p)(mode, count, type_, indices)
+(self.draw_elements_p_p)(mode, count, type_, indices)
 }
 
 pub fn draw_elements_base_vertex(&self, mode: u32, count: i32, type_: u32, indices: *const c_void, basevertex: i32) {
-(self.draw_elements_base_vertex_p)(mode, count, type_, indices, basevertex)
+(self.draw_elements_base_vertex_p_p)(mode, count, type_, indices, basevertex)
 }
 
 pub fn draw_elements_indirect(&self, mode: u32, type_: u32, indirect: *const c_void) {
-(self.draw_elements_indirect_p)(mode, type_, indirect)
+(self.draw_elements_indirect_p_p)(mode, type_, indirect)
 }
 
 pub fn draw_elements_instanced(&self, mode: u32, count: i32, type_: u32, indices: *const c_void, instancecount: i32) {
-(self.draw_elements_instanced_p)(mode, count, type_, indices, instancecount)
+(self.draw_elements_instanced_p_p)(mode, count, type_, indices, instancecount)
 }
 
 pub fn draw_elements_instanced_base_vertex(&self, mode: u32, count: i32, type_: u32, indices: *const c_void, instancecount: i32, basevertex: i32) {
-(self.draw_elements_instanced_base_vertex_p)(mode, count, type_, indices, instancecount, basevertex)
+(self.draw_elements_instanced_base_vertex_p_p)(mode, count, type_, indices, instancecount, basevertex)
 }
 
 pub fn draw_range_elements(&self, mode: u32, start: u32, end: u32, count: i32, type_: u32, indices: *const c_void) {
-(self.draw_range_elements_p)(mode, start, end, count, type_, indices)
+(self.draw_range_elements_p_p)(mode, start, end, count, type_, indices)
 }
 
 pub fn draw_range_elements_base_vertex(&self, mode: u32, start: u32, end: u32, count: i32, type_: u32, indices: *const c_void, basevertex: i32) {
-(self.draw_range_elements_base_vertex_p)(mode, start, end, count, type_, indices, basevertex)
+(self.draw_range_elements_base_vertex_p_p)(mode, start, end, count, type_, indices, basevertex)
 }
 
 pub fn enable(&self, cap: u32) {
-(self.enable_p)(cap)
+(self.enable_p_p)(cap)
 }
 
 pub fn enable_client_state(&self, array: u32) {
-(self.enable_client_state_p)(array)
+(self.enable_client_state_p_p)(array)
 }
 
 pub fn enable_vertex_attrib_array(&self, index: u32) {
-(self.enable_vertex_attrib_array_p)(index)
+(self.enable_vertex_attrib_array_p_p)(index)
 }
 
 pub fn enablei(&self, target: u32, index: u32) {
-(self.enablei_p)(target, index)
+(self.enablei_p_p)(target, index)
 }
 
 pub fn end_conditional_render(&self, ) {
-(self.end_conditional_render_p)()
+(self.end_conditional_render_p_p)()
 }
 
 pub fn end_query(&self, target: u32) {
-(self.end_query_p)(target)
+(self.end_query_p_p)(target)
 }
 
 pub fn end_transform_feedback(&self, ) {
-(self.end_transform_feedback_p)()
+(self.end_transform_feedback_p_p)()
 }
 
 pub fn fence_sync(&self, condition: u32, flags: u32) -> *mut c_void {
-(self.fence_sync_p)(condition, flags)
+(self.fence_sync_p_p)(condition, flags)
 }
 
 pub fn finish(&self, ) {
-(self.finish_p)()
+(self.finish_p_p)()
 }
 
 pub fn flush(&self, ) {
-(self.flush_p)()
+(self.flush_p_p)()
 }
 
 pub fn flush_mapped_buffer_range(&self, target: u32, offset: isize, length: isize) {
-(self.flush_mapped_buffer_range_p)(target, offset, length)
+(self.flush_mapped_buffer_range_p_p)(target, offset, length)
 }
 
 pub fn fogf(&self, pname: u32, param: f32) {
-(self.fogf_p)(pname, param)
+(self.fogf_p_p)(pname, param)
 }
 
 pub fn fogfv(&self, pname: u32, params: *const f32) {
-(self.fogfv_p)(pname, params)
+(self.fogfv_p_p)(pname, params)
 }
 
 pub fn fogx(&self, pname: u32, param: i32) {
-(self.fogx_p)(pname, param)
+(self.fogx_p_p)(pname, param)
 }
 
 pub fn fogxv(&self, pname: u32, param: *const i32) {
-(self.fogxv_p)(pname, param)
+(self.fogxv_p_p)(pname, param)
 }
 
 pub fn framebuffer_parameteri(&self, target: u32, pname: u32, param: i32) {
-(self.framebuffer_parameteri_p)(target, pname, param)
+(self.framebuffer_parameteri_p_p)(target, pname, param)
 }
 
 pub fn framebuffer_renderbuffer(&self, target: u32, attachment: u32, renderbuffertarget: u32, renderbuffer: u32) {
-(self.framebuffer_renderbuffer_p)(target, attachment, renderbuffertarget, renderbuffer)
+(self.framebuffer_renderbuffer_p_p)(target, attachment, renderbuffertarget, renderbuffer)
 }
 
 pub fn framebuffer_texture(&self, target: u32, attachment: u32, texture: u32, level: i32) {
-(self.framebuffer_texture_p)(target, attachment, texture, level)
+(self.framebuffer_texture_p_p)(target, attachment, texture, level)
 }
 
 pub fn framebuffer_texture1_d(&self, target: u32, attachment: u32, textarget: u32, texture: u32, level: i32) {
-(self.framebuffer_texture1_d_p)(target, attachment, textarget, texture, level)
+(self.framebuffer_texture1_d_p_p)(target, attachment, textarget, texture, level)
 }
 
 pub fn framebuffer_texture2_d(&self, target: u32, attachment: u32, textarget: u32, texture: u32, level: i32) {
-(self.framebuffer_texture2_d_p)(target, attachment, textarget, texture, level)
+(self.framebuffer_texture2_d_p_p)(target, attachment, textarget, texture, level)
 }
 
 pub fn framebuffer_texture3_d(&self, target: u32, attachment: u32, textarget: u32, texture: u32, level: i32, zoffset: i32) {
-(self.framebuffer_texture3_d_p)(target, attachment, textarget, texture, level, zoffset)
+(self.framebuffer_texture3_d_p_p)(target, attachment, textarget, texture, level, zoffset)
 }
 
 pub fn framebuffer_texture_layer(&self, target: u32, attachment: u32, texture: u32, level: i32, layer: i32) {
-(self.framebuffer_texture_layer_p)(target, attachment, texture, level, layer)
+(self.framebuffer_texture_layer_p_p)(target, attachment, texture, level, layer)
 }
 
 pub fn front_face(&self, mode: u32) {
-(self.front_face_p)(mode)
+(self.front_face_p_p)(mode)
 }
 
 pub fn frustumf(&self, l: f32, r: f32, b: f32, t: f32, n: f32, f: f32) {
-(self.frustumf_p)(l, r, b, t, n, f)
+(self.frustumf_p_p)(l, r, b, t, n, f)
 }
 
 pub fn frustumx(&self, l: i32, r: i32, b: i32, t: i32, n: i32, f: i32) {
-(self.frustumx_p)(l, r, b, t, n, f)
+(self.frustumx_p_p)(l, r, b, t, n, f)
 }
 
 pub fn gen_buffers(&self, n: i32, buffers: *mut u32) {
-(self.gen_buffers_p)(n, buffers)
+(self.gen_buffers_p_p)(n, buffers)
 }
 
 pub fn gen_framebuffers(&self, n: i32, framebuffers: *mut u32) {
-(self.gen_framebuffers_p)(n, framebuffers)
+(self.gen_framebuffers_p_p)(n, framebuffers)
 }
 
 pub fn gen_program_pipelines(&self, n: i32, pipelines: *mut u32) {
-(self.gen_program_pipelines_p)(n, pipelines)
+(self.gen_program_pipelines_p_p)(n, pipelines)
 }
 
 pub fn gen_queries(&self, n: i32, ids: *mut u32) {
-(self.gen_queries_p)(n, ids)
+(self.gen_queries_p_p)(n, ids)
 }
 
 pub fn gen_renderbuffers(&self, n: i32, renderbuffers: *mut u32) {
-(self.gen_renderbuffers_p)(n, renderbuffers)
+(self.gen_renderbuffers_p_p)(n, renderbuffers)
 }
 
 pub fn gen_samplers(&self, count: i32, samplers: *mut u32) {
-(self.gen_samplers_p)(count, samplers)
+(self.gen_samplers_p_p)(count, samplers)
 }
 
 pub fn gen_textures(&self, n: i32, textures: *mut u32) {
-(self.gen_textures_p)(n, textures)
+(self.gen_textures_p_p)(n, textures)
 }
 
 pub fn gen_transform_feedbacks(&self, n: i32, ids: *mut u32) {
-(self.gen_transform_feedbacks_p)(n, ids)
+(self.gen_transform_feedbacks_p_p)(n, ids)
 }
 
 pub fn gen_vertex_arrays(&self, n: i32, arrays: *mut u32) {
-(self.gen_vertex_arrays_p)(n, arrays)
+(self.gen_vertex_arrays_p_p)(n, arrays)
 }
 
 pub fn generate_mipmap(&self, target: u32) {
-(self.generate_mipmap_p)(target)
+(self.generate_mipmap_p_p)(target)
 }
 
 pub fn get_active_attrib(&self, program: u32, index: u32, buf_size: i32, length: *mut i32, size: *mut i32, type_: *mut u32, name: *mut i8) {
-(self.get_active_attrib_p)(program, index, buf_size, length, size, type_, name)
+(self.get_active_attrib_p_p)(program, index, buf_size, length, size, type_, name)
 }
 
 pub fn get_active_uniform(&self, program: u32, index: u32, buf_size: i32, length: *mut i32, size: *mut i32, type_: *mut u32, name: *mut i8) {
-(self.get_active_uniform_p)(program, index, buf_size, length, size, type_, name)
+(self.get_active_uniform_p_p)(program, index, buf_size, length, size, type_, name)
 }
 
 pub fn get_active_uniform_block_name(&self, program: u32, uniform_block_index: u32, buf_size: i32, length: *mut i32, uniform_block_name: *mut i8) {
-(self.get_active_uniform_block_name_p)(program, uniform_block_index, buf_size, length, uniform_block_name)
+(self.get_active_uniform_block_name_p_p)(program, uniform_block_index, buf_size, length, uniform_block_name)
 }
 
 pub fn get_active_uniform_blockiv(&self, program: u32, uniform_block_index: u32, pname: u32, params: *mut i32) {
-(self.get_active_uniform_blockiv_p)(program, uniform_block_index, pname, params)
+(self.get_active_uniform_blockiv_p_p)(program, uniform_block_index, pname, params)
 }
 
 pub fn get_active_uniform_name(&self, program: u32, uniform_index: u32, buf_size: i32, length: *mut i32, uniform_name: *mut i8) {
-(self.get_active_uniform_name_p)(program, uniform_index, buf_size, length, uniform_name)
+(self.get_active_uniform_name_p_p)(program, uniform_index, buf_size, length, uniform_name)
 }
 
 pub fn get_active_uniformsiv(&self, program: u32, uniform_count: i32, uniform_indices: *const u32, pname: u32, params: *mut i32) {
-(self.get_active_uniformsiv_p)(program, uniform_count, uniform_indices, pname, params)
+(self.get_active_uniformsiv_p_p)(program, uniform_count, uniform_indices, pname, params)
 }
 
 pub fn get_attached_shaders(&self, program: u32, max_count: i32, count: *mut i32, shaders: *mut u32) {
-(self.get_attached_shaders_p)(program, max_count, count, shaders)
+(self.get_attached_shaders_p_p)(program, max_count, count, shaders)
 }
 
-pub fn get_attrib_location(&self, program: u32, name: *const i8) -> c_int {
-(self.get_attrib_location_p)(program, name)
+pub fn get_attrib_location(&self, program: u32, name: *const i8) -> i32 {
+(self.get_attrib_location_p_p)(program, name)
 }
 
 pub fn get_booleani_v(&self, target: u32, index: u32, data: *mut u8) {
-(self.get_booleani_v_p)(target, index, data)
+(self.get_booleani_v_p_p)(target, index, data)
 }
 
 pub fn get_booleanv(&self, pname: u32, data: *mut u8) {
-(self.get_booleanv_p)(pname, data)
+(self.get_booleanv_p_p)(pname, data)
 }
 
 pub fn get_buffer_parameteri64v(&self, target: u32, pname: u32, params: *mut i64) {
-(self.get_buffer_parameteri64v_p)(target, pname, params)
+(self.get_buffer_parameteri64v_p_p)(target, pname, params)
 }
 
 pub fn get_buffer_parameteriv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_buffer_parameteriv_p)(target, pname, params)
+(self.get_buffer_parameteriv_p_p)(target, pname, params)
 }
 
 pub fn get_buffer_pointerv(&self, target: u32, pname: u32, params: *mut *mut c_void) {
-(self.get_buffer_pointerv_p)(target, pname, params)
+(self.get_buffer_pointerv_p_p)(target, pname, params)
 }
 
 pub fn get_buffer_sub_data(&self, target: u32, offset: isize, size: isize, data: *mut c_void) {
-(self.get_buffer_sub_data_p)(target, offset, size, data)
+(self.get_buffer_sub_data_p_p)(target, offset, size, data)
 }
 
 pub fn get_clip_planef(&self, plane: u32, equation: *mut f32) {
-(self.get_clip_planef_p)(plane, equation)
+(self.get_clip_planef_p_p)(plane, equation)
 }
 
 pub fn get_clip_planex(&self, plane: u32, equation: *mut i32) {
-(self.get_clip_planex_p)(plane, equation)
+(self.get_clip_planex_p_p)(plane, equation)
 }
 
 pub fn get_compressed_tex_image(&self, target: u32, level: i32, img: *mut c_void) {
-(self.get_compressed_tex_image_p)(target, level, img)
+(self.get_compressed_tex_image_p_p)(target, level, img)
 }
 
-pub fn get_debug_message_log(&self, count: u32, buf_size: i32, sources: *mut u32, types: *mut u32, ids: *mut u32, severities: *mut u32, lengths: *mut i32, message_log: *mut i8) -> c_uint {
-(self.get_debug_message_log_p)(count, buf_size, sources, types, ids, severities, lengths, message_log)
+pub fn get_debug_message_log(&self, count: u32, buf_size: i32, sources: *mut u32, types: *mut u32, ids: *mut u32, severities: *mut u32, lengths: *mut i32, message_log: *mut i8) -> u32 {
+(self.get_debug_message_log_p_p)(count, buf_size, sources, types, ids, severities, lengths, message_log)
 }
 
 pub fn get_doublev(&self, pname: u32, data: *mut f64) {
-(self.get_doublev_p)(pname, data)
+(self.get_doublev_p_p)(pname, data)
 }
 
-pub fn get_error(&self, ) -> c_uint {
-(self.get_error_p)()
+pub fn get_error(&self, ) -> u32 {
+(self.get_error_p_p)()
 }
 
 pub fn get_fixedv(&self, pname: u32, params: *mut i32) {
-(self.get_fixedv_p)(pname, params)
+(self.get_fixedv_p_p)(pname, params)
 }
 
 pub fn get_floatv(&self, pname: u32, data: *mut f32) {
-(self.get_floatv_p)(pname, data)
+(self.get_floatv_p_p)(pname, data)
 }
 
-pub fn get_frag_data_index(&self, program: u32, name: *const i8) -> c_int {
-(self.get_frag_data_index_p)(program, name)
+pub fn get_frag_data_index(&self, program: u32, name: *const i8) -> i32 {
+(self.get_frag_data_index_p_p)(program, name)
 }
 
-pub fn get_frag_data_location(&self, program: u32, name: *const i8) -> c_int {
-(self.get_frag_data_location_p)(program, name)
+pub fn get_frag_data_location(&self, program: u32, name: *const i8) -> i32 {
+(self.get_frag_data_location_p_p)(program, name)
 }
 
 pub fn get_framebuffer_attachment_parameteriv(&self, target: u32, attachment: u32, pname: u32, params: *mut i32) {
-(self.get_framebuffer_attachment_parameteriv_p)(target, attachment, pname, params)
+(self.get_framebuffer_attachment_parameteriv_p_p)(target, attachment, pname, params)
 }
 
 pub fn get_framebuffer_parameteriv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_framebuffer_parameteriv_p)(target, pname, params)
+(self.get_framebuffer_parameteriv_p_p)(target, pname, params)
 }
 
-pub fn get_graphics_reset_status(&self, ) -> c_uint {
-(self.get_graphics_reset_status_p)()
+pub fn get_graphics_reset_status(&self, ) -> u32 {
+(self.get_graphics_reset_status_p_p)()
 }
 
 pub fn get_integer64i_v(&self, target: u32, index: u32, data: *mut i64) {
-(self.get_integer64i_v_p)(target, index, data)
+(self.get_integer64i_v_p_p)(target, index, data)
 }
 
 pub fn get_integer64v(&self, pname: u32, data: *mut i64) {
-(self.get_integer64v_p)(pname, data)
+(self.get_integer64v_p_p)(pname, data)
 }
 
 pub fn get_integeri_v(&self, target: u32, index: u32, data: *mut i32) {
-(self.get_integeri_v_p)(target, index, data)
+(self.get_integeri_v_p_p)(target, index, data)
 }
 
 pub fn get_integerv(&self, pname: u32, data: *mut i32) {
-(self.get_integerv_p)(pname, data)
+(self.get_integerv_p_p)(pname, data)
 }
 
 pub fn get_internalformativ(&self, target: u32, internalformat: u32, pname: u32, count: i32, params: *mut i32) {
-(self.get_internalformativ_p)(target, internalformat, pname, count, params)
+(self.get_internalformativ_p_p)(target, internalformat, pname, count, params)
 }
 
 pub fn get_lightfv(&self, light: u32, pname: u32, params: *mut f32) {
-(self.get_lightfv_p)(light, pname, params)
+(self.get_lightfv_p_p)(light, pname, params)
 }
 
 pub fn get_lightxv(&self, light: u32, pname: u32, params: *mut i32) {
-(self.get_lightxv_p)(light, pname, params)
+(self.get_lightxv_p_p)(light, pname, params)
 }
 
 pub fn get_materialfv(&self, face: u32, pname: u32, params: *mut f32) {
-(self.get_materialfv_p)(face, pname, params)
+(self.get_materialfv_p_p)(face, pname, params)
 }
 
 pub fn get_materialxv(&self, face: u32, pname: u32, params: *mut i32) {
-(self.get_materialxv_p)(face, pname, params)
+(self.get_materialxv_p_p)(face, pname, params)
 }
 
 pub fn get_multisamplefv(&self, pname: u32, index: u32, val: *mut f32) {
-(self.get_multisamplefv_p)(pname, index, val)
+(self.get_multisamplefv_p_p)(pname, index, val)
 }
 
 pub fn get_object_label(&self, identifier: u32, name: u32, buf_size: i32, length: *mut i32, label: *mut i8) {
-(self.get_object_label_p)(identifier, name, buf_size, length, label)
+(self.get_object_label_p_p)(identifier, name, buf_size, length, label)
 }
 
 pub fn get_object_ptr_label(&self, ptr: *const c_void, buf_size: i32, length: *mut i32, label: *mut i8) {
-(self.get_object_ptr_label_p)(ptr, buf_size, length, label)
+(self.get_object_ptr_label_p_p)(ptr, buf_size, length, label)
 }
 
 pub fn get_pointerv(&self, pname: u32, params: *mut *mut c_void) {
-(self.get_pointerv_p)(pname, params)
+(self.get_pointerv_p_p)(pname, params)
 }
 
 pub fn get_program_binary(&self, program: u32, buf_size: i32, length: *mut i32, binary_format: *mut u32, binary: *mut c_void) {
-(self.get_program_binary_p)(program, buf_size, length, binary_format, binary)
+(self.get_program_binary_p_p)(program, buf_size, length, binary_format, binary)
 }
 
 pub fn get_program_info_log(&self, program: u32, buf_size: i32, length: *mut i32, info_log: *mut i8) {
-(self.get_program_info_log_p)(program, buf_size, length, info_log)
+(self.get_program_info_log_p_p)(program, buf_size, length, info_log)
 }
 
 pub fn get_program_interfaceiv(&self, program: u32, program_interface: u32, pname: u32, params: *mut i32) {
-(self.get_program_interfaceiv_p)(program, program_interface, pname, params)
+(self.get_program_interfaceiv_p_p)(program, program_interface, pname, params)
 }
 
 pub fn get_program_pipeline_info_log(&self, pipeline: u32, buf_size: i32, length: *mut i32, info_log: *mut i8) {
-(self.get_program_pipeline_info_log_p)(pipeline, buf_size, length, info_log)
+(self.get_program_pipeline_info_log_p_p)(pipeline, buf_size, length, info_log)
 }
 
 pub fn get_program_pipelineiv(&self, pipeline: u32, pname: u32, params: *mut i32) {
-(self.get_program_pipelineiv_p)(pipeline, pname, params)
+(self.get_program_pipelineiv_p_p)(pipeline, pname, params)
 }
 
-pub fn get_program_resource_index(&self, program: u32, program_interface: u32, name: *const i8) -> c_uint {
-(self.get_program_resource_index_p)(program, program_interface, name)
+pub fn get_program_resource_index(&self, program: u32, program_interface: u32, name: *const i8) -> u32 {
+(self.get_program_resource_index_p_p)(program, program_interface, name)
 }
 
-pub fn get_program_resource_location(&self, program: u32, program_interface: u32, name: *const i8) -> c_int {
-(self.get_program_resource_location_p)(program, program_interface, name)
+pub fn get_program_resource_location(&self, program: u32, program_interface: u32, name: *const i8) -> i32 {
+(self.get_program_resource_location_p_p)(program, program_interface, name)
 }
 
 pub fn get_program_resource_name(&self, program: u32, program_interface: u32, index: u32, buf_size: i32, length: *mut i32, name: *mut i8) {
-(self.get_program_resource_name_p)(program, program_interface, index, buf_size, length, name)
+(self.get_program_resource_name_p_p)(program, program_interface, index, buf_size, length, name)
 }
 
 pub fn get_program_resourceiv(&self, program: u32, program_interface: u32, index: u32, prop_count: i32, props: *const u32, count: i32, length: *mut i32, params: *mut i32) {
-(self.get_program_resourceiv_p)(program, program_interface, index, prop_count, props, count, length, params)
+(self.get_program_resourceiv_p_p)(program, program_interface, index, prop_count, props, count, length, params)
 }
 
 pub fn get_programiv(&self, program: u32, pname: u32, params: *mut i32) {
-(self.get_programiv_p)(program, pname, params)
+(self.get_programiv_p_p)(program, pname, params)
 }
 
 pub fn get_query_objecti64v(&self, id: u32, pname: u32, params: *mut i64) {
-(self.get_query_objecti64v_p)(id, pname, params)
+(self.get_query_objecti64v_p_p)(id, pname, params)
 }
 
 pub fn get_query_objectiv(&self, id: u32, pname: u32, params: *mut i32) {
-(self.get_query_objectiv_p)(id, pname, params)
+(self.get_query_objectiv_p_p)(id, pname, params)
 }
 
 pub fn get_query_objectui64v(&self, id: u32, pname: u32, params: *mut u64) {
-(self.get_query_objectui64v_p)(id, pname, params)
+(self.get_query_objectui64v_p_p)(id, pname, params)
 }
 
 pub fn get_query_objectuiv(&self, id: u32, pname: u32, params: *mut u32) {
-(self.get_query_objectuiv_p)(id, pname, params)
+(self.get_query_objectuiv_p_p)(id, pname, params)
 }
 
 pub fn get_queryiv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_queryiv_p)(target, pname, params)
+(self.get_queryiv_p_p)(target, pname, params)
 }
 
 pub fn get_renderbuffer_parameteriv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_renderbuffer_parameteriv_p)(target, pname, params)
+(self.get_renderbuffer_parameteriv_p_p)(target, pname, params)
 }
 
 pub fn get_sampler_parameter_iiv(&self, sampler: u32, pname: u32, params: *mut i32) {
-(self.get_sampler_parameter_iiv_p)(sampler, pname, params)
+(self.get_sampler_parameter_iiv_p_p)(sampler, pname, params)
 }
 
 pub fn get_sampler_parameter_iuiv(&self, sampler: u32, pname: u32, params: *mut u32) {
-(self.get_sampler_parameter_iuiv_p)(sampler, pname, params)
+(self.get_sampler_parameter_iuiv_p_p)(sampler, pname, params)
 }
 
 pub fn get_sampler_parameterfv(&self, sampler: u32, pname: u32, params: *mut f32) {
-(self.get_sampler_parameterfv_p)(sampler, pname, params)
+(self.get_sampler_parameterfv_p_p)(sampler, pname, params)
 }
 
 pub fn get_sampler_parameteriv(&self, sampler: u32, pname: u32, params: *mut i32) {
-(self.get_sampler_parameteriv_p)(sampler, pname, params)
+(self.get_sampler_parameteriv_p_p)(sampler, pname, params)
 }
 
 pub fn get_shader_info_log(&self, shader: u32, buf_size: i32, length: *mut i32, info_log: *mut i8) {
-(self.get_shader_info_log_p)(shader, buf_size, length, info_log)
+(self.get_shader_info_log_p_p)(shader, buf_size, length, info_log)
 }
 
 pub fn get_shader_precision_format(&self, shadertype: u32, precisiontype: u32, range: *mut i32, precision: *mut i32) {
-(self.get_shader_precision_format_p)(shadertype, precisiontype, range, precision)
+(self.get_shader_precision_format_p_p)(shadertype, precisiontype, range, precision)
 }
 
 pub fn get_shader_source(&self, shader: u32, buf_size: i32, length: *mut i32, source: *mut i8) {
-(self.get_shader_source_p)(shader, buf_size, length, source)
+(self.get_shader_source_p_p)(shader, buf_size, length, source)
 }
 
 pub fn get_shaderiv(&self, shader: u32, pname: u32, params: *mut i32) {
-(self.get_shaderiv_p)(shader, pname, params)
+(self.get_shaderiv_p_p)(shader, pname, params)
 }
 
-pub fn get_string(&self, name: u32) -> *const c_uchar {
-(self.get_string_p)(name)
+pub fn get_string(&self, name: u32) -> *const u8 {
+(self.get_string_p_p)(name)
 }
 
-pub fn get_stringi(&self, name: u32, index: u32) -> *const c_uchar {
-(self.get_stringi_p)(name, index)
+pub fn get_stringi(&self, name: u32, index: u32) -> *const u8 {
+(self.get_stringi_p_p)(name, index)
 }
 
 pub fn get_synciv(&self, sync: *mut c_void, pname: u32, count: i32, length: *mut i32, values: *mut i32) {
-(self.get_synciv_p)(sync, pname, count, length, values)
+(self.get_synciv_p_p)(sync, pname, count, length, values)
 }
 
 pub fn get_tex_envfv(&self, target: u32, pname: u32, params: *mut f32) {
-(self.get_tex_envfv_p)(target, pname, params)
+(self.get_tex_envfv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_enviv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_tex_enviv_p)(target, pname, params)
+(self.get_tex_enviv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_envxv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_tex_envxv_p)(target, pname, params)
+(self.get_tex_envxv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_image(&self, target: u32, level: i32, format: u32, type_: u32, pixels: *mut c_void) {
-(self.get_tex_image_p)(target, level, format, type_, pixels)
+(self.get_tex_image_p_p)(target, level, format, type_, pixels)
 }
 
 pub fn get_tex_level_parameterfv(&self, target: u32, level: i32, pname: u32, params: *mut f32) {
-(self.get_tex_level_parameterfv_p)(target, level, pname, params)
+(self.get_tex_level_parameterfv_p_p)(target, level, pname, params)
 }
 
 pub fn get_tex_level_parameteriv(&self, target: u32, level: i32, pname: u32, params: *mut i32) {
-(self.get_tex_level_parameteriv_p)(target, level, pname, params)
+(self.get_tex_level_parameteriv_p_p)(target, level, pname, params)
 }
 
 pub fn get_tex_parameter_iiv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_tex_parameter_iiv_p)(target, pname, params)
+(self.get_tex_parameter_iiv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_parameter_iuiv(&self, target: u32, pname: u32, params: *mut u32) {
-(self.get_tex_parameter_iuiv_p)(target, pname, params)
+(self.get_tex_parameter_iuiv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_parameterfv(&self, target: u32, pname: u32, params: *mut f32) {
-(self.get_tex_parameterfv_p)(target, pname, params)
+(self.get_tex_parameterfv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_parameteriv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_tex_parameteriv_p)(target, pname, params)
+(self.get_tex_parameteriv_p_p)(target, pname, params)
 }
 
 pub fn get_tex_parameterxv(&self, target: u32, pname: u32, params: *mut i32) {
-(self.get_tex_parameterxv_p)(target, pname, params)
+(self.get_tex_parameterxv_p_p)(target, pname, params)
 }
 
 pub fn get_transform_feedback_varying(&self, program: u32, index: u32, buf_size: i32, length: *mut i32, size: *mut i32, type_: *mut u32, name: *mut i8) {
-(self.get_transform_feedback_varying_p)(program, index, buf_size, length, size, type_, name)
+(self.get_transform_feedback_varying_p_p)(program, index, buf_size, length, size, type_, name)
 }
 
-pub fn get_uniform_block_index(&self, program: u32, uniform_block_name: *const i8) -> c_uint {
-(self.get_uniform_block_index_p)(program, uniform_block_name)
+pub fn get_uniform_block_index(&self, program: u32, uniform_block_name: *const i8) -> u32 {
+(self.get_uniform_block_index_p_p)(program, uniform_block_name)
 }
 
 pub fn get_uniform_indices(&self, program: u32, uniform_count: i32, uniform_names: *const *const i8, uniform_indices: *mut u32) {
-(self.get_uniform_indices_p)(program, uniform_count, uniform_names, uniform_indices)
+(self.get_uniform_indices_p_p)(program, uniform_count, uniform_names, uniform_indices)
 }
 
-pub fn get_uniform_location(&self, program: u32, name: *const i8) -> c_int {
-(self.get_uniform_location_p)(program, name)
+pub fn get_uniform_location(&self, program: u32, name: *const i8) -> i32 {
+(self.get_uniform_location_p_p)(program, name)
 }
 
 pub fn get_uniformfv(&self, program: u32, location: i32, params: *mut f32) {
-(self.get_uniformfv_p)(program, location, params)
+(self.get_uniformfv_p_p)(program, location, params)
 }
 
 pub fn get_uniformiv(&self, program: u32, location: i32, params: *mut i32) {
-(self.get_uniformiv_p)(program, location, params)
+(self.get_uniformiv_p_p)(program, location, params)
 }
 
 pub fn get_uniformuiv(&self, program: u32, location: i32, params: *mut u32) {
-(self.get_uniformuiv_p)(program, location, params)
+(self.get_uniformuiv_p_p)(program, location, params)
 }
 
 pub fn get_vertex_attrib_iiv(&self, index: u32, pname: u32, params: *mut i32) {
-(self.get_vertex_attrib_iiv_p)(index, pname, params)
+(self.get_vertex_attrib_iiv_p_p)(index, pname, params)
 }
 
 pub fn get_vertex_attrib_iuiv(&self, index: u32, pname: u32, params: *mut u32) {
-(self.get_vertex_attrib_iuiv_p)(index, pname, params)
+(self.get_vertex_attrib_iuiv_p_p)(index, pname, params)
 }
 
 pub fn get_vertex_attrib_pointerv(&self, index: u32, pname: u32, pointer: *mut *mut c_void) {
-(self.get_vertex_attrib_pointerv_p)(index, pname, pointer)
+(self.get_vertex_attrib_pointerv_p_p)(index, pname, pointer)
 }
 
 pub fn get_vertex_attribdv(&self, index: u32, pname: u32, params: *mut f64) {
-(self.get_vertex_attribdv_p)(index, pname, params)
+(self.get_vertex_attribdv_p_p)(index, pname, params)
 }
 
 pub fn get_vertex_attribfv(&self, index: u32, pname: u32, params: *mut f32) {
-(self.get_vertex_attribfv_p)(index, pname, params)
+(self.get_vertex_attribfv_p_p)(index, pname, params)
 }
 
 pub fn get_vertex_attribiv(&self, index: u32, pname: u32, params: *mut i32) {
-(self.get_vertex_attribiv_p)(index, pname, params)
+(self.get_vertex_attribiv_p_p)(index, pname, params)
 }
 
 pub fn getn_uniformfv(&self, program: u32, location: i32, buf_size: i32, params: *mut f32) {
-(self.getn_uniformfv_p)(program, location, buf_size, params)
+(self.getn_uniformfv_p_p)(program, location, buf_size, params)
 }
 
 pub fn getn_uniformiv(&self, program: u32, location: i32, buf_size: i32, params: *mut i32) {
-(self.getn_uniformiv_p)(program, location, buf_size, params)
+(self.getn_uniformiv_p_p)(program, location, buf_size, params)
 }
 
 pub fn getn_uniformuiv(&self, program: u32, location: i32, buf_size: i32, params: *mut u32) {
-(self.getn_uniformuiv_p)(program, location, buf_size, params)
+(self.getn_uniformuiv_p_p)(program, location, buf_size, params)
 }
 
 pub fn hint(&self, target: u32, mode: u32) {
-(self.hint_p)(target, mode)
+(self.hint_p_p)(target, mode)
 }
 
 pub fn invalidate_framebuffer(&self, target: u32, num_attachments: i32, attachments: *const u32) {
-(self.invalidate_framebuffer_p)(target, num_attachments, attachments)
+(self.invalidate_framebuffer_p_p)(target, num_attachments, attachments)
 }
 
 pub fn invalidate_sub_framebuffer(&self, target: u32, num_attachments: i32, attachments: *const u32, x: i32, y: i32, width: i32, height: i32) {
-(self.invalidate_sub_framebuffer_p)(target, num_attachments, attachments, x, y, width, height)
+(self.invalidate_sub_framebuffer_p_p)(target, num_attachments, attachments, x, y, width, height)
 }
 
-pub fn is_buffer(&self, buffer: u32) -> c_uchar {
-(self.is_buffer_p)(buffer)
+pub fn is_buffer(&self, buffer: u32) -> u8 {
+(self.is_buffer_p_p)(buffer)
 }
 
-pub fn is_enabled(&self, cap: u32) -> c_uchar {
-(self.is_enabled_p)(cap)
+pub fn is_enabled(&self, cap: u32) -> u8 {
+(self.is_enabled_p_p)(cap)
 }
 
-pub fn is_enabledi(&self, target: u32, index: u32) -> c_uchar {
-(self.is_enabledi_p)(target, index)
+pub fn is_enabledi(&self, target: u32, index: u32) -> u8 {
+(self.is_enabledi_p_p)(target, index)
 }
 
-pub fn is_framebuffer(&self, framebuffer: u32) -> c_uchar {
-(self.is_framebuffer_p)(framebuffer)
+pub fn is_framebuffer(&self, framebuffer: u32) -> u8 {
+(self.is_framebuffer_p_p)(framebuffer)
 }
 
-pub fn is_program(&self, program: u32) -> c_uchar {
-(self.is_program_p)(program)
+pub fn is_program(&self, program: u32) -> u8 {
+(self.is_program_p_p)(program)
 }
 
-pub fn is_program_pipeline(&self, pipeline: u32) -> c_uchar {
-(self.is_program_pipeline_p)(pipeline)
+pub fn is_program_pipeline(&self, pipeline: u32) -> u8 {
+(self.is_program_pipeline_p_p)(pipeline)
 }
 
-pub fn is_query(&self, id: u32) -> c_uchar {
-(self.is_query_p)(id)
+pub fn is_query(&self, id: u32) -> u8 {
+(self.is_query_p_p)(id)
 }
 
-pub fn is_renderbuffer(&self, renderbuffer: u32) -> c_uchar {
-(self.is_renderbuffer_p)(renderbuffer)
+pub fn is_renderbuffer(&self, renderbuffer: u32) -> u8 {
+(self.is_renderbuffer_p_p)(renderbuffer)
 }
 
-pub fn is_sampler(&self, sampler: u32) -> c_uchar {
-(self.is_sampler_p)(sampler)
+pub fn is_sampler(&self, sampler: u32) -> u8 {
+(self.is_sampler_p_p)(sampler)
 }
 
-pub fn is_shader(&self, shader: u32) -> c_uchar {
-(self.is_shader_p)(shader)
+pub fn is_shader(&self, shader: u32) -> u8 {
+(self.is_shader_p_p)(shader)
 }
 
-pub fn is_sync(&self, sync: *mut c_void) -> c_uchar {
-(self.is_sync_p)(sync)
+pub fn is_sync(&self, sync: *mut c_void) -> u8 {
+(self.is_sync_p_p)(sync)
 }
 
-pub fn is_texture(&self, texture: u32) -> c_uchar {
-(self.is_texture_p)(texture)
+pub fn is_texture(&self, texture: u32) -> u8 {
+(self.is_texture_p_p)(texture)
 }
 
-pub fn is_transform_feedback(&self, id: u32) -> c_uchar {
-(self.is_transform_feedback_p)(id)
+pub fn is_transform_feedback(&self, id: u32) -> u8 {
+(self.is_transform_feedback_p_p)(id)
 }
 
-pub fn is_vertex_array(&self, array: u32) -> c_uchar {
-(self.is_vertex_array_p)(array)
+pub fn is_vertex_array(&self, array: u32) -> u8 {
+(self.is_vertex_array_p_p)(array)
 }
 
 pub fn light_modelf(&self, pname: u32, param: f32) {
-(self.light_modelf_p)(pname, param)
+(self.light_modelf_p_p)(pname, param)
 }
 
 pub fn light_modelfv(&self, pname: u32, params: *const f32) {
-(self.light_modelfv_p)(pname, params)
+(self.light_modelfv_p_p)(pname, params)
 }
 
 pub fn light_modelx(&self, pname: u32, param: i32) {
-(self.light_modelx_p)(pname, param)
+(self.light_modelx_p_p)(pname, param)
 }
 
 pub fn light_modelxv(&self, pname: u32, param: *const i32) {
-(self.light_modelxv_p)(pname, param)
+(self.light_modelxv_p_p)(pname, param)
 }
 
 pub fn lightf(&self, light: u32, pname: u32, param: f32) {
-(self.lightf_p)(light, pname, param)
+(self.lightf_p_p)(light, pname, param)
 }
 
 pub fn lightfv(&self, light: u32, pname: u32, params: *const f32) {
-(self.lightfv_p)(light, pname, params)
+(self.lightfv_p_p)(light, pname, params)
 }
 
 pub fn lightx(&self, light: u32, pname: u32, param: i32) {
-(self.lightx_p)(light, pname, param)
+(self.lightx_p_p)(light, pname, param)
 }
 
 pub fn lightxv(&self, light: u32, pname: u32, params: *const i32) {
-(self.lightxv_p)(light, pname, params)
+(self.lightxv_p_p)(light, pname, params)
 }
 
 pub fn line_width(&self, width: f32) {
-(self.line_width_p)(width)
+(self.line_width_p_p)(width)
 }
 
 pub fn line_widthx(&self, width: i32) {
-(self.line_widthx_p)(width)
+(self.line_widthx_p_p)(width)
 }
 
 pub fn link_program(&self, program: u32) {
-(self.link_program_p)(program)
+(self.link_program_p_p)(program)
 }
 
 pub fn load_identity(&self, ) {
-(self.load_identity_p)()
+(self.load_identity_p_p)()
 }
 
 pub fn load_matrixf(&self, m: *const f32) {
-(self.load_matrixf_p)(m)
+(self.load_matrixf_p_p)(m)
 }
 
 pub fn load_matrixx(&self, m: *const i32) {
-(self.load_matrixx_p)(m)
+(self.load_matrixx_p_p)(m)
 }
 
 pub fn logic_op(&self, opcode: u32) {
-(self.logic_op_p)(opcode)
+(self.logic_op_p_p)(opcode)
 }
 
 pub fn map_buffer(&self, target: u32, access: u32) -> *mut c_void {
-(self.map_buffer_p)(target, access)
+(self.map_buffer_p_p)(target, access)
 }
 
 pub fn map_buffer_range(&self, target: u32, offset: isize, length: isize, access: u32) -> *mut c_void {
-(self.map_buffer_range_p)(target, offset, length, access)
+(self.map_buffer_range_p_p)(target, offset, length, access)
 }
 
 pub fn materialf(&self, face: u32, pname: u32, param: f32) {
-(self.materialf_p)(face, pname, param)
+(self.materialf_p_p)(face, pname, param)
 }
 
 pub fn materialfv(&self, face: u32, pname: u32, params: *const f32) {
-(self.materialfv_p)(face, pname, params)
+(self.materialfv_p_p)(face, pname, params)
 }
 
 pub fn materialx(&self, face: u32, pname: u32, param: i32) {
-(self.materialx_p)(face, pname, param)
+(self.materialx_p_p)(face, pname, param)
 }
 
 pub fn materialxv(&self, face: u32, pname: u32, param: *const i32) {
-(self.materialxv_p)(face, pname, param)
+(self.materialxv_p_p)(face, pname, param)
 }
 
 pub fn matrix_mode(&self, mode: u32) {
-(self.matrix_mode_p)(mode)
+(self.matrix_mode_p_p)(mode)
 }
 
 pub fn memory_barrier(&self, barriers: u32) {
-(self.memory_barrier_p)(barriers)
+(self.memory_barrier_p_p)(barriers)
 }
 
 pub fn memory_barrier_by_region(&self, barriers: u32) {
-(self.memory_barrier_by_region_p)(barriers)
+(self.memory_barrier_by_region_p_p)(barriers)
 }
 
 pub fn min_sample_shading(&self, value: f32) {
-(self.min_sample_shading_p)(value)
+(self.min_sample_shading_p_p)(value)
 }
 
 pub fn mult_matrixf(&self, m: *const f32) {
-(self.mult_matrixf_p)(m)
+(self.mult_matrixf_p_p)(m)
 }
 
 pub fn mult_matrixx(&self, m: *const i32) {
-(self.mult_matrixx_p)(m)
+(self.mult_matrixx_p_p)(m)
 }
 
 pub fn multi_draw_arrays(&self, mode: u32, first: *const i32, count: *const i32, drawcount: i32) {
-(self.multi_draw_arrays_p)(mode, first, count, drawcount)
+(self.multi_draw_arrays_p_p)(mode, first, count, drawcount)
 }
 
 pub fn multi_draw_elements(&self, mode: u32, count: *const i32, type_: u32, indices: *const *const c_void, drawcount: i32) {
-(self.multi_draw_elements_p)(mode, count, type_, indices, drawcount)
+(self.multi_draw_elements_p_p)(mode, count, type_, indices, drawcount)
 }
 
 pub fn multi_draw_elements_base_vertex(&self, mode: u32, count: *const i32, type_: u32, indices: *const *const c_void, drawcount: i32, basevertex: *const i32) {
-(self.multi_draw_elements_base_vertex_p)(mode, count, type_, indices, drawcount, basevertex)
+(self.multi_draw_elements_base_vertex_p_p)(mode, count, type_, indices, drawcount, basevertex)
 }
 
 pub fn multi_tex_coord4f(&self, target: u32, s: f32, t: f32, r: f32, q: f32) {
-(self.multi_tex_coord4f_p)(target, s, t, r, q)
+(self.multi_tex_coord4f_p_p)(target, s, t, r, q)
 }
 
 pub fn multi_tex_coord4x(&self, texture: u32, s: i32, t: i32, r: i32, q: i32) {
-(self.multi_tex_coord4x_p)(texture, s, t, r, q)
+(self.multi_tex_coord4x_p_p)(texture, s, t, r, q)
 }
 
 pub fn multi_tex_coord_p1ui(&self, texture: u32, type_: u32, coords: u32) {
-(self.multi_tex_coord_p1ui_p)(texture, type_, coords)
+(self.multi_tex_coord_p1ui_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p1uiv(&self, texture: u32, type_: u32, coords: *const u32) {
-(self.multi_tex_coord_p1uiv_p)(texture, type_, coords)
+(self.multi_tex_coord_p1uiv_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p2ui(&self, texture: u32, type_: u32, coords: u32) {
-(self.multi_tex_coord_p2ui_p)(texture, type_, coords)
+(self.multi_tex_coord_p2ui_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p2uiv(&self, texture: u32, type_: u32, coords: *const u32) {
-(self.multi_tex_coord_p2uiv_p)(texture, type_, coords)
+(self.multi_tex_coord_p2uiv_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p3ui(&self, texture: u32, type_: u32, coords: u32) {
-(self.multi_tex_coord_p3ui_p)(texture, type_, coords)
+(self.multi_tex_coord_p3ui_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p3uiv(&self, texture: u32, type_: u32, coords: *const u32) {
-(self.multi_tex_coord_p3uiv_p)(texture, type_, coords)
+(self.multi_tex_coord_p3uiv_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p4ui(&self, texture: u32, type_: u32, coords: u32) {
-(self.multi_tex_coord_p4ui_p)(texture, type_, coords)
+(self.multi_tex_coord_p4ui_p_p)(texture, type_, coords)
 }
 
 pub fn multi_tex_coord_p4uiv(&self, texture: u32, type_: u32, coords: *const u32) {
-(self.multi_tex_coord_p4uiv_p)(texture, type_, coords)
+(self.multi_tex_coord_p4uiv_p_p)(texture, type_, coords)
 }
 
 pub fn normal3f(&self, nx: f32, ny: f32, nz: f32) {
-(self.normal3f_p)(nx, ny, nz)
+(self.normal3f_p_p)(nx, ny, nz)
 }
 
 pub fn normal3x(&self, nx: i32, ny: i32, nz: i32) {
-(self.normal3x_p)(nx, ny, nz)
+(self.normal3x_p_p)(nx, ny, nz)
 }
 
 pub fn normal_p3ui(&self, type_: u32, coords: u32) {
-(self.normal_p3ui_p)(type_, coords)
+(self.normal_p3ui_p_p)(type_, coords)
 }
 
 pub fn normal_p3uiv(&self, type_: u32, coords: *const u32) {
-(self.normal_p3uiv_p)(type_, coords)
+(self.normal_p3uiv_p_p)(type_, coords)
 }
 
 pub fn normal_pointer(&self, type_: u32, stride: i32, pointer: *const c_void) {
-(self.normal_pointer_p)(type_, stride, pointer)
+(self.normal_pointer_p_p)(type_, stride, pointer)
 }
 
 pub fn object_label(&self, identifier: u32, name: u32, length: i32, label: *const i8) {
-(self.object_label_p)(identifier, name, length, label)
+(self.object_label_p_p)(identifier, name, length, label)
 }
 
 pub fn object_ptr_label(&self, ptr: *const c_void, length: i32, label: *const i8) {
-(self.object_ptr_label_p)(ptr, length, label)
+(self.object_ptr_label_p_p)(ptr, length, label)
 }
 
 pub fn orthof(&self, l: f32, r: f32, b: f32, t: f32, n: f32, f: f32) {
-(self.orthof_p)(l, r, b, t, n, f)
+(self.orthof_p_p)(l, r, b, t, n, f)
 }
 
 pub fn orthox(&self, l: i32, r: i32, b: i32, t: i32, n: i32, f: i32) {
-(self.orthox_p)(l, r, b, t, n, f)
+(self.orthox_p_p)(l, r, b, t, n, f)
 }
 
 pub fn patch_parameteri(&self, pname: u32, value: i32) {
-(self.patch_parameteri_p)(pname, value)
+(self.patch_parameteri_p_p)(pname, value)
 }
 
 pub fn pause_transform_feedback(&self, ) {
-(self.pause_transform_feedback_p)()
+(self.pause_transform_feedback_p_p)()
 }
 
 pub fn pixel_storef(&self, pname: u32, param: f32) {
-(self.pixel_storef_p)(pname, param)
+(self.pixel_storef_p_p)(pname, param)
 }
 
 pub fn pixel_storei(&self, pname: u32, param: i32) {
-(self.pixel_storei_p)(pname, param)
+(self.pixel_storei_p_p)(pname, param)
 }
 
 pub fn point_parameterf(&self, pname: u32, param: f32) {
-(self.point_parameterf_p)(pname, param)
+(self.point_parameterf_p_p)(pname, param)
 }
 
 pub fn point_parameterfv(&self, pname: u32, params: *const f32) {
-(self.point_parameterfv_p)(pname, params)
+(self.point_parameterfv_p_p)(pname, params)
 }
 
 pub fn point_parameteri(&self, pname: u32, param: i32) {
-(self.point_parameteri_p)(pname, param)
+(self.point_parameteri_p_p)(pname, param)
 }
 
 pub fn point_parameteriv(&self, pname: u32, params: *const i32) {
-(self.point_parameteriv_p)(pname, params)
+(self.point_parameteriv_p_p)(pname, params)
 }
 
 pub fn point_parameterx(&self, pname: u32, param: i32) {
-(self.point_parameterx_p)(pname, param)
+(self.point_parameterx_p_p)(pname, param)
 }
 
 pub fn point_parameterxv(&self, pname: u32, params: *const i32) {
-(self.point_parameterxv_p)(pname, params)
+(self.point_parameterxv_p_p)(pname, params)
 }
 
 pub fn point_size(&self, size: f32) {
-(self.point_size_p)(size)
+(self.point_size_p_p)(size)
 }
 
 pub fn point_sizex(&self, size: i32) {
-(self.point_sizex_p)(size)
+(self.point_sizex_p_p)(size)
 }
 
 pub fn polygon_mode(&self, face: u32, mode: u32) {
-(self.polygon_mode_p)(face, mode)
+(self.polygon_mode_p_p)(face, mode)
 }
 
 pub fn polygon_offset(&self, factor: f32, units: f32) {
-(self.polygon_offset_p)(factor, units)
+(self.polygon_offset_p_p)(factor, units)
 }
 
 pub fn polygon_offsetx(&self, factor: i32, units: i32) {
-(self.polygon_offsetx_p)(factor, units)
+(self.polygon_offsetx_p_p)(factor, units)
 }
 
 pub fn pop_debug_group(&self, ) {
-(self.pop_debug_group_p)()
+(self.pop_debug_group_p_p)()
 }
 
 pub fn pop_matrix(&self, ) {
-(self.pop_matrix_p)()
+(self.pop_matrix_p_p)()
 }
 
 pub fn primitive_bounding_box(&self, min_x: f32, min_y: f32, min_z: f32, min_w: f32, max_x: f32, max_y: f32, max_z: f32, max_w: f32) {
-(self.primitive_bounding_box_p)(min_x, min_y, min_z, min_w, max_x, max_y, max_z, max_w)
+(self.primitive_bounding_box_p_p)(min_x, min_y, min_z, min_w, max_x, max_y, max_z, max_w)
 }
 
 pub fn primitive_restart_index(&self, index: u32) {
-(self.primitive_restart_index_p)(index)
+(self.primitive_restart_index_p_p)(index)
 }
 
 pub fn program_binary(&self, program: u32, binary_format: u32, binary: *const c_void, length: i32) {
-(self.program_binary_p)(program, binary_format, binary, length)
+(self.program_binary_p_p)(program, binary_format, binary, length)
 }
 
 pub fn program_parameteri(&self, program: u32, pname: u32, value: i32) {
-(self.program_parameteri_p)(program, pname, value)
+(self.program_parameteri_p_p)(program, pname, value)
 }
 
 pub fn program_uniform1f(&self, program: u32, location: i32, v0: f32) {
-(self.program_uniform1f_p)(program, location, v0)
+(self.program_uniform1f_p_p)(program, location, v0)
 }
 
 pub fn program_uniform1fv(&self, program: u32, location: i32, count: i32, value: *const f32) {
-(self.program_uniform1fv_p)(program, location, count, value)
+(self.program_uniform1fv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform1i(&self, program: u32, location: i32, v0: i32) {
-(self.program_uniform1i_p)(program, location, v0)
+(self.program_uniform1i_p_p)(program, location, v0)
 }
 
 pub fn program_uniform1iv(&self, program: u32, location: i32, count: i32, value: *const i32) {
-(self.program_uniform1iv_p)(program, location, count, value)
+(self.program_uniform1iv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform1ui(&self, program: u32, location: i32, v0: u32) {
-(self.program_uniform1ui_p)(program, location, v0)
+(self.program_uniform1ui_p_p)(program, location, v0)
 }
 
 pub fn program_uniform1uiv(&self, program: u32, location: i32, count: i32, value: *const u32) {
-(self.program_uniform1uiv_p)(program, location, count, value)
+(self.program_uniform1uiv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform2f(&self, program: u32, location: i32, v0: f32, v1: f32) {
-(self.program_uniform2f_p)(program, location, v0, v1)
+(self.program_uniform2f_p_p)(program, location, v0, v1)
 }
 
 pub fn program_uniform2fv(&self, program: u32, location: i32, count: i32, value: *const f32) {
-(self.program_uniform2fv_p)(program, location, count, value)
+(self.program_uniform2fv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform2i(&self, program: u32, location: i32, v0: i32, v1: i32) {
-(self.program_uniform2i_p)(program, location, v0, v1)
+(self.program_uniform2i_p_p)(program, location, v0, v1)
 }
 
 pub fn program_uniform2iv(&self, program: u32, location: i32, count: i32, value: *const i32) {
-(self.program_uniform2iv_p)(program, location, count, value)
+(self.program_uniform2iv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform2ui(&self, program: u32, location: i32, v0: u32, v1: u32) {
-(self.program_uniform2ui_p)(program, location, v0, v1)
+(self.program_uniform2ui_p_p)(program, location, v0, v1)
 }
 
 pub fn program_uniform2uiv(&self, program: u32, location: i32, count: i32, value: *const u32) {
-(self.program_uniform2uiv_p)(program, location, count, value)
+(self.program_uniform2uiv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform3f(&self, program: u32, location: i32, v0: f32, v1: f32, v2: f32) {
-(self.program_uniform3f_p)(program, location, v0, v1, v2)
+(self.program_uniform3f_p_p)(program, location, v0, v1, v2)
 }
 
 pub fn program_uniform3fv(&self, program: u32, location: i32, count: i32, value: *const f32) {
-(self.program_uniform3fv_p)(program, location, count, value)
+(self.program_uniform3fv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform3i(&self, program: u32, location: i32, v0: i32, v1: i32, v2: i32) {
-(self.program_uniform3i_p)(program, location, v0, v1, v2)
+(self.program_uniform3i_p_p)(program, location, v0, v1, v2)
 }
 
 pub fn program_uniform3iv(&self, program: u32, location: i32, count: i32, value: *const i32) {
-(self.program_uniform3iv_p)(program, location, count, value)
+(self.program_uniform3iv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform3ui(&self, program: u32, location: i32, v0: u32, v1: u32, v2: u32) {
-(self.program_uniform3ui_p)(program, location, v0, v1, v2)
+(self.program_uniform3ui_p_p)(program, location, v0, v1, v2)
 }
 
 pub fn program_uniform3uiv(&self, program: u32, location: i32, count: i32, value: *const u32) {
-(self.program_uniform3uiv_p)(program, location, count, value)
+(self.program_uniform3uiv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform4f(&self, program: u32, location: i32, v0: f32, v1: f32, v2: f32, v3: f32) {
-(self.program_uniform4f_p)(program, location, v0, v1, v2, v3)
+(self.program_uniform4f_p_p)(program, location, v0, v1, v2, v3)
 }
 
 pub fn program_uniform4fv(&self, program: u32, location: i32, count: i32, value: *const f32) {
-(self.program_uniform4fv_p)(program, location, count, value)
+(self.program_uniform4fv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform4i(&self, program: u32, location: i32, v0: i32, v1: i32, v2: i32, v3: i32) {
-(self.program_uniform4i_p)(program, location, v0, v1, v2, v3)
+(self.program_uniform4i_p_p)(program, location, v0, v1, v2, v3)
 }
 
 pub fn program_uniform4iv(&self, program: u32, location: i32, count: i32, value: *const i32) {
-(self.program_uniform4iv_p)(program, location, count, value)
+(self.program_uniform4iv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform4ui(&self, program: u32, location: i32, v0: u32, v1: u32, v2: u32, v3: u32) {
-(self.program_uniform4ui_p)(program, location, v0, v1, v2, v3)
+(self.program_uniform4ui_p_p)(program, location, v0, v1, v2, v3)
 }
 
 pub fn program_uniform4uiv(&self, program: u32, location: i32, count: i32, value: *const u32) {
-(self.program_uniform4uiv_p)(program, location, count, value)
+(self.program_uniform4uiv_p_p)(program, location, count, value)
 }
 
 pub fn program_uniform_matrix2fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix2fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix2fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix2x3fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix2x3fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix2x3fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix2x4fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix2x4fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix2x4fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix3fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix3fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix3fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix3x2fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix3x2fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix3x2fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix3x4fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix3x4fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix3x4fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix4fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix4fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix4fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix4x2fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix4x2fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix4x2fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn program_uniform_matrix4x3fv(&self, program: u32, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.program_uniform_matrix4x3fv_p)(program, location, count, transpose, value)
+(self.program_uniform_matrix4x3fv_p_p)(program, location, count, transpose, value)
 }
 
 pub fn provoking_vertex(&self, mode: u32) {
-(self.provoking_vertex_p)(mode)
+(self.provoking_vertex_p_p)(mode)
 }
 
 pub fn push_debug_group(&self, source: u32, id: u32, length: i32, message: *const i8) {
-(self.push_debug_group_p)(source, id, length, message)
+(self.push_debug_group_p_p)(source, id, length, message)
 }
 
 pub fn push_matrix(&self, ) {
-(self.push_matrix_p)()
+(self.push_matrix_p_p)()
 }
 
 pub fn query_counter(&self, id: u32, target: u32) {
-(self.query_counter_p)(id, target)
+(self.query_counter_p_p)(id, target)
 }
 
 pub fn read_buffer(&self, src: u32) {
-(self.read_buffer_p)(src)
+(self.read_buffer_p_p)(src)
 }
 
 pub fn read_pixels(&self, x: i32, y: i32, width: i32, height: i32, format: u32, type_: u32, pixels: *mut c_void) {
-(self.read_pixels_p)(x, y, width, height, format, type_, pixels)
+(self.read_pixels_p_p)(x, y, width, height, format, type_, pixels)
 }
 
 pub fn readn_pixels(&self, x: i32, y: i32, width: i32, height: i32, format: u32, type_: u32, buf_size: i32, data: *mut c_void) {
-(self.readn_pixels_p)(x, y, width, height, format, type_, buf_size, data)
+(self.readn_pixels_p_p)(x, y, width, height, format, type_, buf_size, data)
 }
 
 pub fn release_shader_compiler(&self, ) {
-(self.release_shader_compiler_p)()
+(self.release_shader_compiler_p_p)()
 }
 
 pub fn renderbuffer_storage(&self, target: u32, internalformat: u32, width: i32, height: i32) {
-(self.renderbuffer_storage_p)(target, internalformat, width, height)
+(self.renderbuffer_storage_p_p)(target, internalformat, width, height)
 }
 
 pub fn renderbuffer_storage_multisample(&self, target: u32, samples: i32, internalformat: u32, width: i32, height: i32) {
-(self.renderbuffer_storage_multisample_p)(target, samples, internalformat, width, height)
+(self.renderbuffer_storage_multisample_p_p)(target, samples, internalformat, width, height)
 }
 
 pub fn resume_transform_feedback(&self, ) {
-(self.resume_transform_feedback_p)()
+(self.resume_transform_feedback_p_p)()
 }
 
 pub fn rotatef(&self, angle: f32, x: f32, y: f32, z: f32) {
-(self.rotatef_p)(angle, x, y, z)
+(self.rotatef_p_p)(angle, x, y, z)
 }
 
 pub fn rotatex(&self, angle: i32, x: i32, y: i32, z: i32) {
-(self.rotatex_p)(angle, x, y, z)
+(self.rotatex_p_p)(angle, x, y, z)
 }
 
 pub fn sample_coverage(&self, value: f32, invert: u8) {
-(self.sample_coverage_p)(value, invert)
+(self.sample_coverage_p_p)(value, invert)
 }
 
 pub fn sample_coveragex(&self, value: i32, invert: u8) {
-(self.sample_coveragex_p)(value, invert)
+(self.sample_coveragex_p_p)(value, invert)
 }
 
 pub fn sample_maski(&self, mask_number: u32, mask: u32) {
-(self.sample_maski_p)(mask_number, mask)
+(self.sample_maski_p_p)(mask_number, mask)
 }
 
 pub fn sampler_parameter_iiv(&self, sampler: u32, pname: u32, param: *const i32) {
-(self.sampler_parameter_iiv_p)(sampler, pname, param)
+(self.sampler_parameter_iiv_p_p)(sampler, pname, param)
 }
 
 pub fn sampler_parameter_iuiv(&self, sampler: u32, pname: u32, param: *const u32) {
-(self.sampler_parameter_iuiv_p)(sampler, pname, param)
+(self.sampler_parameter_iuiv_p_p)(sampler, pname, param)
 }
 
 pub fn sampler_parameterf(&self, sampler: u32, pname: u32, param: f32) {
-(self.sampler_parameterf_p)(sampler, pname, param)
+(self.sampler_parameterf_p_p)(sampler, pname, param)
 }
 
 pub fn sampler_parameterfv(&self, sampler: u32, pname: u32, param: *const f32) {
-(self.sampler_parameterfv_p)(sampler, pname, param)
+(self.sampler_parameterfv_p_p)(sampler, pname, param)
 }
 
 pub fn sampler_parameteri(&self, sampler: u32, pname: u32, param: i32) {
-(self.sampler_parameteri_p)(sampler, pname, param)
+(self.sampler_parameteri_p_p)(sampler, pname, param)
 }
 
 pub fn sampler_parameteriv(&self, sampler: u32, pname: u32, param: *const i32) {
-(self.sampler_parameteriv_p)(sampler, pname, param)
+(self.sampler_parameteriv_p_p)(sampler, pname, param)
 }
 
 pub fn scalef(&self, x: f32, y: f32, z: f32) {
-(self.scalef_p)(x, y, z)
+(self.scalef_p_p)(x, y, z)
 }
 
 pub fn scalex(&self, x: i32, y: i32, z: i32) {
-(self.scalex_p)(x, y, z)
+(self.scalex_p_p)(x, y, z)
 }
 
 pub fn scissor(&self, x: i32, y: i32, width: i32, height: i32) {
-(self.scissor_p)(x, y, width, height)
+(self.scissor_p_p)(x, y, width, height)
 }
 
 pub fn secondary_color_p3ui(&self, type_: u32, color: u32) {
-(self.secondary_color_p3ui_p)(type_, color)
+(self.secondary_color_p3ui_p_p)(type_, color)
 }
 
 pub fn secondary_color_p3uiv(&self, type_: u32, color: *const u32) {
-(self.secondary_color_p3uiv_p)(type_, color)
+(self.secondary_color_p3uiv_p_p)(type_, color)
 }
 
 pub fn shade_model(&self, mode: u32) {
-(self.shade_model_p)(mode)
+(self.shade_model_p_p)(mode)
 }
 
 pub fn shader_binary(&self, count: i32, shaders: *const u32, binary_format: u32, binary: *const c_void, length: i32) {
-(self.shader_binary_p)(count, shaders, binary_format, binary, length)
+(self.shader_binary_p_p)(count, shaders, binary_format, binary, length)
 }
 
 pub fn shader_source(&self, shader: u32, count: i32, string: *const *const i8, length: *const i32) {
-(self.shader_source_p)(shader, count, string, length)
+(self.shader_source_p_p)(shader, count, string, length)
 }
 
 pub fn stencil_func(&self, func: u32, ref_: i32, mask: u32) {
-(self.stencil_func_p)(func, ref_, mask)
+(self.stencil_func_p_p)(func, ref_, mask)
 }
 
 pub fn stencil_func_separate(&self, face: u32, func: u32, ref_: i32, mask: u32) {
-(self.stencil_func_separate_p)(face, func, ref_, mask)
+(self.stencil_func_separate_p_p)(face, func, ref_, mask)
 }
 
 pub fn stencil_mask(&self, mask: u32) {
-(self.stencil_mask_p)(mask)
+(self.stencil_mask_p_p)(mask)
 }
 
 pub fn stencil_mask_separate(&self, face: u32, mask: u32) {
-(self.stencil_mask_separate_p)(face, mask)
+(self.stencil_mask_separate_p_p)(face, mask)
 }
 
 pub fn stencil_op(&self, fail: u32, zfail: u32, zpass: u32) {
-(self.stencil_op_p)(fail, zfail, zpass)
+(self.stencil_op_p_p)(fail, zfail, zpass)
 }
 
 pub fn stencil_op_separate(&self, face: u32, sfail: u32, dpfail: u32, dppass: u32) {
-(self.stencil_op_separate_p)(face, sfail, dpfail, dppass)
+(self.stencil_op_separate_p_p)(face, sfail, dpfail, dppass)
 }
 
 pub fn tex_buffer(&self, target: u32, internalformat: u32, buffer: u32) {
-(self.tex_buffer_p)(target, internalformat, buffer)
+(self.tex_buffer_p_p)(target, internalformat, buffer)
 }
 
 pub fn tex_buffer_range(&self, target: u32, internalformat: u32, buffer: u32, offset: isize, size: isize) {
-(self.tex_buffer_range_p)(target, internalformat, buffer, offset, size)
+(self.tex_buffer_range_p_p)(target, internalformat, buffer, offset, size)
 }
 
 pub fn tex_coord_p1ui(&self, type_: u32, coords: u32) {
-(self.tex_coord_p1ui_p)(type_, coords)
+(self.tex_coord_p1ui_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p1uiv(&self, type_: u32, coords: *const u32) {
-(self.tex_coord_p1uiv_p)(type_, coords)
+(self.tex_coord_p1uiv_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p2ui(&self, type_: u32, coords: u32) {
-(self.tex_coord_p2ui_p)(type_, coords)
+(self.tex_coord_p2ui_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p2uiv(&self, type_: u32, coords: *const u32) {
-(self.tex_coord_p2uiv_p)(type_, coords)
+(self.tex_coord_p2uiv_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p3ui(&self, type_: u32, coords: u32) {
-(self.tex_coord_p3ui_p)(type_, coords)
+(self.tex_coord_p3ui_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p3uiv(&self, type_: u32, coords: *const u32) {
-(self.tex_coord_p3uiv_p)(type_, coords)
+(self.tex_coord_p3uiv_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p4ui(&self, type_: u32, coords: u32) {
-(self.tex_coord_p4ui_p)(type_, coords)
+(self.tex_coord_p4ui_p_p)(type_, coords)
 }
 
 pub fn tex_coord_p4uiv(&self, type_: u32, coords: *const u32) {
-(self.tex_coord_p4uiv_p)(type_, coords)
+(self.tex_coord_p4uiv_p_p)(type_, coords)
 }
 
 pub fn tex_coord_pointer(&self, size: i32, type_: u32, stride: i32, pointer: *const c_void) {
-(self.tex_coord_pointer_p)(size, type_, stride, pointer)
+(self.tex_coord_pointer_p_p)(size, type_, stride, pointer)
 }
 
 pub fn tex_envf(&self, target: u32, pname: u32, param: f32) {
-(self.tex_envf_p)(target, pname, param)
+(self.tex_envf_p_p)(target, pname, param)
 }
 
 pub fn tex_envfv(&self, target: u32, pname: u32, params: *const f32) {
-(self.tex_envfv_p)(target, pname, params)
+(self.tex_envfv_p_p)(target, pname, params)
 }
 
 pub fn tex_envi(&self, target: u32, pname: u32, param: i32) {
-(self.tex_envi_p)(target, pname, param)
+(self.tex_envi_p_p)(target, pname, param)
 }
 
 pub fn tex_enviv(&self, target: u32, pname: u32, params: *const i32) {
-(self.tex_enviv_p)(target, pname, params)
+(self.tex_enviv_p_p)(target, pname, params)
 }
 
 pub fn tex_envx(&self, target: u32, pname: u32, param: i32) {
-(self.tex_envx_p)(target, pname, param)
+(self.tex_envx_p_p)(target, pname, param)
 }
 
 pub fn tex_envxv(&self, target: u32, pname: u32, params: *const i32) {
-(self.tex_envxv_p)(target, pname, params)
+(self.tex_envxv_p_p)(target, pname, params)
 }
 
 pub fn tex_image1_d(&self, target: u32, level: i32, internalformat: i32, width: i32, border: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_image1_d_p)(target, level, internalformat, width, border, format, type_, pixels)
+(self.tex_image1_d_p_p)(target, level, internalformat, width, border, format, type_, pixels)
 }
 
 pub fn tex_image2_d(&self, target: u32, level: i32, internalformat: i32, width: i32, height: i32, border: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_image2_d_p)(target, level, internalformat, width, height, border, format, type_, pixels)
+(self.tex_image2_d_p_p)(target, level, internalformat, width, height, border, format, type_, pixels)
 }
 
 pub fn tex_image2_d_multisample(&self, target: u32, samples: i32, internalformat: u32, width: i32, height: i32, fixedsamplelocations: u8) {
-(self.tex_image2_d_multisample_p)(target, samples, internalformat, width, height, fixedsamplelocations)
+(self.tex_image2_d_multisample_p_p)(target, samples, internalformat, width, height, fixedsamplelocations)
 }
 
 pub fn tex_image3_d(&self, target: u32, level: i32, internalformat: i32, width: i32, height: i32, depth: i32, border: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_image3_d_p)(target, level, internalformat, width, height, depth, border, format, type_, pixels)
+(self.tex_image3_d_p_p)(target, level, internalformat, width, height, depth, border, format, type_, pixels)
 }
 
 pub fn tex_image3_d_multisample(&self, target: u32, samples: i32, internalformat: u32, width: i32, height: i32, depth: i32, fixedsamplelocations: u8) {
-(self.tex_image3_d_multisample_p)(target, samples, internalformat, width, height, depth, fixedsamplelocations)
+(self.tex_image3_d_multisample_p_p)(target, samples, internalformat, width, height, depth, fixedsamplelocations)
 }
 
 pub fn tex_parameter_iiv(&self, target: u32, pname: u32, params: *const i32) {
-(self.tex_parameter_iiv_p)(target, pname, params)
+(self.tex_parameter_iiv_p_p)(target, pname, params)
 }
 
 pub fn tex_parameter_iuiv(&self, target: u32, pname: u32, params: *const u32) {
-(self.tex_parameter_iuiv_p)(target, pname, params)
+(self.tex_parameter_iuiv_p_p)(target, pname, params)
 }
 
 pub fn tex_parameterf(&self, target: u32, pname: u32, param: f32) {
-(self.tex_parameterf_p)(target, pname, param)
+(self.tex_parameterf_p_p)(target, pname, param)
 }
 
 pub fn tex_parameterfv(&self, target: u32, pname: u32, params: *const f32) {
-(self.tex_parameterfv_p)(target, pname, params)
+(self.tex_parameterfv_p_p)(target, pname, params)
 }
 
 pub fn tex_parameteri(&self, target: u32, pname: u32, param: i32) {
-(self.tex_parameteri_p)(target, pname, param)
+(self.tex_parameteri_p_p)(target, pname, param)
 }
 
 pub fn tex_parameteriv(&self, target: u32, pname: u32, params: *const i32) {
-(self.tex_parameteriv_p)(target, pname, params)
+(self.tex_parameteriv_p_p)(target, pname, params)
 }
 
 pub fn tex_parameterx(&self, target: u32, pname: u32, param: i32) {
-(self.tex_parameterx_p)(target, pname, param)
+(self.tex_parameterx_p_p)(target, pname, param)
 }
 
 pub fn tex_parameterxv(&self, target: u32, pname: u32, params: *const i32) {
-(self.tex_parameterxv_p)(target, pname, params)
+(self.tex_parameterxv_p_p)(target, pname, params)
 }
 
 pub fn tex_storage2_d(&self, target: u32, levels: i32, internalformat: u32, width: i32, height: i32) {
-(self.tex_storage2_d_p)(target, levels, internalformat, width, height)
+(self.tex_storage2_d_p_p)(target, levels, internalformat, width, height)
 }
 
 pub fn tex_storage2_d_multisample(&self, target: u32, samples: i32, internalformat: u32, width: i32, height: i32, fixedsamplelocations: u8) {
-(self.tex_storage2_d_multisample_p)(target, samples, internalformat, width, height, fixedsamplelocations)
+(self.tex_storage2_d_multisample_p_p)(target, samples, internalformat, width, height, fixedsamplelocations)
 }
 
 pub fn tex_storage3_d(&self, target: u32, levels: i32, internalformat: u32, width: i32, height: i32, depth: i32) {
-(self.tex_storage3_d_p)(target, levels, internalformat, width, height, depth)
+(self.tex_storage3_d_p_p)(target, levels, internalformat, width, height, depth)
 }
 
 pub fn tex_storage3_d_multisample(&self, target: u32, samples: i32, internalformat: u32, width: i32, height: i32, depth: i32, fixedsamplelocations: u8) {
-(self.tex_storage3_d_multisample_p)(target, samples, internalformat, width, height, depth, fixedsamplelocations)
+(self.tex_storage3_d_multisample_p_p)(target, samples, internalformat, width, height, depth, fixedsamplelocations)
 }
 
 pub fn tex_sub_image1_d(&self, target: u32, level: i32, xoffset: i32, width: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_sub_image1_d_p)(target, level, xoffset, width, format, type_, pixels)
+(self.tex_sub_image1_d_p_p)(target, level, xoffset, width, format, type_, pixels)
 }
 
 pub fn tex_sub_image2_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, width: i32, height: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_sub_image2_d_p)(target, level, xoffset, yoffset, width, height, format, type_, pixels)
+(self.tex_sub_image2_d_p_p)(target, level, xoffset, yoffset, width, height, format, type_, pixels)
 }
 
 pub fn tex_sub_image3_d(&self, target: u32, level: i32, xoffset: i32, yoffset: i32, zoffset: i32, width: i32, height: i32, depth: i32, format: u32, type_: u32, pixels: *const c_void) {
-(self.tex_sub_image3_d_p)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type_, pixels)
+(self.tex_sub_image3_d_p_p)(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type_, pixels)
 }
 
 pub fn transform_feedback_varyings(&self, program: u32, count: i32, varyings: *const *const i8, buffer_mode: u32) {
-(self.transform_feedback_varyings_p)(program, count, varyings, buffer_mode)
+(self.transform_feedback_varyings_p_p)(program, count, varyings, buffer_mode)
 }
 
 pub fn translatef(&self, x: f32, y: f32, z: f32) {
-(self.translatef_p)(x, y, z)
+(self.translatef_p_p)(x, y, z)
 }
 
 pub fn translatex(&self, x: i32, y: i32, z: i32) {
-(self.translatex_p)(x, y, z)
+(self.translatex_p_p)(x, y, z)
 }
 
 pub fn uniform1f(&self, location: i32, v0: f32) {
-(self.uniform1f_p)(location, v0)
+(self.uniform1f_p_p)(location, v0)
 }
 
 pub fn uniform1fv(&self, location: i32, count: i32, value: *const f32) {
-(self.uniform1fv_p)(location, count, value)
+(self.uniform1fv_p_p)(location, count, value)
 }
 
 pub fn uniform1i(&self, location: i32, v0: i32) {
-(self.uniform1i_p)(location, v0)
+(self.uniform1i_p_p)(location, v0)
 }
 
 pub fn uniform1iv(&self, location: i32, count: i32, value: *const i32) {
-(self.uniform1iv_p)(location, count, value)
+(self.uniform1iv_p_p)(location, count, value)
 }
 
 pub fn uniform1ui(&self, location: i32, v0: u32) {
-(self.uniform1ui_p)(location, v0)
+(self.uniform1ui_p_p)(location, v0)
 }
 
 pub fn uniform1uiv(&self, location: i32, count: i32, value: *const u32) {
-(self.uniform1uiv_p)(location, count, value)
+(self.uniform1uiv_p_p)(location, count, value)
 }
 
 pub fn uniform2f(&self, location: i32, v0: f32, v1: f32) {
-(self.uniform2f_p)(location, v0, v1)
+(self.uniform2f_p_p)(location, v0, v1)
 }
 
 pub fn uniform2fv(&self, location: i32, count: i32, value: *const f32) {
-(self.uniform2fv_p)(location, count, value)
+(self.uniform2fv_p_p)(location, count, value)
 }
 
 pub fn uniform2i(&self, location: i32, v0: i32, v1: i32) {
-(self.uniform2i_p)(location, v0, v1)
+(self.uniform2i_p_p)(location, v0, v1)
 }
 
 pub fn uniform2iv(&self, location: i32, count: i32, value: *const i32) {
-(self.uniform2iv_p)(location, count, value)
+(self.uniform2iv_p_p)(location, count, value)
 }
 
 pub fn uniform2ui(&self, location: i32, v0: u32, v1: u32) {
-(self.uniform2ui_p)(location, v0, v1)
+(self.uniform2ui_p_p)(location, v0, v1)
 }
 
 pub fn uniform2uiv(&self, location: i32, count: i32, value: *const u32) {
-(self.uniform2uiv_p)(location, count, value)
+(self.uniform2uiv_p_p)(location, count, value)
 }
 
 pub fn uniform3f(&self, location: i32, v0: f32, v1: f32, v2: f32) {
-(self.uniform3f_p)(location, v0, v1, v2)
+(self.uniform3f_p_p)(location, v0, v1, v2)
 }
 
 pub fn uniform3fv(&self, location: i32, count: i32, value: *const f32) {
-(self.uniform3fv_p)(location, count, value)
+(self.uniform3fv_p_p)(location, count, value)
 }
 
 pub fn uniform3i(&self, location: i32, v0: i32, v1: i32, v2: i32) {
-(self.uniform3i_p)(location, v0, v1, v2)
+(self.uniform3i_p_p)(location, v0, v1, v2)
 }
 
 pub fn uniform3iv(&self, location: i32, count: i32, value: *const i32) {
-(self.uniform3iv_p)(location, count, value)
+(self.uniform3iv_p_p)(location, count, value)
 }
 
 pub fn uniform3ui(&self, location: i32, v0: u32, v1: u32, v2: u32) {
-(self.uniform3ui_p)(location, v0, v1, v2)
+(self.uniform3ui_p_p)(location, v0, v1, v2)
 }
 
 pub fn uniform3uiv(&self, location: i32, count: i32, value: *const u32) {
-(self.uniform3uiv_p)(location, count, value)
+(self.uniform3uiv_p_p)(location, count, value)
 }
 
 pub fn uniform4f(&self, location: i32, v0: f32, v1: f32, v2: f32, v3: f32) {
-(self.uniform4f_p)(location, v0, v1, v2, v3)
+(self.uniform4f_p_p)(location, v0, v1, v2, v3)
 }
 
 pub fn uniform4fv(&self, location: i32, count: i32, value: *const f32) {
-(self.uniform4fv_p)(location, count, value)
+(self.uniform4fv_p_p)(location, count, value)
 }
 
 pub fn uniform4i(&self, location: i32, v0: i32, v1: i32, v2: i32, v3: i32) {
-(self.uniform4i_p)(location, v0, v1, v2, v3)
+(self.uniform4i_p_p)(location, v0, v1, v2, v3)
 }
 
 pub fn uniform4iv(&self, location: i32, count: i32, value: *const i32) {
-(self.uniform4iv_p)(location, count, value)
+(self.uniform4iv_p_p)(location, count, value)
 }
 
 pub fn uniform4ui(&self, location: i32, v0: u32, v1: u32, v2: u32, v3: u32) {
-(self.uniform4ui_p)(location, v0, v1, v2, v3)
+(self.uniform4ui_p_p)(location, v0, v1, v2, v3)
 }
 
 pub fn uniform4uiv(&self, location: i32, count: i32, value: *const u32) {
-(self.uniform4uiv_p)(location, count, value)
+(self.uniform4uiv_p_p)(location, count, value)
 }
 
 pub fn uniform_block_binding(&self, program: u32, uniform_block_index: u32, uniform_block_binding: u32) {
-(self.uniform_block_binding_p)(program, uniform_block_index, uniform_block_binding)
+(self.uniform_block_binding_p_p)(program, uniform_block_index, uniform_block_binding)
 }
 
 pub fn uniform_matrix2fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix2fv_p)(location, count, transpose, value)
+(self.uniform_matrix2fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix2x3fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix2x3fv_p)(location, count, transpose, value)
+(self.uniform_matrix2x3fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix2x4fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix2x4fv_p)(location, count, transpose, value)
+(self.uniform_matrix2x4fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix3fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix3fv_p)(location, count, transpose, value)
+(self.uniform_matrix3fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix3x2fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix3x2fv_p)(location, count, transpose, value)
+(self.uniform_matrix3x2fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix3x4fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix3x4fv_p)(location, count, transpose, value)
+(self.uniform_matrix3x4fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix4fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix4fv_p)(location, count, transpose, value)
+(self.uniform_matrix4fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix4x2fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix4x2fv_p)(location, count, transpose, value)
+(self.uniform_matrix4x2fv_p_p)(location, count, transpose, value)
 }
 
 pub fn uniform_matrix4x3fv(&self, location: i32, count: i32, transpose: u8, value: *const f32) {
-(self.uniform_matrix4x3fv_p)(location, count, transpose, value)
+(self.uniform_matrix4x3fv_p_p)(location, count, transpose, value)
 }
 
-pub fn unmap_buffer(&self, target: u32) -> c_uchar {
-(self.unmap_buffer_p)(target)
+pub fn unmap_buffer(&self, target: u32) -> u8 {
+(self.unmap_buffer_p_p)(target)
 }
 
 pub fn use_program(&self, program: u32) {
-(self.use_program_p)(program)
+(self.use_program_p_p)(program)
 }
 
 pub fn use_program_stages(&self, pipeline: u32, stages: u32, program: u32) {
-(self.use_program_stages_p)(pipeline, stages, program)
+(self.use_program_stages_p_p)(pipeline, stages, program)
 }
 
 pub fn validate_program(&self, program: u32) {
-(self.validate_program_p)(program)
+(self.validate_program_p_p)(program)
 }
 
 pub fn validate_program_pipeline(&self, pipeline: u32) {
-(self.validate_program_pipeline_p)(pipeline)
+(self.validate_program_pipeline_p_p)(pipeline)
 }
 
 pub fn vertex_attrib1d(&self, index: u32, x: f64) {
-(self.vertex_attrib1d_p)(index, x)
+(self.vertex_attrib1d_p_p)(index, x)
 }
 
 pub fn vertex_attrib1dv(&self, index: u32, v: *const f64) {
-(self.vertex_attrib1dv_p)(index, v)
+(self.vertex_attrib1dv_p_p)(index, v)
 }
 
 pub fn vertex_attrib1f(&self, index: u32, x: f32) {
-(self.vertex_attrib1f_p)(index, x)
+(self.vertex_attrib1f_p_p)(index, x)
 }
 
 pub fn vertex_attrib1fv(&self, index: u32, v: *const f32) {
-(self.vertex_attrib1fv_p)(index, v)
+(self.vertex_attrib1fv_p_p)(index, v)
 }
 
 pub fn vertex_attrib1s(&self, index: u32, x: i16) {
-(self.vertex_attrib1s_p)(index, x)
+(self.vertex_attrib1s_p_p)(index, x)
 }
 
 pub fn vertex_attrib1sv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib1sv_p)(index, v)
+(self.vertex_attrib1sv_p_p)(index, v)
 }
 
 pub fn vertex_attrib2d(&self, index: u32, x: f64, y: f64) {
-(self.vertex_attrib2d_p)(index, x, y)
+(self.vertex_attrib2d_p_p)(index, x, y)
 }
 
 pub fn vertex_attrib2dv(&self, index: u32, v: *const f64) {
-(self.vertex_attrib2dv_p)(index, v)
+(self.vertex_attrib2dv_p_p)(index, v)
 }
 
 pub fn vertex_attrib2f(&self, index: u32, x: f32, y: f32) {
-(self.vertex_attrib2f_p)(index, x, y)
+(self.vertex_attrib2f_p_p)(index, x, y)
 }
 
 pub fn vertex_attrib2fv(&self, index: u32, v: *const f32) {
-(self.vertex_attrib2fv_p)(index, v)
+(self.vertex_attrib2fv_p_p)(index, v)
 }
 
 pub fn vertex_attrib2s(&self, index: u32, x: i16, y: i16) {
-(self.vertex_attrib2s_p)(index, x, y)
+(self.vertex_attrib2s_p_p)(index, x, y)
 }
 
 pub fn vertex_attrib2sv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib2sv_p)(index, v)
+(self.vertex_attrib2sv_p_p)(index, v)
 }
 
 pub fn vertex_attrib3d(&self, index: u32, x: f64, y: f64, z: f64) {
-(self.vertex_attrib3d_p)(index, x, y, z)
+(self.vertex_attrib3d_p_p)(index, x, y, z)
 }
 
 pub fn vertex_attrib3dv(&self, index: u32, v: *const f64) {
-(self.vertex_attrib3dv_p)(index, v)
+(self.vertex_attrib3dv_p_p)(index, v)
 }
 
 pub fn vertex_attrib3f(&self, index: u32, x: f32, y: f32, z: f32) {
-(self.vertex_attrib3f_p)(index, x, y, z)
+(self.vertex_attrib3f_p_p)(index, x, y, z)
 }
 
 pub fn vertex_attrib3fv(&self, index: u32, v: *const f32) {
-(self.vertex_attrib3fv_p)(index, v)
+(self.vertex_attrib3fv_p_p)(index, v)
 }
 
 pub fn vertex_attrib3s(&self, index: u32, x: i16, y: i16, z: i16) {
-(self.vertex_attrib3s_p)(index, x, y, z)
+(self.vertex_attrib3s_p_p)(index, x, y, z)
 }
 
 pub fn vertex_attrib3sv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib3sv_p)(index, v)
+(self.vertex_attrib3sv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_nbv(&self, index: u32, v: *const i8) {
-(self.vertex_attrib4_nbv_p)(index, v)
+(self.vertex_attrib4_nbv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_niv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib4_niv_p)(index, v)
+(self.vertex_attrib4_niv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_nsv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib4_nsv_p)(index, v)
+(self.vertex_attrib4_nsv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_nub(&self, index: u32, x: u8, y: u8, z: u8, w: u8) {
-(self.vertex_attrib4_nub_p)(index, x, y, z, w)
+(self.vertex_attrib4_nub_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib4_nubv(&self, index: u32, v: *const u8) {
-(self.vertex_attrib4_nubv_p)(index, v)
+(self.vertex_attrib4_nubv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_nuiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib4_nuiv_p)(index, v)
+(self.vertex_attrib4_nuiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4_nusv(&self, index: u32, v: *const u16) {
-(self.vertex_attrib4_nusv_p)(index, v)
+(self.vertex_attrib4_nusv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4bv(&self, index: u32, v: *const i8) {
-(self.vertex_attrib4bv_p)(index, v)
+(self.vertex_attrib4bv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4d(&self, index: u32, x: f64, y: f64, z: f64, w: f64) {
-(self.vertex_attrib4d_p)(index, x, y, z, w)
+(self.vertex_attrib4d_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib4dv(&self, index: u32, v: *const f64) {
-(self.vertex_attrib4dv_p)(index, v)
+(self.vertex_attrib4dv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4f(&self, index: u32, x: f32, y: f32, z: f32, w: f32) {
-(self.vertex_attrib4f_p)(index, x, y, z, w)
+(self.vertex_attrib4f_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib4fv(&self, index: u32, v: *const f32) {
-(self.vertex_attrib4fv_p)(index, v)
+(self.vertex_attrib4fv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4iv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib4iv_p)(index, v)
+(self.vertex_attrib4iv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4s(&self, index: u32, x: i16, y: i16, z: i16, w: i16) {
-(self.vertex_attrib4s_p)(index, x, y, z, w)
+(self.vertex_attrib4s_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib4sv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib4sv_p)(index, v)
+(self.vertex_attrib4sv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4ubv(&self, index: u32, v: *const u8) {
-(self.vertex_attrib4ubv_p)(index, v)
+(self.vertex_attrib4ubv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4uiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib4uiv_p)(index, v)
+(self.vertex_attrib4uiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib4usv(&self, index: u32, v: *const u16) {
-(self.vertex_attrib4usv_p)(index, v)
+(self.vertex_attrib4usv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_binding(&self, attribindex: u32, bindingindex: u32) {
-(self.vertex_attrib_binding_p)(attribindex, bindingindex)
+(self.vertex_attrib_binding_p_p)(attribindex, bindingindex)
 }
 
 pub fn vertex_attrib_divisor(&self, index: u32, divisor: u32) {
-(self.vertex_attrib_divisor_p)(index, divisor)
+(self.vertex_attrib_divisor_p_p)(index, divisor)
 }
 
 pub fn vertex_attrib_format(&self, attribindex: u32, size: i32, type_: u32, normalized: u8, relativeoffset: u32) {
-(self.vertex_attrib_format_p)(attribindex, size, type_, normalized, relativeoffset)
+(self.vertex_attrib_format_p_p)(attribindex, size, type_, normalized, relativeoffset)
 }
 
 pub fn vertex_attrib_i1i(&self, index: u32, x: i32) {
-(self.vertex_attrib_i1i_p)(index, x)
+(self.vertex_attrib_i1i_p_p)(index, x)
 }
 
 pub fn vertex_attrib_i1iv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib_i1iv_p)(index, v)
+(self.vertex_attrib_i1iv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i1ui(&self, index: u32, x: u32) {
-(self.vertex_attrib_i1ui_p)(index, x)
+(self.vertex_attrib_i1ui_p_p)(index, x)
 }
 
 pub fn vertex_attrib_i1uiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib_i1uiv_p)(index, v)
+(self.vertex_attrib_i1uiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i2i(&self, index: u32, x: i32, y: i32) {
-(self.vertex_attrib_i2i_p)(index, x, y)
+(self.vertex_attrib_i2i_p_p)(index, x, y)
 }
 
 pub fn vertex_attrib_i2iv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib_i2iv_p)(index, v)
+(self.vertex_attrib_i2iv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i2ui(&self, index: u32, x: u32, y: u32) {
-(self.vertex_attrib_i2ui_p)(index, x, y)
+(self.vertex_attrib_i2ui_p_p)(index, x, y)
 }
 
 pub fn vertex_attrib_i2uiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib_i2uiv_p)(index, v)
+(self.vertex_attrib_i2uiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i3i(&self, index: u32, x: i32, y: i32, z: i32) {
-(self.vertex_attrib_i3i_p)(index, x, y, z)
+(self.vertex_attrib_i3i_p_p)(index, x, y, z)
 }
 
 pub fn vertex_attrib_i3iv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib_i3iv_p)(index, v)
+(self.vertex_attrib_i3iv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i3ui(&self, index: u32, x: u32, y: u32, z: u32) {
-(self.vertex_attrib_i3ui_p)(index, x, y, z)
+(self.vertex_attrib_i3ui_p_p)(index, x, y, z)
 }
 
 pub fn vertex_attrib_i3uiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib_i3uiv_p)(index, v)
+(self.vertex_attrib_i3uiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4bv(&self, index: u32, v: *const i8) {
-(self.vertex_attrib_i4bv_p)(index, v)
+(self.vertex_attrib_i4bv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4i(&self, index: u32, x: i32, y: i32, z: i32, w: i32) {
-(self.vertex_attrib_i4i_p)(index, x, y, z, w)
+(self.vertex_attrib_i4i_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib_i4iv(&self, index: u32, v: *const i32) {
-(self.vertex_attrib_i4iv_p)(index, v)
+(self.vertex_attrib_i4iv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4sv(&self, index: u32, v: *const i16) {
-(self.vertex_attrib_i4sv_p)(index, v)
+(self.vertex_attrib_i4sv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4ubv(&self, index: u32, v: *const u8) {
-(self.vertex_attrib_i4ubv_p)(index, v)
+(self.vertex_attrib_i4ubv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4ui(&self, index: u32, x: u32, y: u32, z: u32, w: u32) {
-(self.vertex_attrib_i4ui_p)(index, x, y, z, w)
+(self.vertex_attrib_i4ui_p_p)(index, x, y, z, w)
 }
 
 pub fn vertex_attrib_i4uiv(&self, index: u32, v: *const u32) {
-(self.vertex_attrib_i4uiv_p)(index, v)
+(self.vertex_attrib_i4uiv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i4usv(&self, index: u32, v: *const u16) {
-(self.vertex_attrib_i4usv_p)(index, v)
+(self.vertex_attrib_i4usv_p_p)(index, v)
 }
 
 pub fn vertex_attrib_i_format(&self, attribindex: u32, size: i32, type_: u32, relativeoffset: u32) {
-(self.vertex_attrib_i_format_p)(attribindex, size, type_, relativeoffset)
+(self.vertex_attrib_i_format_p_p)(attribindex, size, type_, relativeoffset)
 }
 
 pub fn vertex_attrib_i_pointer(&self, index: u32, size: i32, type_: u32, stride: i32, pointer: *const c_void) {
-(self.vertex_attrib_i_pointer_p)(index, size, type_, stride, pointer)
+(self.vertex_attrib_i_pointer_p_p)(index, size, type_, stride, pointer)
 }
 
 pub fn vertex_attrib_p1ui(&self, index: u32, type_: u32, normalized: u8, value: u32) {
-(self.vertex_attrib_p1ui_p)(index, type_, normalized, value)
+(self.vertex_attrib_p1ui_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p1uiv(&self, index: u32, type_: u32, normalized: u8, value: *const u32) {
-(self.vertex_attrib_p1uiv_p)(index, type_, normalized, value)
+(self.vertex_attrib_p1uiv_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p2ui(&self, index: u32, type_: u32, normalized: u8, value: u32) {
-(self.vertex_attrib_p2ui_p)(index, type_, normalized, value)
+(self.vertex_attrib_p2ui_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p2uiv(&self, index: u32, type_: u32, normalized: u8, value: *const u32) {
-(self.vertex_attrib_p2uiv_p)(index, type_, normalized, value)
+(self.vertex_attrib_p2uiv_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p3ui(&self, index: u32, type_: u32, normalized: u8, value: u32) {
-(self.vertex_attrib_p3ui_p)(index, type_, normalized, value)
+(self.vertex_attrib_p3ui_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p3uiv(&self, index: u32, type_: u32, normalized: u8, value: *const u32) {
-(self.vertex_attrib_p3uiv_p)(index, type_, normalized, value)
+(self.vertex_attrib_p3uiv_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p4ui(&self, index: u32, type_: u32, normalized: u8, value: u32) {
-(self.vertex_attrib_p4ui_p)(index, type_, normalized, value)
+(self.vertex_attrib_p4ui_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_p4uiv(&self, index: u32, type_: u32, normalized: u8, value: *const u32) {
-(self.vertex_attrib_p4uiv_p)(index, type_, normalized, value)
+(self.vertex_attrib_p4uiv_p_p)(index, type_, normalized, value)
 }
 
 pub fn vertex_attrib_pointer(&self, index: u32, size: i32, type_: u32, normalized: u8, stride: i32, pointer: *const c_void) {
-(self.vertex_attrib_pointer_p)(index, size, type_, normalized, stride, pointer)
+(self.vertex_attrib_pointer_p_p)(index, size, type_, normalized, stride, pointer)
 }
 
 pub fn vertex_binding_divisor(&self, bindingindex: u32, divisor: u32) {
-(self.vertex_binding_divisor_p)(bindingindex, divisor)
+(self.vertex_binding_divisor_p_p)(bindingindex, divisor)
 }
 
 pub fn vertex_p2ui(&self, type_: u32, value: u32) {
-(self.vertex_p2ui_p)(type_, value)
+(self.vertex_p2ui_p_p)(type_, value)
 }
 
 pub fn vertex_p2uiv(&self, type_: u32, value: *const u32) {
-(self.vertex_p2uiv_p)(type_, value)
+(self.vertex_p2uiv_p_p)(type_, value)
 }
 
 pub fn vertex_p3ui(&self, type_: u32, value: u32) {
-(self.vertex_p3ui_p)(type_, value)
+(self.vertex_p3ui_p_p)(type_, value)
 }
 
 pub fn vertex_p3uiv(&self, type_: u32, value: *const u32) {
-(self.vertex_p3uiv_p)(type_, value)
+(self.vertex_p3uiv_p_p)(type_, value)
 }
 
 pub fn vertex_p4ui(&self, type_: u32, value: u32) {
-(self.vertex_p4ui_p)(type_, value)
+(self.vertex_p4ui_p_p)(type_, value)
 }
 
 pub fn vertex_p4uiv(&self, type_: u32, value: *const u32) {
-(self.vertex_p4uiv_p)(type_, value)
+(self.vertex_p4uiv_p_p)(type_, value)
 }
 
 pub fn vertex_pointer(&self, size: i32, type_: u32, stride: i32, pointer: *const c_void) {
-(self.vertex_pointer_p)(size, type_, stride, pointer)
+(self.vertex_pointer_p_p)(size, type_, stride, pointer)
 }
 
 pub fn viewport(&self, x: i32, y: i32, width: i32, height: i32) {
-(self.viewport_p)(x, y, width, height)
+(self.viewport_p_p)(x, y, width, height)
 }
 
 pub fn wait_sync(&self, sync: *mut c_void, flags: u32, timeout: u64) {
-(self.wait_sync_p)(sync, flags, timeout)
+(self.wait_sync_p_p)(sync, flags, timeout)
 }
 
 }

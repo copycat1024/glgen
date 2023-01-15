@@ -81,22 +81,16 @@ impl Type {
         }
     }
 
-    pub fn as_arg(&self) -> String {
-        match (&self.md, &self.id) {
-            (TypeMod::None, TypeData::Void) => String::new(),
-            _ => format!("{}{}", self.mod_(), self.arg()),
-        }
+    pub fn c(&self) -> String {
+        format!("{}{}", self.mod_(), self.match_c())
     }
 
-    pub fn as_wrap(&self) -> String {
-        format!("{}{}", self.mod_(), self.wrap())
+    pub fn rust(&self) -> String {
+        format!("{}{}", self.mod_(), self.match_rust())
     }
 
-    pub fn as_ret(&self) -> String {
-        match (&self.md, &self.id) {
-            (TypeMod::None, TypeData::Void) => String::new(),
-            _ => format!(" -> {}", self.as_arg()),
-        }
+    pub fn not_void(&self) -> bool {
+        !matches!((&self.md, &self.id), (TypeMod::None, TypeData::Void))
     }
 
     fn mod_(&self) -> &str {
@@ -109,7 +103,7 @@ impl Type {
         }
     }
 
-    fn arg(&self) -> &str {
+    fn match_c(&self) -> &str {
         match self.id {
             TypeData::Char => "c_char",
             TypeData::DebugProc => "DebugProc",
@@ -127,7 +121,7 @@ impl Type {
         }
     }
 
-    fn wrap(&self) -> &str {
+    fn match_rust(&self) -> &str {
         match self.id {
             TypeData::Char => "i8",
             TypeData::DebugProc => "DebugProc",

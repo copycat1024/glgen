@@ -1,31 +1,52 @@
 use super::util;
-use crate::{
-    ffi::{Argument, Type},
-    gl::{self, Binding},
-};
+use crate::{ffi::Argument, gl};
 
 pub struct Command {
-    pub name: String,
-    pub upper_name: String,
-    pub lower_name: String,
-    pub ret_type: Type,
+    pub decl: Argument,
     pub args: Vec<Argument>,
+
+    pub upper: String,
+    pub lower: String,
 }
 
 impl Command {
     pub fn new(cmd: gl::Command) -> Self {
-        let gl::Command {
-            proto: Binding { type_, name, .. },
-            param,
-        } = cmd;
+        let gl::Command { proto, param } = cmd;
+
+        let upper = Self::get_upper_name(&proto.name);
+        let lower = Self::get_lower_name(&proto.name);
+        let decl = Argument::new(proto);
 
         Self {
-            name: name.clone(),
-            upper_name: Self::get_upper_name(&name),
-            lower_name: Self::get_lower_name(&name),
-            ret_type: Type::new(&type_),
+            decl,
             args: param.into_iter().map(Argument::new).collect(),
+            upper,
+            lower,
         }
+    }
+
+    pub fn type_name(&self) -> String {
+        format!("{}T", self.upper)
+    }
+
+    pub fn field_name(&self) -> String {
+        format!("{}_p", self.lower)
+    }
+
+    pub fn rust_name(&self) -> String {
+        self.lower.to_owned()
+    }
+
+    pub fn gl_name(&self) -> String {
+        self.decl.name()
+    }
+
+    pub fn ret_c(&self) -> String {
+        self.decl.ret_c()
+    }
+
+    pub fn ret_rust(&self) -> String {
+        self.decl.ret_rust()
     }
 
     pub fn get_upper_name(name: &str) -> String {

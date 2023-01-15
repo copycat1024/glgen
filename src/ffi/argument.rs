@@ -23,12 +23,28 @@ impl Argument {
         }
     }
 
-    pub fn type_arg(&self) -> String {
-        self.type_.as_arg()
+    pub fn type_c(&self) -> String {
+        self.type_.c()
     }
 
-    pub fn type_wrap(&self) -> String {
-        self.type_.as_wrap()
+    pub fn type_rust(&self) -> String {
+        self.type_.rust()
+    }
+
+    pub fn ret_c(&self) -> String {
+        if self.type_.not_void() {
+            format!(" -> {}", self.type_.c())
+        } else {
+            String::new()
+        }
+    }
+
+    pub fn ret_rust(&self) -> String {
+        if self.type_.not_void() {
+            format!(" -> {}", self.type_.rust())
+        } else {
+            String::new()
+        }
     }
 
     pub fn name(&self) -> String {
