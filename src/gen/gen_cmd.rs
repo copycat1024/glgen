@@ -1,4 +1,7 @@
-use super::Generator;
+use super::{
+    expr::{write_field, write_load, write_type, write_wrap},
+    Generator,
+};
 use std::io::{Result, Write};
 
 const TYPES: &str = "
@@ -30,8 +33,8 @@ pub fn gen_cmd(gen: &Generator, output: &mut dyn Write) -> Result<()> {
 fn gen_cmd_types(gen: &Generator, output: &mut dyn Write) -> Result<()> {
     write!(output, "{TYPES}")?;
 
-    for (_, cmd) in gen.commands.iter() {
-        cmd.write_type(output)?;
+    for cmd in gen.commands.values() {
+        write_type(output, cmd)?;
     }
 
     writeln!(output)
@@ -40,8 +43,8 @@ fn gen_cmd_types(gen: &Generator, output: &mut dyn Write) -> Result<()> {
 fn gen_cmd_struct(gen: &Generator, output: &mut dyn Write) -> Result<()> {
     writeln!(output, "pub struct GlCmd {{")?;
 
-    for (_, cmd) in gen.commands.iter() {
-        cmd.write_field(output)?;
+    for cmd in gen.commands.values() {
+        write_field(output, cmd)?;
     }
 
     writeln!(output, "}}")?;
@@ -51,22 +54,19 @@ fn gen_cmd_struct(gen: &Generator, output: &mut dyn Write) -> Result<()> {
 fn gen_cmd_impl(gen: &Generator, output: &mut dyn Write) -> Result<()> {
     writeln!(output, "impl GlCmd {{")?;
 
-    writeln!(
-        output,
-        "pub fn load<FnLoad>(&self, loader: &FnLoad) -> Self"
-    )?;
+    writeln!(output, "pub fn load<FnLoad>(loader: FnLoad) -> Self")?;
     writeln!(output, "where FnLoad: Fn(*const c_char) -> *mut c_void {{")?;
     writeln!(output, "Self {{")?;
 
-    for (_, cmd) in gen.commands.iter() {
-        cmd.write_load(output)?;
+    for cmd in gen.commands.values() {
+        write_load(output, cmd)?;
     }
 
     writeln!(output, "}}")?;
     writeln!(output, "}}")?;
 
-    for (_, cmd) in gen.commands.iter() {
-        cmd.write_wrap(output)?;
+    for cmd in gen.commands.values() {
+        write_wrap(output, cmd)?;
     }
 
     writeln!(output, "}}")?;

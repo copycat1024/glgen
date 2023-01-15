@@ -82,15 +82,35 @@ impl Type {
     }
 
     pub fn as_arg(&self) -> String {
-        let md = match self.md {
+        match (&self.md, &self.id) {
+            (TypeMod::None, TypeData::Void) => String::new(),
+            _ => format!("{}{}", self.mod_(), self.arg()),
+        }
+    }
+
+    pub fn as_wrap(&self) -> String {
+        format!("{}{}", self.mod_(), self.wrap())
+    }
+
+    pub fn as_ret(&self) -> String {
+        match (&self.md, &self.id) {
+            (TypeMod::None, TypeData::Void) => String::new(),
+            _ => format!(" -> {}", self.as_arg()),
+        }
+    }
+
+    fn mod_(&self) -> &str {
+        match self.md {
             TypeMod::None => "",
             TypeMod::ConstPtr => "*const ",
             TypeMod::ConstPtrPtr => "*const *const ",
             TypeMod::Ptr => "*mut ",
             TypeMod::PtrPtr => "*mut *mut ",
-        };
+        }
+    }
 
-        let id = match self.id {
+    fn arg(&self) -> &str {
+        match self.id {
             TypeData::Char => "c_char",
             TypeData::DebugProc => "DebugProc",
             TypeData::Double => "c_double",
@@ -104,19 +124,24 @@ impl Type {
             TypeData::Uint64 => "u64",
             TypeData::Ushort => "c_ushort",
             TypeData::Void => "c_void",
-        };
-
-        match (&self.md, &self.id) {
-            (TypeMod::None, TypeData::Void) => String::new(),
-            _ => format!("{md}{id}"),
         }
     }
 
-    pub fn as_ret(&self) -> String {
-        let arg = self.as_arg();
-        match (&self.md, &self.id) {
-            (TypeMod::None, TypeData::Void) => String::new(),
-            _ => format!(" -> {arg}"),
+    fn wrap(&self) -> &str {
+        match self.id {
+            TypeData::Char => "i8",
+            TypeData::DebugProc => "DebugProc",
+            TypeData::Double => "f64",
+            TypeData::Float => "f32",
+            TypeData::Int => "i32",
+            TypeData::Int64 => "i64",
+            TypeData::IntSize => "isize",
+            TypeData::Short => "i16",
+            TypeData::Uchar => "u8",
+            TypeData::Uint => "u32",
+            TypeData::Uint64 => "u64",
+            TypeData::Ushort => "u16",
+            TypeData::Void => "c_void",
         }
     }
 }

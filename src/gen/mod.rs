@@ -1,3 +1,4 @@
+mod expr;
 mod gen_cmd;
 mod gen_load;
 mod gen_mod;

@@ -2,15 +2,21 @@ use super::util;
 use crate::{ffi::Type, gl::Binding};
 
 pub struct Argument {
-    // pub type_mod: TypeMod,
-    // pub type_id: String,
     type_: Type,
     name: String,
 }
 
 impl Argument {
     pub fn new(binding: Binding) -> Self {
-        let Binding { type_, name, .. } = binding;
+        let Binding {
+            type_,
+            name,
+            group,
+            class,
+            len,
+        } = binding;
+        println!("{group:?} {len:?} {class:?}");
+
         Self {
             type_: Type::new(&type_),
             name,
@@ -19,6 +25,10 @@ impl Argument {
 
     pub fn type_arg(&self) -> String {
         self.type_.as_arg()
+    }
+
+    pub fn type_wrap(&self) -> String {
+        self.type_.as_wrap()
     }
 
     pub fn name(&self) -> String {
