@@ -5,7 +5,7 @@ use super::{
 use std::io::{Result, Write};
 
 const TYPES: &str = "
-use super::load;
+use super::{load, enums};
 use std::ffi::{c_char, c_double, c_float, c_int, c_short, c_uchar, c_uint, c_ushort, c_void};
 
 type DebugProc = Option<
@@ -66,7 +66,7 @@ fn gen_cmd_impl(gen: &Generator, output: &mut dyn Write) -> Result<()> {
     writeln!(output, "}}")?;
 
     for cmd in gen.commands.values() {
-        write_wrap(output, cmd)?;
+        write_wrap(output, cmd, gen)?;
     }
 
     writeln!(output, "}}")?;

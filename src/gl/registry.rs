@@ -4,7 +4,7 @@ use crate::{
 };
 
 pub struct Registry {
-    enums: Vec<Enum>,
+    pub enums: Vec<Enum>,
     pub commands: Vec<Command>,
     pub feature: Feature,
 }
@@ -34,9 +34,20 @@ impl Registry {
     }
 
     fn collect_enum_list(&mut self, node: Node) {
+        let mut value = String::new();
+        let mut name = String::new();
+
         for node in node.children.into_iter() {
             if node.name == "enum" {
-                let enum_ = Enum::new(node);
+                let mut enum_ = Enum::new(node);
+
+                if value != enum_.value {
+                    value = enum_.value.clone();
+                    name = enum_.name.clone();
+                } else if enum_.alias.is_none() {
+                    enum_.alias = Some(name.clone());
+                }
+
                 self.enums.push(enum_);
             }
         }

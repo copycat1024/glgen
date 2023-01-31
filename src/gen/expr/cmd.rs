@@ -1,5 +1,5 @@
 use super::write_args;
-use crate::ffi::Command;
+use crate::{ffi::Command, gen::Generator};
 use std::io::{Result, Write};
 
 pub fn write_type(out: &mut dyn Write, cmd: &Command) -> Result<()> {
@@ -18,16 +18,23 @@ pub fn write_load(out: &mut dyn Write, cmd: &Command) -> Result<()> {
     writeln!(out, "{field_name}: load(&loader, \"{gl_name}\"),",)
 }
 
-pub fn write_wrap(out: &mut dyn Write, cmd: &Command) -> Result<()> {
+pub fn write_wrap(out: &mut dyn Write, cmd: &Command, gen: &Generator) -> Result<()> {
     write!(out, "pub fn {}(&self, ", cmd.rust_name())?;
     write_args(out, cmd, |arg| {
-        format!("{}: {}", arg.name(), arg.type_rust())
+        format!("{}: {}", arg.name(), arg.type_rust(gen))
     })?;
-    writeln!(out, "){} {{", cmd.ret_rust())?;
+    writeln!(out, "){} {{", cmd.ret_rust(gen))?;
 
-    write!(out, "(self.{}_p)(", cmd.field_name())?;
-    write_args(out, cmd, |arg| arg.name())?;
-    writeln!(out, ")")?;
+    write!(out, "(self.{})(", cmd.field_name())?;
+    write_args(out, cmd, |arg| {
+        format!("{}{}", arg.name(), arg.type_cast(gen))
+    })?;
+
+    if cmd.decl.is_grouped(gen) {
+        writeln!(out, ").into()")?;
+    } else {
+        writeln!(out, ")")?;
+    }
 
     writeln!(out, "}}")?;
     writeln!(out)

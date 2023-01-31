@@ -1,5 +1,5 @@
 use super::util;
-use crate::{ffi::Argument, gl};
+use crate::{ffi::Argument, gen::Generator, gl};
 
 pub struct Command {
     pub decl: Argument,
@@ -38,24 +38,25 @@ impl Command {
     }
 
     pub fn gl_name(&self) -> String {
-        self.decl.name()
+        self.decl.gl_name()
     }
 
     pub fn ret_c(&self) -> String {
         self.decl.ret_c()
     }
 
-    pub fn ret_rust(&self) -> String {
-        self.decl.ret_rust()
+    pub fn ret_rust(&self, gen: &Generator) -> String {
+        self.decl.ret_rust(gen)
     }
+
 
     pub fn get_upper_name(name: &str) -> String {
         let name = name.chars().fold(String::new(), util::pascal_case_reducer);
-        name[2..].into()
+        name[2..].to_owned()
     }
 
     pub fn get_lower_name(name: &str) -> String {
         let name = name.chars().fold(String::new(), util::snake_case_reducer);
-        name[3..].into()
+        name[3..].to_owned()
     }
 }

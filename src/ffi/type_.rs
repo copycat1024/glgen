@@ -93,7 +93,7 @@ impl Type {
         !matches!((&self.md, &self.id), (TypeMod::None, TypeData::Void))
     }
 
-    fn mod_(&self) -> &str {
+    pub fn mod_(&self) -> &str {
         match self.md {
             TypeMod::None => "",
             TypeMod::ConstPtr => "*const ",
@@ -121,7 +121,7 @@ impl Type {
         }
     }
 
-    fn match_rust(&self) -> &str {
+    pub fn match_rust(&self) -> &str {
         match self.id {
             TypeData::Char => "i8",
             TypeData::DebugProc => "DebugProc",
